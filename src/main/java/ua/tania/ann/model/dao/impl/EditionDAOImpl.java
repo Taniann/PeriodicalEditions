@@ -18,8 +18,8 @@ public class EditionDAOImpl implements EditionDAO {
     }
 
     @Override
-    public void create(Edition edition) {
-
+    public boolean insert(Edition edition) {
+        return true;
     }
 
     @Override
@@ -33,12 +33,12 @@ public class EditionDAOImpl implements EditionDAO {
     }
 
     @Override
-    public void update(Edition edition) {
-
+    public boolean update(Edition edition) {
+        return true;
     }
 
     @Override
-    public void delete(int id) {
-
+    public boolean delete(int id) {
+        return true;
     }
 }

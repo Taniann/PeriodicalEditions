@@ -1,8 +1,6 @@
 package ua.tania.ann.controller;
 
-import ua.tania.ann.controller.command.Command;
-import ua.tania.ann.controller.command.NotAllowedCommand;
-import ua.tania.ann.controller.command.RegisterCommand;
+import ua.tania.ann.controller.command.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -18,13 +16,16 @@ public class RequestHelper {
 
     private RequestHelper() {
         commands.put("register", new RegisterCommand());
+        commands.put("setEnglish", new SetEnglishCommand());
+        commands.put("setUkrainian", new SetUkrainianCommand());
+
     }
 
     public Command getCommand(HttpServletRequest request) {
         String commandName = request.getParameter("command");
         Command command = commands.get(commandName);
         if (command == null) {
-            command = new NotAllowedCommand();
+            command = new NoCommand();
         }
         return command;
     }

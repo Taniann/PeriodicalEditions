@@ -2,7 +2,9 @@ package ua.tania.ann.model.dao.impl;
 
 import ua.tania.ann.model.dao.UserDAO;
 import ua.tania.ann.model.entity.User;
+import ua.tania.ann.utils.ConnectionPool;
 
+import java.sql.*;
 import java.util.List;
 
 /**
@@ -11,17 +13,12 @@ import java.util.List;
 public class UserDAOImpl implements UserDAO {
     private static final UserDAOImpl INSTANCE = new UserDAOImpl();
 
-    private static final String TABLE_NAME = "user";
-
-    private static final String ID = "id";
-    private static final String EMAIL = "email";
-    private static final String PHONE = "phone";
-    private static final String LOGIN = "login";
-    private static final String PASSWORD = "password";
-    private static final String IS_ADMIN = "is_admin";
-    private static final String FIRST_NAME = "first_name";
-    private static final String SECOND_NAME = "second_name";
-    private static final String MIDDLE_NAME = "middle_name";
+    private static final String INSERT_QUERY = "INSERT INTO user_u (email, phone, " +
+            "login, password, is_admin) VALUES (?, ?, ?, ?, ?)";
+    private static final String FIND_BY_ID_QUERY = "";
+    private static final String FIND_ALL_QUERY = "";
+    private static final String UPDATE_QUERY = "";
+    private static final String DELETE_QUERY = "";
 
     private UserDAOImpl(){}
 
@@ -30,7 +27,29 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void create(User user) {
+    public boolean  insert(User user) {
+        boolean rowInserted = false;
+        Connection connection = null;
+        PreparedStatement statement = null;
+
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+
+            statement = connection.prepareStatement(INSERT_QUERY);
+            statement.setString(1, user.getEmail());
+            statement.setString(2, user.getPhone());
+            statement.setString(3, user.getLogin());
+            statement.setString(4, user.getPassword());
+            statement.setBoolean(5, user.isAdmin());
+
+            rowInserted = statement.executeUpdate() > 0;
+
+        }catch (SQLException e) {
+
+        }finally {
+            close(connection, statement);
+        }
+        return rowInserted;
 
     }
 
@@ -45,12 +64,21 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void update(User user) {
-
+    public boolean update(User user) {
+        return true;
     }
 
     @Override
-    public void delete(int id) {
+    public boolean delete(int id) {
+        return true;
+    }
 
+
+    private void close(Connection connection, Statement statement){
+        try {
+            if (connection != null) connection.close();
+            if (statement!= null) statement.close();
+        } catch (SQLException e) {
+        }
     }
 }

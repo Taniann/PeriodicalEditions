@@ -8,9 +8,9 @@ import java.util.List;
  * Created by Таня on 17.08.2018.
  */
 public interface EditionDAO {
-    void create(Edition edition);
+    boolean insert(Edition edition);
     Edition findById(int id);
     List<Edition> findAll();
-    void update(Edition edition);
-    void delete(int id);
+    boolean update(Edition edition);
+    boolean delete(int id);
 }

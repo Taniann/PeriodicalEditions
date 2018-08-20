@@ -38,21 +38,21 @@ public class ControllerServlet extends HttpServlet {
             Command command = requestHelper.getCommand(request);
             page = command.execute(request, response);
         } catch (ServletException e) {
-            request.setAttribute(ERROR_MESSAGE,
-                    MessageManager.getInstance().getMessage(MessageManager.SERVLET_EXCEPTION));
-            page = ConfigurationManager.getInstance().getConfig(ConfigurationManager.ERROR);
+          //  request.setAttribute(ERROR_MESSAGE,
+          //          MessageManager.getInstance().getMessage(MessageManager.SERVLET_EXCEPTION));
+          //  page = ConfigurationManager.getInstance().getConfig(ConfigurationManager.ERROR);
         } catch (IOException e) {
-            request.setAttribute(ERROR_MESSAGE,
-                    MessageManager.getInstance().getMessage(MessageManager.IO_EXCEPTION));
-            page = ConfigurationManager.getInstance().getConfig(ConfigurationManager.ERROR);
+         //   request.setAttribute(ERROR_MESSAGE,
+         //           MessageManager.getInstance().getMessage(MessageManager.IO_EXCEPTION));
+         //   page = ConfigurationManager.getInstance().getConfig(ConfigurationManager.ERROR);
         } catch (Exception e) {
-            request.setAttribute(ERROR_MESSAGE, MessageManager.getInstance().getMessage(MessageManager.EXCEPTION));
-            page = ConfigurationManager.getInstance().getConfig(ConfigurationManager.ERROR);
+         //   request.setAttribute(ERROR_MESSAGE, MessageManager.getInstance().getMessage(MessageManager.EXCEPTION));
+         //   page = ConfigurationManager.getInstance().getConfig(ConfigurationManager.ERROR);
         }
         response.setCharacterEncoding(CHARACTER_ENCODING);
         response.setContentType(CONTENT_TYPE);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-//        dispatcher.forward(request, response);
-        //response.sendRedirect(path);
+       // RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+       // dispatcher.forward(request, response);
+        response.sendRedirect(page);
     }
 }

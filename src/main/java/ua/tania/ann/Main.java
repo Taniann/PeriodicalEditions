@@ -12,7 +12,8 @@ public class Main {
     static final Locale UKRAINIAN = new Locale(LANGUAGE_UK, COUNTRY_UA);
 
     public static void main(String[] args) {
-        ResourceBundle labels = ResourceBundle.getBundle("registrationPage", UKRAINIAN);
-        System.out.println(labels.getString("registrationPage.email"));
+        Locale.setDefault(Locale.US);
+        ResourceBundle labels = ResourceBundle.getBundle("catalogPage", Locale.getDefault());
+        System.out.println(labels.getString("catalogPage.signUp"));
     }
 }

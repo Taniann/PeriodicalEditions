@@ -14,6 +14,14 @@ public class User {
     private String secondName;
     private String middleName;
 
+    public User(String email, String phone, String login, String password, boolean isAdmin) {
+        this.email = email;
+        this.phone = phone;
+        this.login = login;
+        this.password = password;
+        this.isAdmin = isAdmin;
+    }
+
     public int getId() {
         return id;
     }
