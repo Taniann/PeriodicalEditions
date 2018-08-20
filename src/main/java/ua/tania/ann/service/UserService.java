@@ -2,7 +2,6 @@ package ua.tania.ann.service;
 
 import ua.tania.ann.model.dao.DAOFactory;
 import ua.tania.ann.model.entity.User;
-import ua.tania.ann.service.validation.RegexConstant;
 
 /**
  * Created by Таня on 17.08.2018.
@@ -29,18 +28,21 @@ public class UserService {
 
 
     public boolean insert(User user) {
-        if (checkEmail(user.getEmail()) || checkPhoneNumber(user.getPhone())) {
+        if (loginIsExist(user.getLogin())) return false;
             return factory.createUserDAO().insert(user);
-        }
-        else return false;
     }
 
-
-    public boolean checkEmail(String email) {
-        return email.matches(RegexConstant.EMAIL);
+      public User findByLogin(String login) {
+        return factory.createUserDAO().findByLogin(login);
     }
 
-    public boolean checkPhoneNumber(String phoneNumber) {
-        return phoneNumber.matches(RegexConstant.TELEPHONE);
+    public boolean loginIsExist(String login) {
+        User user = factory.createUserDAO().findByLogin(login);
+        if (user == null) return false;
+        else return true;
+    }
+
+    public boolean checkPassword(User user, String password){
+        return password.equals(user.getPassword());
     }
 }

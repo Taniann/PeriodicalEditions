@@ -16,6 +16,7 @@ public class RequestHelper {
 
     private RequestHelper() {
         commands.put("register", new RegisterCommand());
+        commands.put("login", new LoginCommand());
         commands.put("setEnglish", new SetEnglishCommand());
         commands.put("setUkrainian", new SetUkrainianCommand());
 

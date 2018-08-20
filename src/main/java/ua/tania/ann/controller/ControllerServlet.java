@@ -51,8 +51,8 @@ public class ControllerServlet extends HttpServlet {
         }
         response.setCharacterEncoding(CHARACTER_ENCODING);
         response.setContentType(CONTENT_TYPE);
-       // RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-       // dispatcher.forward(request, response);
-        response.sendRedirect(page);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+        dispatcher.forward(request, response);
+        //response.sendRedirect(page);
     }
 }

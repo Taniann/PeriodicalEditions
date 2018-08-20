@@ -14,6 +14,9 @@ public class User {
     private String secondName;
     private String middleName;
 
+    public User() {
+    }
+
     public User(String email, String phone, String login, String password, boolean isAdmin) {
         this.email = email;
         this.phone = phone;
@@ -21,6 +24,8 @@ public class User {
         this.password = password;
         this.isAdmin = isAdmin;
     }
+
+
 
     public int getId() {
         return id;

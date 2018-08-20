@@ -12,13 +12,15 @@ public class ConfigurationManager {
 
     public static final String DRIVER_CLASS_NAME = "config.driverClassName";
     public static final String URL = "config.url";
-    public static final String USERNAME = "config.username";
     public static final String PASSWORD = "config.password";
     public static final String DATABASE = "config.database";
-    public static final String REGISTER = "config.register";
 
+    public static final String REGISTER = "config.register";
     public static final String LOGIN = "config.login";
     public static final String ERROR = "config.error";
+    public static final String WELCOME = "config.welcome";
+
+
 
 
     private ConfigurationManager(){

@@ -50,11 +50,6 @@
                    class="form-control"
                    style="width: 100%; margin-bottom: 10px"
             />
-            <input type="password" placeholder="<fmt:message key="registrationPage.confirmPassword" bundle="${registrationPage}"/>"
-                   minlength="6" name="password" required
-                   class="form-control"
-                   style="width: 100%; margin-bottom: 10px"
-            />
 
             <button class="btn btn-primary" type="submit" value="register" name="command"><fmt:message key="registrationPage.signUp"
                                                                                             bundle="${registrationPage}"/></button>

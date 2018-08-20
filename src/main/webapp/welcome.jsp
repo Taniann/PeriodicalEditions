@@ -21,7 +21,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="<c:url value="/view/register.jsp"/>">Реєстрація</a></li>
-                            <li><a href="#">Увійти в систему</a></li>
+                            <li><a href="<c:url value="/view/login.jsp"/>">Увійти в систему</a></li>
                             <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
                             <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
                     </div>

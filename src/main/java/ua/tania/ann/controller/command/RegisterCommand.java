@@ -2,7 +2,9 @@ package ua.tania.ann.controller.command;
 
 import ua.tania.ann.model.entity.User;
 import ua.tania.ann.service.UserService;
+import ua.tania.ann.utils.ConfigurationManager;
 
+import javax.security.auth.login.Configuration;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,6 +12,12 @@ import javax.servlet.http.HttpServletResponse;
  * Created by Таня on 17.08.2018.
  */
 public class RegisterCommand implements Command {
+    private static final String EMAIL = "email";
+    private static final String PHONE = "phone";
+    private static final String LOGIN = "login";
+    private static final String PASSWORD = "password";
+
+
     private UserService userService;
 
     public RegisterCommand() {
@@ -18,15 +26,15 @@ public class RegisterCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        String email = request.getParameter("email");
-        String phone = request.getParameter("phone");
-        String login = request.getParameter("login");
-        String password = request.getParameter("password");
+        String email = request.getParameter(EMAIL);
+        String phone = request.getParameter(PHONE);
+        String login = request.getParameter(LOGIN);
+        String password = request.getParameter(PASSWORD);
 
         User newUser = new User(email, phone, login, password, false);
         if (userService.insert(newUser)) {
-            return "catalog.jsp";
+            return ConfigurationManager.getInstance().getConfig(ConfigurationManager.LOGIN);
         }
-        return "view/register.jsp";
+        return ConfigurationManager.getInstance().getConfig(ConfigurationManager.REGISTER);
     }
 }

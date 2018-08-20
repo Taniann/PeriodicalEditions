@@ -13,8 +13,7 @@ public class SetEnglishCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        request.getSession().setAttribute(null, null);
         Config.set(request.getSession(), Config.FMT_LOCALE, ENGLISH);
-        return request.getServletPath();
+        return request.getRequestURI();
     }
 }
