@@ -42,7 +42,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean  insert(User user) {
-        boolean rowInserted = false;
+        boolean isRowInserted = false;
         Connection connection = null;
         PreparedStatement statement = null;
 
@@ -56,14 +56,14 @@ public class UserDAOImpl implements UserDAO {
             statement.setString(4, user.getPassword());
             statement.setBoolean(5, user.isAdmin());
 
-            rowInserted = statement.executeUpdate() > 0;
+            isRowInserted = statement.executeUpdate() > 0;
 
         }catch (SQLException e) {
 
         }finally {
             close(connection, statement);
         }
-        return rowInserted;
+        return isRowInserted;
 
     }
 
