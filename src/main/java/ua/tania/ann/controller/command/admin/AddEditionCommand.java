@@ -18,7 +18,7 @@ public class AddEditionCommand implements Command {
     private static final String NAME = "name";
     private static final String INFO = "info";
     private static final String PRICE = "price";
-    private static final String CATEGORY = "category";
+    private static final String IMAGE_URL = "image_url";
     private static final String TYPE = "type";
 
     private EditionService editionService;
@@ -34,7 +34,7 @@ public class AddEditionCommand implements Command {
         String name = request.getParameter(NAME);
         String info = request.getParameter(INFO);
         Double price = Double.parseDouble(request.getParameter(PRICE));
-        String category = request.getParameter(CATEGORY);
+        String category = request.getParameter(IMAGE_URL);
         String type = request.getParameter(TYPE);
 
         Edition newEdition = new Edition(name, info, price, category, type);

@@ -15,9 +15,9 @@ public class EditionDAOImpl implements EditionDAO {
     private static final EditionDAOImpl INSTANCE = new EditionDAOImpl();
 
     private static final String INSERT_QUERY = "INSERT INTO edition (name, info, " +
-            "price, category, type) VALUES (?, ?, ?, ?, ?)";
+            "price, image_url, type) VALUES (?, ?, ?, ?, ?)";
     private static final String UPDATE_QUERY = "UPDATE edition SET name = ?, info = ?, price = ?, " +
-            "category = ?, type = ? WHERE id = ?";
+            "image_url = ?, type = ? WHERE id = ?";
     private static final String DELETE_QUERY = "DELETE FROM edition where id = ?";
     private static final String FIND_ALL_QUERY = "SELECT* FROM edition";
     private static final String FIND_BY_ID_QUERY = "SELECT* FROM edition WHERE id = ?";
@@ -41,7 +41,7 @@ public class EditionDAOImpl implements EditionDAO {
             statement.setString(1, edition.getName());
             statement.setString(2, edition.getInfo());
             statement.setDouble(3, edition.getPrice());
-            statement.setString(4, edition.getCategory());
+            statement.setString(4, edition.getImageUrl());
             statement.setString(5, edition.getType());
 
             isRowInserted = statement.executeUpdate() > 0;
@@ -73,9 +73,9 @@ public class EditionDAOImpl implements EditionDAO {
                 String name = resultSet.getString("name");
                 String info = resultSet.getString("info");
                 Double price = resultSet.getDouble("price");
-                String category = resultSet.getString("category");
+                String imageUrl = resultSet.getString("imageUrl");
                 String type = resultSet.getString("type");
-                edition = new Edition(id, name, info, price, category, type);
+                edition = new Edition(id, name, info, price, imageUrl, type);
             }
         }catch (SQLException e) {
 
@@ -105,9 +105,9 @@ public class EditionDAOImpl implements EditionDAO {
                 String name = resultSet.getString("name");
                 String info = resultSet.getString("info");
                 Double price = resultSet.getDouble("price");
-                String category = resultSet.getString("category");
+                String imageUrl = resultSet.getString("imageUrl");
                 String type = resultSet.getString("type");
-                Edition edition = new Edition(id, name, info, price, category, type);
+                Edition edition = new Edition(id, name, info, price, imageUrl, type);
                 result.add(edition);
             }
         }catch (SQLException e) {
@@ -132,7 +132,7 @@ public class EditionDAOImpl implements EditionDAO {
             statement.setString(1, edition.getName());
             statement.setString(2, edition.getInfo());
             statement.setDouble(3, edition.getPrice());
-            statement.setString(4, edition.getCategory());
+            statement.setString(4, edition.getImageUrl());
             statement.setString(5, edition.getType());
             statement.setInt(6, edition.getId());
 

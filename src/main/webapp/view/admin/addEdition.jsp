@@ -34,14 +34,14 @@
                     <input type="hidden" name="id" value="<c:out value='${edition.id}' />" />
                 </c:if>
             <tr>
-                <th>First name: </th>
+                <th>Name: </th>
                 <td>
                     <input type="text" name="name" size="45"
                             value="<c:out value='${edition.name}' />" />
                 </td>
             </tr>
             <tr>
-                <th>Second name: </th>
+                <th>Info: </th>
                 <td>
                     <input type="text" name="info" size="100"
                             value="<c:out value='${edition.info}' />"
@@ -49,7 +49,7 @@
                 </td>
             </tr>
             <tr>
-                <th>Middle name: </th>
+                <th>Price: </th>
                 <td>
                     <input type="text" name="price" size="5"
                             value="<c:out value='${edition.price}' />"
@@ -57,17 +57,11 @@
                 </td>
             </tr>
            <tr>
-                 <th>Category: </th>
+                 <th>Image url: </th>
                  <td>
-                 <select name="category">
-                        <option value="наука">Наука.Техніка</option>
-                        <option value="освіта">Освіта</option>
-                        <option value="спорт">Спорт</option>
-                        <option value="подорожі">Подорожі.Відпустка</option>
-                        <option value="мода" >Мода. Стиль</option>
-                        <option value="медицина">Медицина. Здоров’я</option>
-                        <option value="дитяче">Для дітей</option>
-                    </select>
+                    <input type="text" name="image_url" size="100"
+                            value="<c:out value='${edition.image_url}' />"
+                    />
                  </td>
             </tr>
             <tr>

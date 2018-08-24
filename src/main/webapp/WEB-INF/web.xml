@@ -44,10 +44,5 @@
     <welcome-file>welcome.jsp</welcome-file>
   </welcome-file-list>
 
-  <context-param>
-    <param-name>javax.servlet.jsp.jstl.fmt.LocalizationContext</param-name>
-    <param-value>catalogPage</param-value>
-    <param-value>registrationPage</param-value>
-  </context-param>
 
 </web-app>

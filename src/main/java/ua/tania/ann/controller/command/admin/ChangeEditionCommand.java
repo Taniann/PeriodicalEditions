@@ -16,7 +16,7 @@ public class ChangeEditionCommand implements Command {
     private static final String NAME = "name";
     private static final String INFO = "info";
     private static final String PRICE = "price";
-    private static final String CATEGORY = "category";
+    private static final String IMAGE_URL = "image_url";
     private static final String TYPE = "type";
 
     private EditionService editionService;

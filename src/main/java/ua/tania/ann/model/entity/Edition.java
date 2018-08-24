@@ -8,23 +8,23 @@ public class Edition {
     private String name;
     private String info;
     private Double price;
-    private String category;
+    private String imageUrl;
     private String type;
 
-    public Edition(int id, String name, String info, Double price, String category, String type) {
+    public Edition(int id, String name, String info, Double price, String imageUrl, String type) {
         this.id = id;
         this.name = name;
         this.info = info;
         this.price = price;
-        this.category = category;
+        this.imageUrl = imageUrl;
         this.type = type;
     }
 
-    public Edition(String name, String info, Double price, String category, String type) {
+    public Edition(String name, String info, Double price, String imageUrl, String type) {
         this.name = name;
         this.info = info;
         this.price = price;
-        this.category = category;
+        this.imageUrl = imageUrl;
         this.type = type;
     }
 
@@ -60,12 +60,12 @@ public class Edition {
         this.price = price;
     }
 
-    public String getCategory() {
-        return category;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getType() {
