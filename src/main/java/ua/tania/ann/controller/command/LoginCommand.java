@@ -1,7 +1,9 @@
 package ua.tania.ann.controller.command;
 
 import ua.tania.ann.model.entity.User;
+import ua.tania.ann.service.EditionService;
 import ua.tania.ann.service.UserService;
+import ua.tania.ann.utils.JspPath;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,52 +20,57 @@ public class LoginCommand implements Command {
     private static final String PASSWORD = "password";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        String page = null;
+    public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        ResultPage resultPage = new ResultPage(ResultPage.RoutingType.REDIRECT);
+
         String login = request.getParameter(LOGIN);
         String password = request.getParameter(PASSWORD);
 
         User user = UserService.getInstance().findByLogin(login);
 
         if (user == null) {
-            page = redirectToErrorPage(request);
+            resultPage = redirectToErrorPage(request, resultPage);
         }
         else if (isCorrectPassword(user, password)) {
-            page = pageChoice(user, request);
+            resultPage = pageChoice(user, request, resultPage);
         }
-        return page;
+        return resultPage;
     }
 
     private boolean isCorrectPassword(User user, String inputPassword) {
         return UserService.getInstance().checkPassword(user, inputPassword);
     }
 
-    private String pageChoice(User user, HttpServletRequest request) {
-        String page = null;
+    private ResultPage pageChoice(User user, HttpServletRequest request, ResultPage resultPage) {
         if (user.isAdmin()) {
-            page = redirectToAdminPage(request, user);
+            resultPage = redirectToAdminPage(request, user, resultPage);
         } else {
-            page = redirectToUserPage(request, user);
+            resultPage = redirectToUserPage(request, user, resultPage);
         }
-        return page;
+        return resultPage;
     }
 
-    private String redirectToAdminPage(HttpServletRequest request, User user) {
+    private ResultPage redirectToAdminPage(HttpServletRequest request, User user, ResultPage resultPage) {
         HttpSession session = request.getSession();
         session.setAttribute(USER_ATTRIBUTE, user);
 
-        return "/view/admin/adminPage.jsp";
+        resultPage.setPage(JspPath.ADMIN_PAGE_COMMAND);
+        return resultPage;
     }
 
-    private String redirectToUserPage(HttpServletRequest request, User user) {
+    private ResultPage redirectToUserPage(HttpServletRequest request, User user, ResultPage resultPage) {
         HttpSession session = request.getSession();
         session.setAttribute(USER_ATTRIBUTE, user);
+        session.setAttribute("editionList", EditionService.getInstance().findAll());
 
-        return "/view/user/catalog.jsp";
+
+        resultPage.setPage(JspPath.CATALOG_PAGE);
+        return resultPage;
     }
 
-    private String redirectToErrorPage(HttpServletRequest request) {
+    private ResultPage redirectToErrorPage(HttpServletRequest request, ResultPage resultPage) {
         request.setAttribute(ERROR_MESSAGE, true);
-        return "/view/login.jsp";
+        resultPage.setPage(JspPath.LOGIN_PAGE);
+        return resultPage;
     }
 }

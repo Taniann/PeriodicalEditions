@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class NoCommand implements Command {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         return null;
     }
 }

@@ -1,6 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <html>
   <head>
     <title>Periodical editions</title>
@@ -9,6 +10,8 @@
           href="<c:url value="/resources/css/bootstrap.css"/>"/>
     <script src="<c:url value="/resources/js/jquery-3.2.1.js"/>"></script>
     <script src="<c:url value="/resources/js/bootstrap.js"/>"></script>
+    <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'uk_UA'}"/>
+    <fmt:setLocale value="${locale}"/>
     <fmt:setBundle basename="registrationPage" var="registrationPage"/>
   </head>
 
@@ -29,7 +32,7 @@
 <div class="row">
     <div class="col-md-5"></div>
     <div class="col-md-2" style="text-align: center;">
-        <form style="padding-top: 100%; text-align: center" method="post" action="/login" class="center-block">
+        <form style="padding-top: 100%; text-align: center" method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
             <input type="text" placeholder="<fmt:message key="registrationPage.login" bundle="${registrationPage}"/>" name="login"
                    required
                    class="form-control"

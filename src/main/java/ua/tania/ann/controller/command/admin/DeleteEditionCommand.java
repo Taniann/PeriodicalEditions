@@ -14,16 +14,12 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 /**
  * Created by Таня on 21.08.2018.
  */
-public class AddEditionCommand implements Command {
-    private static final String NAME = "name";
-    private static final String INFO = "info";
-    private static final String PRICE = "price";
-    private static final String CATEGORY = "category";
-    private static final String TYPE = "type";
+public class DeleteEditionCommand implements Command{
+    private static final String ID = "id";
 
     private EditionService editionService;
 
-    public AddEditionCommand() {
+    public DeleteEditionCommand() {
         editionService = EditionService.getInstance();
     }
 
@@ -31,19 +27,15 @@ public class AddEditionCommand implements Command {
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ResultPage resultPage = new ResultPage(REDIRECT);
 
-        String name = request.getParameter(NAME);
-        String info = request.getParameter(INFO);
-        Double price = Double.parseDouble(request.getParameter(PRICE));
-        String category = request.getParameter(CATEGORY);
-        String type = request.getParameter(TYPE);
+        int id = Integer.parseInt(request.getParameter(ID));
 
-        Edition newEdition = new Edition(name, info, price, category, type);
-        if (editionService.insert(newEdition)) {
+        if (editionService.delete(id)) {
             resultPage.setPage(JspPath.ADMIN_PAGE_COMMAND);
         }
         else {
             resultPage.setPage(JspPath.ERROR_PAGE);
         }
-         return resultPage;
+
+        return resultPage;
     }
 }

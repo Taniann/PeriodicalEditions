@@ -3,7 +3,8 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>PeriodicalEditions</display-name>
+
 
   <servlet>
     <servlet-name>ControllerServlet</servlet-name>
@@ -12,7 +13,7 @@
 
   <servlet-mapping>
     <servlet-name>ControllerServlet</servlet-name>
-    <url-pattern>/</url-pattern>
+    <url-pattern>/controller</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
@@ -42,5 +43,11 @@
   <welcome-file-list>
     <welcome-file>welcome.jsp</welcome-file>
   </welcome-file-list>
+
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.LocalizationContext</param-name>
+    <param-value>catalogPage</param-value>
+    <param-value>registrationPage</param-value>
+  </context-param>
 
 </web-app>

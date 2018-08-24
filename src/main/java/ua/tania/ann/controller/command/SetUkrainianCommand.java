@@ -14,9 +14,9 @@ public class SetUkrainianCommand implements Command {
     static final Locale UKRAINIAN = new Locale(LANGUAGE_UK, COUNTRY_UA);
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         request.getSession().setAttribute(null, null);
         Config.set(request.getSession(), Config.FMT_LOCALE, UKRAINIAN);
-        return request.getServletPath();
+        return null;
     }
 }
