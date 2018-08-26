@@ -11,12 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import static ua.tania.ann.controller.command.ResultPage.RoutingType.FORWARD;
 
 /**
- * Created by Таня on 24.08.2018.
+ * Created by Таня on 26.08.2018.
  */
-public class ShowAddEditionCommand implements Command {
+public class ShowAddCategoryCommand implements Command {
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ResultPage resultPage = new ResultPage(FORWARD, JspPath.EDITION_ADD_PAGE);
+        ResultPage resultPage = new ResultPage(FORWARD, JspPath.CATEGORY_ADD_PAGE);
+        request.getSession(false).setAttribute("categoryList", CategoryService.getInstance().findAll());
 
         return resultPage;
     }

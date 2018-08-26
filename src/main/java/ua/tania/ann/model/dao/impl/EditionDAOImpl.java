@@ -73,7 +73,7 @@ public class EditionDAOImpl implements EditionDAO {
                 String name = resultSet.getString("name");
                 String info = resultSet.getString("info");
                 Double price = resultSet.getDouble("price");
-                String imageUrl = resultSet.getString("imageUrl");
+                String imageUrl = resultSet.getString("image_url");
                 String type = resultSet.getString("type");
                 edition = new Edition(id, name, info, price, imageUrl, type);
             }
@@ -105,7 +105,7 @@ public class EditionDAOImpl implements EditionDAO {
                 String name = resultSet.getString("name");
                 String info = resultSet.getString("info");
                 Double price = resultSet.getDouble("price");
-                String imageUrl = resultSet.getString("imageUrl");
+                String imageUrl = resultSet.getString("image_url");
                 String type = resultSet.getString("type");
                 Edition edition = new Edition(id, name, info, price, imageUrl, type);
                 result.add(edition);

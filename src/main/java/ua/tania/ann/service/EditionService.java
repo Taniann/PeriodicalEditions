@@ -43,4 +43,8 @@ public class EditionService {
     public Edition findById(int id) {
         return factory.createEditionDAO().findById(id);
     }
+
+    public boolean update(Edition edition) {
+        return factory.createEditionDAO().update(edition);
+    }
 }

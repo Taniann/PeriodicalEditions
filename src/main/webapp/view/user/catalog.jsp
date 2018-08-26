@@ -35,8 +35,7 @@
                     <div class="caption">
                         <h3><a href="#"><c:out value="${edition.name}"/></a></h3>
                         <p><c:out value="${edition.info}"/></p>
-                        <p><c:out value="${edition.price}"/></p>
-                        <a href="#" class="btn btn-success">До корзини<i class="fa fa-arrow right"></i></a>
+                        <a href="${pageContext.request.contextPath}/controller?command=addToCartPage&id=${edition.id}" class="btn btn-success">Детальніше<i class="fa fa-arrow right"></i></a>
                     </div>
                 </div>
             </div>

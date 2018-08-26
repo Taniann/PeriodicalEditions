@@ -19,7 +19,6 @@ public class ShowAdminPageCommand implements Command {
         ResultPage resultPage = new ResultPage(FORWARD, JspPath.ADMIN_PAGE);
         request.getSession(false).setAttribute("editionList", EditionService.getInstance().findAll());
 
-
         return resultPage;
     }
 }

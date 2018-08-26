@@ -30,55 +30,35 @@
      <div class="container" align="center">
             <table border="1" cellpadding="5">
             <form style="padding-top: 100%; text-align: center" method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
-                <c:if test="${edition != null}">
-                    <input type="hidden" name="id" value="<c:out value='${edition.id}' />" />
-                </c:if>
             <tr>
-                <th>Name: </th>
+                <th>Category name: </th>
                 <td>
                     <input type="text" name="name" size="45"
-                            value="<c:out value='${edition.name}' />" />
+                            value="<c:out value='${category.name}' />" />
                 </td>
             </tr>
-            <tr>
-                <th>Info: </th>
-                <td>
-                    <input type="text" name="info" size="100"
-                            value="<c:out value='${edition.info}' />"
-                    />
-                </td>
-            </tr>
-            <tr>
-                <th>Price: </th>
-                <td>
-                    <input type="text" name="price" size="5"
-                            value="<c:out value='${edition.price}' />"
-                    />
-                </td>
-            </tr>
-           <tr>
-                <th>Categories: </th>
-                <td>
 
-                   <c:forEach var="category" items="${categories}">
-                      <input type="checkbox" name="chekedCategory" value="${category.name}">${category.name}
-                   </c:forEach>
-                </td>
-            </tr>
-            <tr>
-                <th>Type: </th>
-                <td><select name="type">
-                        <option value="друковане" <c:if test="${edition.type eq '1'}">selected</c:if>>Друковане видання</option>
-                        <option value="електронне" <c:if test="${edition.type eq '2' }">selected</c:if>>Електронне видання</option>
-                    </select></td>
-            </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <button class="btn btn-primary" type="submit" value="changeEdition" name="command">Save</button>
+                    <button class="btn btn-primary" type="submit" value="addCategory" name="command">Save</button>
                 </td>
             </tr>
         </table>
         </form>
+        <div align="center">
+        <table border="1" cellpadding="5">
+            <caption><h2>List of Categories</h2></caption>
+
+            <c:forEach var="category" items="${categoryList}">
+                <tr>
+                    <td><c:out value="${category.name}" /></td>
+                    <td>
+                        <a href="${pageContext.request.contextPath}/controller?command=deleteCategory&id=${category.id}" class="btn btn-success">Видалити<i class="fa fa-arrow right"></i></a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+         </div>
     </div>
  </body>
  </html>

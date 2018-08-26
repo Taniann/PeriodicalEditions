@@ -1,12 +1,9 @@
 package ua.tania.ann.controller;
 
 import ua.tania.ann.controller.command.*;
-import ua.tania.ann.controller.command.admin.AddEditionCommand;
-import ua.tania.ann.controller.command.admin.ChangeEditionCommand;
-import ua.tania.ann.controller.command.admin.DeleteEditionCommand;
-import ua.tania.ann.controller.command.show.ShowAddEditionCommand;
-import ua.tania.ann.controller.command.show.ShowAdminPageCommand;
-import ua.tania.ann.controller.command.show.ShowChangeEditionCommand;
+import ua.tania.ann.controller.command.admin.*;
+import ua.tania.ann.controller.command.show.*;
+import ua.tania.ann.controller.command.user.AddToCartCommand;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -32,6 +29,12 @@ public class RequestHelper {
         commands.put("showAdminPage", new ShowAdminPageCommand());
         commands.put("changeEdition", new ChangeEditionCommand());
         commands.put("showChangeEdition", new ShowChangeEditionCommand());
+        commands.put("addCategory", new AddCategoryCommand());
+        commands.put("showAddCategory", new ShowAddCategoryCommand());
+        commands.put("deleteCategory", new DeleteCategoryCommand());
+        commands.put("addToCartPage", new ShowAddToCartPage());
+        commands.put("addToCart", new AddToCartCommand());
+
 
     }
 

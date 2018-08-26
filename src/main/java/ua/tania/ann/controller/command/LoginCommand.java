@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import static ua.tania.ann.controller.command.CommandUtil.ERROR_MESSAGE;
 import static ua.tania.ann.controller.command.CommandUtil.USER_ATTRIBUTE;
+import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 
 /**
  * Created by Таня on 20.08.2018.
@@ -21,7 +22,7 @@ public class LoginCommand implements Command {
 
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ResultPage resultPage = new ResultPage(ResultPage.RoutingType.REDIRECT);
+        ResultPage resultPage = new ResultPage(REDIRECT);
 
         String login = request.getParameter(LOGIN);
         String password = request.getParameter(PASSWORD);
@@ -62,7 +63,6 @@ public class LoginCommand implements Command {
         HttpSession session = request.getSession();
         session.setAttribute(USER_ATTRIBUTE, user);
         session.setAttribute("editionList", EditionService.getInstance().findAll());
-
 
         resultPage.setPage(JspPath.CATALOG_PAGE);
         return resultPage;

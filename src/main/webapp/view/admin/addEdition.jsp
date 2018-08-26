@@ -60,15 +60,15 @@
                  <th>Image url: </th>
                  <td>
                     <input type="text" name="image_url" size="100"
-                            value="<c:out value='${edition.image_url}' />"
+                            value="<c:out value='${edition.imageUrl}' />"
                     />
                  </td>
             </tr>
             <tr>
                  <th>Type: </th>
                 <td><select name="type">
-                        <option value="друковане">Друковані видання</option>
-                        <option value="електронне" >Електронні видання</option>
+                        <option value="1">Друковані видання</option>
+                        <option value="2" >Електронні видання</option>
                     </select></td>
             </tr>
             <tr>

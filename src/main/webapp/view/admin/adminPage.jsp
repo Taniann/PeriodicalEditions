@@ -28,8 +28,11 @@
         </div>
         <h1>Periodical editions</h1>
         <h2>
-            <a href="${pageContext.request.contextPath}/?command=showAddEdition">Add New Edition</a>
+            <a href="${pageContext.request.contextPath}/controller?command=showAddEdition">Add New Edition</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="${pageContext.request.contextPath}/controller?command=showAddCategory">Add New Category</a>
         </h2>
+
         <div class="row">
          <c:forEach var="edition" items="${editionList}">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -38,6 +41,7 @@
                     <div class="caption">
                         <h3><a href=""><c:out value="${edition.name}"/></a></h3>
                         <p><c:out value="${edition.info}"/></p>
+                        <p>Categories: </p>
                         <a href="${pageContext.request.contextPath}/controller?command=showChangeEdition&id=${edition.id}" class="btn btn-success">Змінити<i class="fa fa-arrow right"></i></a>
                         <a href="${pageContext.request.contextPath}/controller?command=deleteEdition&id=${edition.id}" class="btn btn-success">Видалити<i class="fa fa-arrow right"></i></a>
                     </div>

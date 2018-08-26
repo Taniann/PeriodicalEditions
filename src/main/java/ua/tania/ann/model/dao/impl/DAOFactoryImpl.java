@@ -1,5 +1,6 @@
 package ua.tania.ann.model.dao.impl;
 
+import ua.tania.ann.model.dao.CategoryDAO;
 import ua.tania.ann.model.dao.DAOFactory;
 import ua.tania.ann.model.dao.EditionDAO;
 import ua.tania.ann.model.dao.UserDAO;
@@ -17,5 +18,10 @@ public class DAOFactoryImpl extends DAOFactory {
     @Override
     public EditionDAO createEditionDAO() {
         return EditionDAOImpl.getInstance();
+    }
+
+    @Override
+    public CategoryDAO createCategoryDAO() {
+        return CategoryDAOImpl.getInstance();
     }
 }

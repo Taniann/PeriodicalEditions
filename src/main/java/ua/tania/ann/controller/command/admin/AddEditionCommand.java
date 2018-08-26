@@ -2,12 +2,17 @@ package ua.tania.ann.controller.command.admin;
 
 import ua.tania.ann.controller.command.Command;
 import ua.tania.ann.controller.command.ResultPage;
+import ua.tania.ann.model.entity.Category;
 import ua.tania.ann.model.entity.Edition;
+import ua.tania.ann.service.CategoryService;
 import ua.tania.ann.service.EditionService;
 import ua.tania.ann.utils.JspPath;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 
@@ -34,10 +39,10 @@ public class AddEditionCommand implements Command {
         String name = request.getParameter(NAME);
         String info = request.getParameter(INFO);
         Double price = Double.parseDouble(request.getParameter(PRICE));
-        String category = request.getParameter(IMAGE_URL);
+        String imageUrl = request.getParameter(IMAGE_URL);
         String type = request.getParameter(TYPE);
 
-        Edition newEdition = new Edition(name, info, price, category, type);
+        Edition newEdition = new Edition(name, info, price, imageUrl, type);
         if (editionService.insert(newEdition)) {
             resultPage.setPage(JspPath.ADMIN_PAGE_COMMAND);
         }
