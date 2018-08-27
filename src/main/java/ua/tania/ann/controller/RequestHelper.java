@@ -4,6 +4,7 @@ import ua.tania.ann.controller.command.*;
 import ua.tania.ann.controller.command.admin.*;
 import ua.tania.ann.controller.command.show.*;
 import ua.tania.ann.controller.command.user.AddToCartCommand;
+import ua.tania.ann.controller.command.user.DeleteFromCartCommand;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -34,8 +35,7 @@ public class RequestHelper {
         commands.put("deleteCategory", new DeleteCategoryCommand());
         commands.put("addToCartPage", new ShowAddToCartPage());
         commands.put("addToCart", new AddToCartCommand());
-
-
+        commands.put("deleteFromCart", new DeleteFromCartCommand());
     }
 
     public Command getCommand(HttpServletRequest request) {

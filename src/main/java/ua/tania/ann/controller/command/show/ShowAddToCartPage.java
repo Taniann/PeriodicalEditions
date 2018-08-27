@@ -9,7 +9,6 @@ import ua.tania.ann.utils.JspPath;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import static ua.tania.ann.controller.command.ResultPage.RoutingType.FORWARD;
 import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 
 /**

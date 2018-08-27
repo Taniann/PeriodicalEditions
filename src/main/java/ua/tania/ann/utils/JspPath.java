@@ -21,7 +21,6 @@ public final class JspPath {
     public static final String EDITIONS_PAGE_COMMAND = "/controller?command=editions";
     public static final String ADMIN_PAGE_COMMAND = "/controller?command=showAdminPage";
     public static final String CATEGORY_PAGE_COMMAND = "/controller?command=showAddCategory";
-
     public static final String CART_PAGE_COMMAND = "/controller?command=cart";
     public static final String PROFILE_PAGE_COMMAND = "/controller?command=profile";
 

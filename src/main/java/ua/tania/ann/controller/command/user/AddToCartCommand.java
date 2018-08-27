@@ -9,8 +9,9 @@ import ua.tania.ann.utils.JspPath;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 
@@ -31,27 +32,24 @@ public class AddToCartCommand implements Command {
 
         Edition edition = editionService.findById(Integer.parseInt(request.getParameter(ID)));
 
-        List<Edition> cart = new ArrayList<>();
+        Map<Edition, Double> cart = new HashMap<>();
 
-        int countMonth = countMonth(request);
-        Double amount = edition.getPrice() * countMonth;
-        List<Double> amounts = new ArrayList<>();
+        Double amount = edition.getPrice() * countMonth(request);
 
+        Double totalAmount = null;
 
         if (request.getSession(false).getAttribute("cart") != null) {
-            ((List<Edition>)request.getSession().getAttribute("cart")).add(edition);
+            Map<Edition, Double> existingCart = ( Map<Edition, Double>)request.getSession().getAttribute("cart");
+            existingCart.put(edition, amount);
+            totalAmount = calculateTotalAmount(existingCart);
         } else {
-            cart.add(edition);
+            cart.put(edition, amount);
+            totalAmount = amount;
             request.getSession(false).setAttribute("cart", cart);
         }
 
-        if (request.getSession(false).getAttribute("amounts") != null) {
-            ((List<Double>)request.getSession().getAttribute("amounts")).add(amount);
-        } else {
-            amounts.add(amount);
-            request.getSession(false).setAttribute("amounts", amounts);
-        }
 
+        request.getSession(false).setAttribute("totalAmount", totalAmount);
         resultPage.setPage(JspPath.CART_PAGE);
 
         return resultPage;
@@ -60,6 +58,14 @@ public class AddToCartCommand implements Command {
     private int countMonth(HttpServletRequest request) {
         String[] month = request.getParameterValues("month");
         return month.length;
+    }
+
+    private Double calculateTotalAmount(Map<Edition, Double> cart) {
+        Double result = 0.0;
+        for(Map.Entry<Edition, Double> entry : cart.entrySet()) {
+            result += entry.getValue();
+        }
+        return result;
     }
 }
 

@@ -21,6 +21,8 @@
                                 <li><a href="${pageContext.request.contextPath}/controller?command=logout">Вийти</a></li>
                                 <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
                                 <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
+                                <li><a href="/view/user/profile.jsp">My profile</a></li>
+
                         </div>
                     </div>
                 </div>
