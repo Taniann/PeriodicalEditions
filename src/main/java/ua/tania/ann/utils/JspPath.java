@@ -11,7 +11,7 @@ public final class JspPath {
     public static final String CART_PAGE = "/view/user/cart.jsp";
     public static final String ADD_TO_CART_PAGE = "/view/user/addToCart.jsp";
     public static final String PROFILE_PAGE = "/view/user/profile.jsp";
-    public static final String EDIT_PROFILE_PAGE = "/view/user/editProfile.jsp";
+    public static final String CHANGE_PASSWORD_PAGE = "/view/user/changePassword.jsp";
     public static final String CHANGE_EDITION_PAGE = "/view/admin/changeEdition.jsp";
     public static final String ADMIN_PAGE = "/view/admin/adminPage.jsp";
     public static final String EDITION_ADD_PAGE = "/view/admin/addEdition.jsp";

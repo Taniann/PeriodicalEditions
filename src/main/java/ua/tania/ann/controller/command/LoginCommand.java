@@ -35,6 +35,7 @@ public class LoginCommand implements Command {
         else if (isCorrectPassword(user, password)) {
             resultPage = pageChoice(user, request, resultPage);
         }
+        else resultPage = redirectToErrorPage(request, resultPage);
         return resultPage;
     }
 

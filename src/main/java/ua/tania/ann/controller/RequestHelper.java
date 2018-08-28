@@ -4,7 +4,9 @@ import ua.tania.ann.controller.command.*;
 import ua.tania.ann.controller.command.admin.*;
 import ua.tania.ann.controller.command.show.*;
 import ua.tania.ann.controller.command.user.AddToCartCommand;
+import ua.tania.ann.controller.command.user.ChangePasswordCommand;
 import ua.tania.ann.controller.command.user.DeleteFromCartCommand;
+import ua.tania.ann.controller.command.user.EditProfileCommand;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -36,6 +38,8 @@ public class RequestHelper {
         commands.put("addToCartPage", new ShowAddToCartPage());
         commands.put("addToCart", new AddToCartCommand());
         commands.put("deleteFromCart", new DeleteFromCartCommand());
+        commands.put("editProfile", new EditProfileCommand());
+        commands.put("changePassword", new ChangePasswordCommand());
     }
 
     public Command getCommand(HttpServletRequest request) {

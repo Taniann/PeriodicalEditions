@@ -15,9 +15,11 @@ public class UserDAOImpl implements UserDAO {
 
     private static final String INSERT_QUERY = "INSERT INTO user_u (email, phone, " +
             "login, password, is_admin) VALUES (?, ?, ?, ?, ?)";
-    private static final String FIND_BY_ID_QUERY = "";
+    private static final String FIND_BY_ID_QUERY = "SELECT* FROM user_u WHERE id = ?";
     private static final String FIND_ALL_QUERY = "";
-    private static final String UPDATE_QUERY = "";
+    private static final String UPDATE_PROFILE_QUERY = "UPDATE user_u SET first_name = ?, second_name = ?, middle_name = ?, " +
+            "email = ?, phone = ? WHERE id = ?";
+    private static final String CHANGE_PASSWORD_QUERY = "UPDATE user_u SET password = ? WHERE id = ?";
     private static final String DELETE_QUERY = "";
     private static final String FIND_BY_LOGIN_QUERY = "SELECT* FROM user_u WHERE login = ?";
 
@@ -30,9 +32,6 @@ public class UserDAOImpl implements UserDAO {
     private static final String LABEL_FIRST_NAME = "first_name";
     private static final String LABEL_SECOND_NAME = "second_name";
     private static final String LABEL_MIDDLE_NAME = "middle_name";
-
-
-
 
     private UserDAOImpl(){}
 
@@ -69,7 +68,30 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User findById(int id) {
-        return null;
+        User user = null;
+
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+
+            statement = connection.prepareStatement(FIND_BY_ID_QUERY);
+            statement.setInt(1, id);
+            resultSet = statement.executeQuery();
+
+            while (resultSet.next()){
+                user = getUser(resultSet);
+            }
+
+        }catch (SQLException e) {
+
+        }finally {
+            close(connection, statement, resultSet);
+        }
+
+        return user ;
     }
 
     @Override
@@ -78,8 +100,55 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public boolean update(User user) {
-        return true;
+    public boolean updateProfile(User user) {
+        boolean isRowUpdated = false;
+
+        Connection connection = null;
+        PreparedStatement statement = null;
+
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            statement = connection.prepareStatement(UPDATE_PROFILE_QUERY);
+
+            statement.setString(1, user.getFirstName());
+            statement.setString(2, user.getSecondName());
+            statement.setString(3, user.getMiddleName());
+            statement.setString(4, user.getEmail());
+            statement.setString(5, user.getPhone());
+            statement.setInt(6, user.getId());
+
+            isRowUpdated = statement.executeUpdate() > 0;
+        }catch (SQLException e) {
+
+        }finally {
+            close(connection, statement);
+        }
+
+        return isRowUpdated;
+    }
+
+    @Override
+    public boolean updatePassword(User user) {
+        boolean isRowUpdated = false;
+
+        Connection connection = null;
+        PreparedStatement statement = null;
+
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            statement = connection.prepareStatement(CHANGE_PASSWORD_QUERY);
+
+            statement.setString(1, user.getPassword());
+            statement.setInt(2, user.getId());
+
+            isRowUpdated = statement.executeUpdate() > 0;
+        }catch (SQLException e) {
+
+        }finally {
+            close(connection, statement);
+        }
+
+        return isRowUpdated;
     }
 
     @Override
@@ -99,7 +168,7 @@ public class UserDAOImpl implements UserDAO {
             connection = ConnectionPool.getInstance().getConnection();
 
             statement = connection.prepareStatement(FIND_BY_LOGIN_QUERY);
-            statement.setObject(1, login);
+            statement.setString(1, login);
             resultSet = statement.executeQuery();
 
             while (resultSet.next()){

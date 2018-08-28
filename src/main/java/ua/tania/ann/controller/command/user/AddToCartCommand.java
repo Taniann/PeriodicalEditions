@@ -60,6 +60,10 @@ public class AddToCartCommand implements Command {
         return month.length;
     }
 
+    private String[] monthValues(HttpServletRequest request) {
+        String[] months = request.getParameterValues("month");
+        return months;
+    }
     private Double calculateTotalAmount(Map<Edition, Double> cart) {
         Double result = 0.0;
         for(Map.Entry<Edition, Double> entry : cart.entrySet()) {

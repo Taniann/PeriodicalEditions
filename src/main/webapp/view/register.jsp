@@ -9,9 +9,13 @@
           href="<c:url value="/resources/css/bootstrap.css"/>"/>
     <script src="<c:url value="/resources/js/jquery-3.2.1.js"/>"></script>
     <script src="<c:url value="/resources/js/bootstrap.js"/>"></script>
-    <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'uk_UA'}"/>
+    <script src="<c:url value="/resources/js/validator.js"/>"></script>
+    <script src="<c:url value="/resources/js/bootstrap-formhelpers-phone.js"/>"></script>
+    <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'en_US'}"/>
     <fmt:setLocale value="${locale}"/>
     <fmt:setBundle basename="registrationPage" var="registrationPage"/>
+    <fmt:setBundle basename="message" var="message"/>
+
   </head>
 
 <body>
@@ -31,15 +35,21 @@
 <div class="row">
     <div class="col-md-5"></div>
     <div class="col-md-2" style="text-align: center;">
-        <form style="padding-top: 100%; text-align: center" method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
+        <form style="padding-top: 100%; text-align: center" data-toggle="validator" method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
+            <c:if test="${requestScope.uncorrectEmail != null}">
+                <h4><fmt:message key="message.uncorrectEmail" bundle="${message}"/></h4>
+            </c:if>
+            <c:if test="${requestScope.uncorrectPhone != null}">
+                <h4><fmt:message key="message.uncorrectPhone" bundle="${message}"/></h4>
+            </c:if>
             <input type="email" placeholder="<fmt:message key="registrationPage.email" bundle="${registrationPage}"/>" name="email"
                    required
                    class="form-control"
                    style="width: 100%; margin-bottom: 10px"
             />
-            <input type="text" name="phone" placeholder="<fmt:message key="registrationPage.phone" bundle="${registrationPage}"/>"
-                   required
-                   class="form-control"
+            <input type="text" data-format="+380 (dd) ddd-dddd"
+                   name="phone"
+                   class="form-control bfh-phone"
                    style="width: 100%; margin-bottom: 10px"
             />
             <input type="text" placeholder="<fmt:message key="registrationPage.login" bundle="${registrationPage}"/>" name="login"
@@ -48,7 +58,13 @@
                    style="width: 100%; margin-bottom: 10px"
             />
             <input type="password" placeholder="<fmt:message key="registrationPage.password" bundle="${registrationPage}"/>"
-                   minlength="6" name="password" required
+                   minlength="6" name="password" id="password"  required
+                   class="form-control"
+                   style="width: 100%; margin-bottom: 10px"
+            />
+            <input type="password" placeholder="<fmt:message key="registrationPage.confirmPassword" bundle="${registrationPage}"/>"
+                   minlength="6" name="conpassword" required
+                   data-match="#password" data-match-error="Whoops, these don't match"
                    class="form-control"
                    style="width: 100%; margin-bottom: 10px"
             />

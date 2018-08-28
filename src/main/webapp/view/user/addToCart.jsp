@@ -31,18 +31,18 @@
                  <form method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
                     <div class="col-md-2 col-md-offset-1">
                         <p>2018</p>
-                        <p><input type="checkbox" name="month" value="1" disabled/>Січень
-                        <input type="checkbox" name="month" value="2" disabled/>Лютий</p>
-                        <p><input type="checkbox" name="month" value="3" disabled/>Березень
-                        <input type="checkbox" name="month" value="4" disabled/>Квітень</p>
-                        <p><input type="checkbox" name="month" value="5" disabled/>Травень
-                        <input type="checkbox" name="month" value="6" disabled/>Червень</p>
-                        <p><input type="checkbox" name="month" value="7" disabled/>Липень
-                        <input type="checkbox" name="month" value="8" disabled/>Серпень</p>
-                        <p><input type="checkbox" name="month" value="9" disabled/>Вересень
-                        <input type="checkbox" name="month" value="10"/>Жовтень</p>
-                        <p><input type="checkbox" name="month" value="11"/>Листопад
-                        <input type="checkbox" name="month" value="12"/>Грудень</p>
+                        <p><input type="checkbox" name="month" value="0" disabled/>Січень
+                        <input type="checkbox" name="month" value="1" disabled/>Лютий</p>
+                        <p><input type="checkbox" name="month" value="2" disabled/>Березень
+                        <input type="checkbox" name="month" value="3" disabled/>Квітень</p>
+                        <p><input type="checkbox" name="month" value="4" disabled/>Травень
+                        <input type="checkbox" name="month" value="5" disabled/>Червень</p>
+                        <p><input type="checkbox" name="month" value="6" disabled/>Липень
+                        <input type="checkbox" name="month" value="7" disabled/>Серпень</p>
+                        <p><input type="checkbox" name="month" value="8" disabled/>Вересень
+                        <input type="checkbox" name="month" value="9"/>Жовтень</p>
+                        <p><input type="checkbox" name="month" value="10"/>Листопад
+                        <input type="checkbox" name="month" value="11"/>Грудень</p>
                         <a href="${pageContext.request.contextPath}/controller?command=" class="btn btn-success">Сума<i class="fa fa-arrow right"></i></a>
                      </div>
                      <div class="col-md-6">
