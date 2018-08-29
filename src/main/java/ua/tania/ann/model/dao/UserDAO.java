@@ -12,6 +12,7 @@ public interface UserDAO {
     User findById(int id);
     List<User> findAll();
     boolean updateProfile(User user);
+    boolean updateProfileForOrder(User user);
     boolean updatePassword(User user);
     boolean delete(int id);
     User findByLogin(String login);

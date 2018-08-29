@@ -43,7 +43,6 @@
                         <input type="checkbox" name="month" value="9"/>Жовтень</p>
                         <p><input type="checkbox" name="month" value="10"/>Листопад
                         <input type="checkbox" name="month" value="11"/>Грудень</p>
-                        <a href="${pageContext.request.contextPath}/controller?command=" class="btn btn-success">Сума<i class="fa fa-arrow right"></i></a>
                      </div>
                      <div class="col-md-6">
 

@@ -27,17 +27,31 @@
             </div>
         </div>
             <div class="container-fluid">
-                 <c:forEach items="${sessionScope.cart}" var="edition">
+                <c:forEach items="${sessionScope.cart}" var="cartRecord">
                  <div class="row">
-                    <div class="col-md-2 col-md-offset-1">${edition.key.name}</div>
-                     <div class="col-md-2">2018</div>
-                     <div class="col-md-2">${edition.value} </div>
-                      <form method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
-                     <div class="col-md-2"><a href="${pageContext.request.contextPath}/controller?command=deleteFromCart&id=${edition.key.id}&value=${edition.value}">Delete</a></div>
-                    </form>
+                    <div class="col-md-2 col-md-offset-1">${cartRecord.edition.name}</div>
+                    <c:forEach items="${cartRecord.months}" var="month">
+                        <c:if test="${month == '0'}">
+                           <div class="col-md-1">Січень</div>
+                          </c:if>
+                        <c:if test="${month == '1'}">
+                           <div class="col-md-1">Лютий</div>
+                          </c:if>
+                        <c:if test="${month == '9'}">
+                           <div class="col-md-1">Жовтень</div>
+                          </c:if>
+                        <c:if test="${month == '10'}">
+                           <div class="col-md-1">Листопад</div>
+                          </c:if>
+                        <c:if test="${month == '11'}">
+                           <div class="col-md-1">Грудень</div>
+                          </c:if>
+                     </c:forEach>
+                     <div class="col-md-2">${cartRecord.amount}</div>
+                     <div class="col-md-2"><a href="${pageContext.request.contextPath}/controller?command=deleteFromCart&id=${cartRecord.id}">Delete</a></div>
                    </div>
-                  </c:forEach>
-                  <p>${totalAmount}</p>
+                    </c:forEach>
+              <p>${totalAmount}</p>
              </div>
             <a href="/view/user/catalog.jsp" class="btn btn-success">Продовжити вибір<i class="fa fa-arrow left"></i></a>
             <a href="/view/user/order.jsp" class="btn btn-success">Оформити замовлення<i class="fa fa-arrow left"></i></a>

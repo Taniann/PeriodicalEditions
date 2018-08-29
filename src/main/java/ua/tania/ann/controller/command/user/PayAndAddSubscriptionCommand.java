@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Таня on 29.08.2018.
+ * Created by Таня on 30.08.2018.
  */
-public class OrderCommand implements Command {
+public class PayAndAddSubscriptionCommand implements Command {
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         return null;

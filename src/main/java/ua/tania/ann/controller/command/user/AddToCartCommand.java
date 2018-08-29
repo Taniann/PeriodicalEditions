@@ -1,5 +1,6 @@
 package ua.tania.ann.controller.command.user;
 
+import ua.tania.ann.auxiliary.entity.CartRecord;
 import ua.tania.ann.controller.command.Command;
 import ua.tania.ann.controller.command.ResultPage;
 import ua.tania.ann.model.entity.Edition;
@@ -8,11 +9,9 @@ import ua.tania.ann.utils.JspPath;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
+import static ua.tania.ann.controller.command.ResultPage.RoutingType.FORWARD;
 import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 
 /**
@@ -32,18 +31,21 @@ public class AddToCartCommand implements Command {
 
         Edition edition = editionService.findById(Integer.parseInt(request.getParameter(ID)));
 
-        Map<Edition, Double> cart = new HashMap<>();
+        ArrayList<CartRecord> cart = new ArrayList<>();
 
         Double amount = edition.getPrice() * countMonth(request);
+        Set<String> months = monthValues(request);
 
         Double totalAmount = null;
 
         if (request.getSession(false).getAttribute("cart") != null) {
-            Map<Edition, Double> existingCart = ( Map<Edition, Double>)request.getSession().getAttribute("cart");
-            existingCart.put(edition, amount);
+            ArrayList<CartRecord> existingCart = ( ArrayList<CartRecord>)request.getSession().getAttribute("cart");
+            existingCart.add(new CartRecord(edition, amount, months));
             totalAmount = calculateTotalAmount(existingCart);
+            request.getSession(false).setAttribute("cart", existingCart);
+
         } else {
-            cart.put(edition, amount);
+            cart.add(new CartRecord(edition, amount, months));
             totalAmount = amount;
             request.getSession(false).setAttribute("cart", cart);
         }
@@ -60,14 +62,18 @@ public class AddToCartCommand implements Command {
         return month.length;
     }
 
-    private String[] monthValues(HttpServletRequest request) {
+    private Set<String> monthValues(HttpServletRequest request) {
+        Set<String> result = new HashSet<>();
         String[] months = request.getParameterValues("month");
-        return months;
+        for (String monthNumber: months) {
+            result.add(monthNumber);
+        }
+        return result;
     }
-    private Double calculateTotalAmount(Map<Edition, Double> cart) {
+    private Double calculateTotalAmount(ArrayList<CartRecord> cart) {
         Double result = 0.0;
-        for(Map.Entry<Edition, Double> entry : cart.entrySet()) {
-            result += entry.getValue();
+        for(CartRecord record : cart) {
+            result += record.getAmount();
         }
         return result;
     }

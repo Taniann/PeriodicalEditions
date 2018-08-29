@@ -19,6 +19,9 @@ public class UserDAOImpl implements UserDAO {
     private static final String FIND_ALL_QUERY = "";
     private static final String UPDATE_PROFILE_QUERY = "UPDATE user_u SET first_name = ?, second_name = ?, middle_name = ?, " +
             "email = ?, phone = ? WHERE id = ?";
+    private static final String UPDATE_PROFILE_FOR_ORDER_QUERY = "UPDATE user_u SET first_name = ?, second_name = ?, middle_name = ?, " +
+            "email = ?, phone = ?, city = ?, street_name = ?, house_number = ?, " +
+            "flat_number = ?, zip_code = ? WHERE id = ?";
     private static final String CHANGE_PASSWORD_QUERY = "UPDATE user_u SET password = ? WHERE id = ?";
     private static final String DELETE_QUERY = "";
     private static final String FIND_BY_LOGIN_QUERY = "SELECT* FROM user_u WHERE login = ?";
@@ -116,6 +119,39 @@ public class UserDAOImpl implements UserDAO {
             statement.setString(4, user.getEmail());
             statement.setString(5, user.getPhone());
             statement.setInt(6, user.getId());
+
+            isRowUpdated = statement.executeUpdate() > 0;
+        }catch (SQLException e) {
+
+        }finally {
+            close(connection, statement);
+        }
+
+        return isRowUpdated;
+    }
+
+    @Override
+    public boolean updateProfileForOrder(User user) {
+        boolean isRowUpdated = false;
+
+        Connection connection = null;
+        PreparedStatement statement = null;
+
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+            statement = connection.prepareStatement(UPDATE_PROFILE_FOR_ORDER_QUERY);
+
+            statement.setString(1, user.getFirstName());
+            statement.setString(2, user.getSecondName());
+            statement.setString(3, user.getMiddleName());
+            statement.setString(4, user.getEmail());
+            statement.setString(5, user.getPhone());
+            statement.setString(6, user.getCity());
+            statement.setString(7, user.getStreetName());
+            statement.setString(8, user.getHouseNumber());
+            statement.setString(9, user.getFlatNumber());
+            statement.setString(10, user.getIndex());
+            statement.setInt(11, user.getId());
 
             isRowUpdated = statement.executeUpdate() > 0;
         }catch (SQLException e) {

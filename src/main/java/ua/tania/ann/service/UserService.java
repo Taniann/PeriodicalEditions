@@ -46,6 +46,11 @@ public class UserService {
         return factory.createUserDAO().updateProfile(user);
     }
 
+    public boolean updateProfileForOrder(User user) {
+        return factory.createUserDAO().updateProfileForOrder(user);
+    }
+
+
     public boolean updatePassword(User user) {
         return factory.createUserDAO().updatePassword(user);
     }
