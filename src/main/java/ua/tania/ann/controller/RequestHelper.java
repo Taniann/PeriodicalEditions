@@ -38,6 +38,8 @@ public class RequestHelper {
         commands.put("editProfile", new EditProfileCommand());
         commands.put("changePassword", new ChangePasswordCommand());
         commands.put("makeOrder", new MakeOrderCommand());
+        commands.put("addSubscription", new AddSubscriptionCommand());
+        commands.put("reviewSubscriptions", new ReviewSubscriptionsCommand());
     }
 
     public Command getCommand(HttpServletRequest request) {

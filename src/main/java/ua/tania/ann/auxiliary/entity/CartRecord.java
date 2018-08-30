@@ -12,9 +12,9 @@ public class CartRecord {
     private int id = 0;
     private Edition edition;
     private Double amount;
-    private Set<String> months;
+    private String[] months;
 
-    public CartRecord(Edition edition, Double amount, Set<String> months) {
+    public CartRecord(Edition edition, Double amount, String[] months) {
         idCounter++;
         this.id = idCounter;
         this.edition = edition;
@@ -38,11 +38,11 @@ public class CartRecord {
         this.amount = amount;
     }
 
-    public Set<String> getMonths() {
+    public String[] getMonths() {
         return months;
     }
 
-    public void setMonths(Set<String> month) {
+    public void setMonths(String[] month) {
         this.months = month;
     }
 

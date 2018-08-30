@@ -28,9 +28,6 @@
             </div>
         </div>
             <div class="container-fluid">
-                <form method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
-                 <div class="row">
-                 </div>
                  <form method="post" action="${pageContext.request.contextPath}/controller" >
                   <c:if test="${user != null}">
                       <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
@@ -78,7 +75,7 @@
                    </div>
                     <div class="row">
                         <div class="col-md-3 col-md-offset-1" style="padding-top: 20px">
-                            <button class="btn btn-primary" type="submit" value="payAndAddSubscription" name="command">Save</button>
+                            <button class="btn btn-primary" type="submit" value="addSubscription" name="command">Save</button>
                          </div>
 
                   </div>

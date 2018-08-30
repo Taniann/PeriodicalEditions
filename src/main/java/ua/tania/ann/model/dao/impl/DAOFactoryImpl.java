@@ -1,9 +1,6 @@
 package ua.tania.ann.model.dao.impl;
 
-import ua.tania.ann.model.dao.CategoryDAO;
-import ua.tania.ann.model.dao.DAOFactory;
-import ua.tania.ann.model.dao.EditionDAO;
-import ua.tania.ann.model.dao.UserDAO;
+import ua.tania.ann.model.dao.*;
 
 /**
  * Created by Таня on 17.08.2018.
@@ -23,5 +20,10 @@ public class DAOFactoryImpl extends DAOFactory {
     @Override
     public CategoryDAO createCategoryDAO() {
         return CategoryDAOImpl.getInstance();
+    }
+
+    @Override
+    public SubscriptionDAO createSubscriptionDAO() {
+        return SubscriptionDAOImpl.getInstance();
     }
 }

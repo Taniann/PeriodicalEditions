@@ -25,6 +25,7 @@ public class AddToCartCommand implements Command {
     public AddToCartCommand()  {
         editionService = EditionService.getInstance();
     }
+
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ResultPage resultPage = new ResultPage(REDIRECT);
@@ -34,7 +35,7 @@ public class AddToCartCommand implements Command {
         ArrayList<CartRecord> cart = new ArrayList<>();
 
         Double amount = edition.getPrice() * countMonth(request);
-        Set<String> months = monthValues(request);
+        String[] months = monthValues(request);
 
         Double totalAmount = null;
 
@@ -62,13 +63,9 @@ public class AddToCartCommand implements Command {
         return month.length;
     }
 
-    private Set<String> monthValues(HttpServletRequest request) {
-        Set<String> result = new HashSet<>();
-        String[] months = request.getParameterValues("month");
-        for (String monthNumber: months) {
-            result.add(monthNumber);
-        }
-        return result;
+    private String[] monthValues(HttpServletRequest request) {
+        return request.getParameterValues("month");
+
     }
     private Double calculateTotalAmount(ArrayList<CartRecord> cart) {
         Double result = 0.0;

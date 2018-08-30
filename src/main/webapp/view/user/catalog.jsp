@@ -22,6 +22,8 @@
                                 <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
                                 <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
                                 <li><a href="/view/user/profile.jsp">My profile</a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=reviewSubscriptions">My subscriptions</a></li>
+
 
                         </div>
                     </div>

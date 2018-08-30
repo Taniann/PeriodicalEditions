@@ -12,6 +12,8 @@ public abstract class DAOFactory {
     public abstract UserDAO createUserDAO();
     public abstract EditionDAO createEditionDAO();
     public abstract CategoryDAO createCategoryDAO();
+    public abstract SubscriptionDAO createSubscriptionDAO();
+
 
 
     public static DAOFactory getInstance(){
