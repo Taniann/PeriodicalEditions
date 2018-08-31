@@ -52,7 +52,7 @@ public class AddSubscriptionCommand implements Command {
                                             cartRecord.getMonths(), cartRecord.getAmount() );
             isInserted = subscriptionService.insert(subscription);
         }
-        
+
         request.getSession().setAttribute("cart", null);
 
         if (isInserted) {
