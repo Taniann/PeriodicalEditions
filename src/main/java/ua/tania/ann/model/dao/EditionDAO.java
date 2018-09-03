@@ -11,6 +11,8 @@ public interface EditionDAO {
     boolean insert(Edition edition);
     Edition findById(int id);
     List<Edition> findAll();
+    List<Edition> findAll(int currentPage, int recordsPerPage);
     boolean update(Edition edition);
     boolean delete(int id);
+    int getNumberOfRows();
 }

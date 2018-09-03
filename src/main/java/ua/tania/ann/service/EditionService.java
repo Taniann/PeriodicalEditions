@@ -36,6 +36,11 @@ public class EditionService {
         return factory.createEditionDAO().findAll();
     }
 
+    public List<Edition> findAll(int currentPage, int recordsPerPage) {
+        int start = currentPage * recordsPerPage - recordsPerPage;
+        return factory.createEditionDAO().findAll(start, recordsPerPage);
+    }
+
     public boolean delete(int id) {
         return factory.createEditionDAO().delete(id);
     }
@@ -46,5 +51,9 @@ public class EditionService {
 
     public boolean update(Edition edition) {
         return factory.createEditionDAO().update(edition);
+    }
+
+    public int getNumberOfRows() {
+        return factory.createEditionDAO().getNumberOfRows();
     }
 }

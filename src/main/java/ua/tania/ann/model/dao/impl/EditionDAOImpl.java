@@ -20,7 +20,9 @@ public class EditionDAOImpl implements EditionDAO {
             "image_url = ?, type = ? WHERE id = ?";
     private static final String DELETE_QUERY = "DELETE FROM edition where id = ?";
     private static final String FIND_ALL_QUERY = "SELECT* FROM edition";
+    private static final String FIND_ALL_WITH_LIMIT_QUERY = "SELECT* FROM edition LIMIT ?, ?";
     private static final String FIND_BY_ID_QUERY = "SELECT* FROM edition WHERE id = ?";
+    private static final String NUMBER_OF_ROWS_QUERY = "SELECT COUNT(id) AS total FROM edition";
 
     private EditionDAOImpl(){}
 
@@ -118,6 +120,41 @@ public class EditionDAOImpl implements EditionDAO {
         return result;
     }
 
+
+    @Override
+    public List<Edition> findAll(int currentPage, int recordsPerPage) {
+        List<Edition> result = new ArrayList<>();
+
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = ConnectionPool.getInstance().getConnection();
+
+            statement = connection.prepareStatement(FIND_ALL_WITH_LIMIT_QUERY);
+            statement.setInt(1, currentPage);
+            statement.setInt(2, recordsPerPage);
+            resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String info = resultSet.getString("info");
+                Double price = resultSet.getDouble("price");
+                String imageUrl = resultSet.getString("image_url");
+                String type = resultSet.getString("type");
+                Edition edition = new Edition(id, name, info, price, imageUrl, type);
+                result.add(edition);
+            }
+        }catch (SQLException e) {
+
+        }finally {
+            close(connection, statement, resultSet);
+        }
+        return result;
+    }
+
     @Override
     public boolean update(Edition edition) {
         boolean isRowUpdated = false;
@@ -166,6 +203,31 @@ public class EditionDAOImpl implements EditionDAO {
         }
 
         return isRowDeleted;
+    }
+
+    @Override
+    public int getNumberOfRows() {
+        int numOfRows = 0;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try{
+            connection = ConnectionPool.getInstance().getConnection();
+            statement = connection.prepareStatement(NUMBER_OF_ROWS_QUERY);
+            resultSet = statement.executeQuery();
+
+            if(resultSet.next()) {
+                numOfRows = resultSet.getInt("total");
+            }
+
+        }catch (SQLException e) {
+
+        }finally {
+            close(connection, statement, resultSet);
+        }
+
+        return numOfRows;
     }
 
     private void close(Connection connection, Statement statement){

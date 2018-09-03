@@ -59,7 +59,6 @@
            <tr>
                 <th>Categories: </th>
                 <td>
-
                    <c:forEach var="category" items="${categories}">
                       <input type="checkbox" name="chekedCategory" value="${category.name}">${category.name}
                    </c:forEach>
@@ -68,8 +67,8 @@
             <tr>
                 <th>Type: </th>
                 <td><select name="type">
-                        <option value="друковане" <c:if test="${edition.type eq '1'}">selected</c:if>>Друковане видання</option>
-                        <option value="електронне" <c:if test="${edition.type eq '2' }">selected</c:if>>Електронне видання</option>
+                        <option value="1" <c:if test="${edition.type eq '1'}">selected</c:if>>Друковане видання</option>
+                        <option value="2" <c:if test="${edition.type eq '2' }">selected</c:if>>Електронне видання</option>
                     </select></td>
             </tr>
             <tr>

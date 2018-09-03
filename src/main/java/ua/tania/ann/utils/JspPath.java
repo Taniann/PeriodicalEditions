@@ -21,7 +21,7 @@ public final class JspPath {
     public static final String CATEGORY_ADD_PAGE = "/view/admin/addCategory.jsp";
     public static final String ERROR_PAGE = "/view/error.jsp";
 
-    public static final String EDITIONS_PAGE_COMMAND = "/controller?command=editions";
+    public static final String CATALOG_PAGE_COMMAND = "/controller?command=showCatalogPage&currentPage=1";
     public static final String ADMIN_PAGE_COMMAND = "/controller?command=showAdminPage";
     public static final String CATEGORY_PAGE_COMMAND = "/controller?command=showAddCategory";
     public static final String CART_PAGE_COMMAND = "/controller?command=cart";

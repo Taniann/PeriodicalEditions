@@ -16,6 +16,6 @@ public class ShowProfileCommand implements Command {
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ResultPage resultPage = new ResultPage(REDIRECT, JspPath.PROFILE_PAGE);
-        return null;
+        return resultPage;
     }
 }

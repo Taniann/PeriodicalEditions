@@ -1,6 +1,7 @@
 package ua.tania.ann.controller.command;
 
 import ua.tania.ann.model.entity.User;
+import ua.tania.ann.service.CategoryService;
 import ua.tania.ann.service.EditionService;
 import ua.tania.ann.service.UserService;
 import ua.tania.ann.utils.JspPath;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import static ua.tania.ann.controller.command.CommandUtil.ERROR_MESSAGE;
 import static ua.tania.ann.controller.command.CommandUtil.USER_ATTRIBUTE;
+import static ua.tania.ann.controller.command.ResultPage.RoutingType.FORWARD;
 import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 
 /**
@@ -22,7 +24,7 @@ public class LoginCommand implements Command {
 
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ResultPage resultPage = new ResultPage(REDIRECT);
+        ResultPage resultPage = new ResultPage(FORWARD);
 
         String login = request.getParameter(LOGIN);
         String password = request.getParameter(PASSWORD);
@@ -63,9 +65,11 @@ public class LoginCommand implements Command {
     private ResultPage redirectToUserPage(HttpServletRequest request, User user, ResultPage resultPage) {
         HttpSession session = request.getSession();
         session.setAttribute(USER_ATTRIBUTE, user);
-        session.setAttribute("editionList", EditionService.getInstance().findAll());
+     //   session.setAttribute("editionList", EditionService.getInstance().findAll());
+        session.setAttribute("categories", CategoryService.getInstance().findAll());
 
-        resultPage.setPage(JspPath.CATALOG_PAGE);
+
+        resultPage.setPage(JspPath.CATALOG_PAGE_COMMAND);
         return resultPage;
     }
 

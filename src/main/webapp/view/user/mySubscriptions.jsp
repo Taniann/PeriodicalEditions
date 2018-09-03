@@ -29,7 +29,11 @@
             <div class="container-fluid">
                 <c:forEach items="${sessionScope.subscriptions}" var="subscription">
                  <div class="row">
-                            <div class="col-md-2 col-md-offset-1">${subscription.editionId}</div>
+                        <c:forEach items="${sessionScope.editions}" var="edition">
+                            <c:if test="${edition.id == subscription.editionId }">
+                                 <div class="col-md-2 col-md-offset-1">${edition.name}</div>
+                            </c:if>
+                        </c:forEach>
                     <c:forEach items="${subscription.months}" var="month">
                         <c:if test="${month == '0'}">
                            <div class="col-md-1">Січень</div>
@@ -51,7 +55,7 @@
                    </div>
                     </c:forEach>
              </div>
-            <a href="/view/user/catalog.jsp" class="btn btn-success">До каталогу<i class="fa fa-arrow left"></i></a>
+            <a href="${pageContext.request.contextPath}/controller?command=showCatalogPage&currentPage=1" class="btn btn-success">До каталогу<i class="fa fa-arrow left"></i></a>
       </body>
      <script src="<c:url value="/resources/js/jquery-1.11.3.js"/>"></script>
      <script src="<c:url value="/resources/js/bootstrap.js"/>"></script>

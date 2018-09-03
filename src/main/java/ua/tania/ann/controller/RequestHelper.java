@@ -40,6 +40,8 @@ public class RequestHelper {
         commands.put("makeOrder", new MakeOrderCommand());
         commands.put("addSubscription", new AddSubscriptionCommand());
         commands.put("reviewSubscriptions", new ReviewSubscriptionsCommand());
+        commands.put("searchEditionByCategory", new SearchEditionByCategoryCommand());
+        commands.put("showCatalogPage", new ShowCatalogCommand());
     }
 
     public Command getCommand(HttpServletRequest request) {

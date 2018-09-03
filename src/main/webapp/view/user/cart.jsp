@@ -53,7 +53,7 @@
                     </c:forEach>
               <p>${totalAmount}</p>
              </div>
-            <a href="/view/user/catalog.jsp" class="btn btn-success">Продовжити вибір<i class="fa fa-arrow left"></i></a>
+            <a href="${pageContext.request.contextPath}/controller?command=showCatalogPage&currentPage=1" class="btn btn-success">Продовжити вибір<i class="fa fa-arrow left"></i></a>
             <a href="/view/user/order.jsp" class="btn btn-success">Оформити замовлення<i class="fa fa-arrow left"></i></a>
       </body>
      <script src="<c:url value="/resources/js/jquery-1.11.3.js"/>"></script>

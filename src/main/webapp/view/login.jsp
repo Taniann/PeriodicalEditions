@@ -44,8 +44,7 @@
                    style="width: 100%; margin-bottom: 10px"
             />
 
-            <button class="btn btn-primary" type="submit" value="login" name="command"><fmt:message key="registrationPage.signUp"
-                                                                                            bundle="${registrationPage}"/></button>
+            <button class="btn btn-primary" type="submit" value="login" name="command">Ввійти</button>
         </form>
     </div>
     <div class="col-md-5"></div>

@@ -65,7 +65,7 @@
                          </div>
                   </div>
               </form>
-                <a href="/view/user/catalog.jsp" class="btn btn-primary">Повернутися до каталогу<i class="fa fa-arrow left"></i></a>
+                <a href="${pageContext.request.contextPath}/controller?command=showCatalogPage&currentPage=1" class="btn btn-primary">Повернутися до каталогу<i class="fa fa-arrow left"></i></a>
              </div>
       </body>
 

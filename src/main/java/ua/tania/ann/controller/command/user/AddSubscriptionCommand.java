@@ -56,7 +56,7 @@ public class AddSubscriptionCommand implements Command {
         request.getSession().setAttribute("cart", null);
 
         if (isInserted) {
-            return new ResultPage(REDIRECT, JspPath.CATALOG_PAGE);
+            return new ResultPage(REDIRECT, JspPath.CATALOG_PAGE_COMMAND);
         } else {
             request.setAttribute("errorMessage", true);
             return new ResultPage(FORWARD, JspPath.PAYMENT_PAGE);

@@ -2,6 +2,7 @@ package ua.tania.ann.controller.command.user;
 
 import ua.tania.ann.controller.command.Command;
 import ua.tania.ann.controller.command.ResultPage;
+import ua.tania.ann.model.entity.Edition;
 import ua.tania.ann.model.entity.Subscription;
 import ua.tania.ann.model.entity.User;
 import ua.tania.ann.service.EditionService;
@@ -33,8 +34,11 @@ public class ReviewSubscriptionsCommand implements Command {
         User user = (User)request.getSession(false).getAttribute("user");
 
         List<Subscription> subscriptions = subscriptionService.findAllByUserId(user.getId());
+        List<Edition> editions = editionService.findAll();
 
         request.getSession(false).setAttribute("subscriptions", subscriptions);
+        request.getSession(false).setAttribute("editions", editions);
+
 
         return new ResultPage(REDIRECT, JspPath.SUBSCRIPTIONS_PAGE);
     }
