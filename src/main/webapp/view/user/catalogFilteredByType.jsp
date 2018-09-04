@@ -9,7 +9,11 @@
           href="<c:url value="/resources/css/bootstrap.css"/>"/>
     <link rel="stylesheet" type="text/css"
              href="<c:url value="/resources/css/style.css"/>"/>
+    <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'uk_UA'}"/>
+    <fmt:setLocale value="${locale}"/>
     <fmt:setBundle basename="catalogPage" var="catalogPage"/>
+    <fmt:setBundle basename="common" var="common"/>
+
     </head>
       <body>
         <div class="container-fluid">
@@ -18,25 +22,33 @@
                     <div class="container">
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="${pageContext.request.contextPath}/controller?command=logout">Вийти</a></li>
-                                <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
-                                <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
-                                <li><a href="/view/user/profile.jsp">My profile</a></li>
-                                <li><a href="${pageContext.request.contextPath}/controller?command=reviewSubscriptions">My subscriptions</a></li>
+                                <li><a href="/view/user/profile.jsp"><fmt:message key="common.myProfile" bundle="${common}"/></a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=reviewSubscriptions"><fmt:message key="common.mySubscription" bundle="${common}"/></a></li>
+                            </ul>
+                             <ul class="nav navbar-nav navbar-right">
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=logout"><fmt:message key="common.exit" bundle="${common}"/></a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=en_US"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">ENG</a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=uk_UA"
+                                  title="<fmt:message key="common.localeHint" bundle="${common}"/>">УКР</a></li>
+                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-  <div class="row">
+  <div class="row" style="padding-bottom: 20px">
   <form method="post" action="${pageContext.request.contextPath}/controller?command=searchByType&currentPage=1">
         <div class="col-md-10 col-md-offset-2">
             <select name="type">
-                <option value="1" <c:if test="${requestScope.type != null && requestScope.type eq '1'}">selected</c:if>>Друковані видання</option>
-                <option value="2" <c:if test="${requestScope.type != null && requestScope.type eq '2'}">selected</c:if> >Електронні видання</option>
+                <option value="1" <c:if test="${requestScope.type != null && requestScope.type eq '1'}">selected</c:if>>
+                <fmt:message key="catalogPage.typePrinted" bundle="${catalogPage}"/></option>
+                <option value="2" <c:if test="${requestScope.type != null && requestScope.type eq '2'}">selected</c:if> >
+                <fmt:message key="catalogPage.typeElectronic" bundle="${catalogPage}"/></option>
             </select>
-            <button class="btn btn-primary" type="submit">Пошук</button>
+            <button class="btn btn-secondary btn-sm" type="submit">
+            <fmt:message key="catalogPage.search" bundle="${catalogPage}"/></button>
         </div>
   </form>
   </div>
@@ -55,7 +67,8 @@
                      <div class="caption">
                         <h3><a href="#"><c:out value="${edition.name}"/></a></h3>
                         <p><c:out value="${edition.info}"/></p>
-                        <a href="${pageContext.request.contextPath}/controller?command=addToCartPage&id=${edition.id}" class="btn btn-success">Детальніше<i class="fa fa-arrow right"></i></a>
+                        <a href="${pageContext.request.contextPath}/controller?command=addToCartPage&id=${edition.id}" class="btn btn-success">
+                        <fmt:message key="catalogPage.moreDetails" bundle="${catalogPage}"/><i class="fa fa-arrow right"></i></a>
                     </div>
                      </div>
                 </div>
@@ -68,7 +81,8 @@
             <ul class="pagination">
                 <c:if test="${currentPage != 1}">
                     <li class="page-item"><a class="page-link"
-                        href="${pageContext.request.contextPath}/controller?command=searchByType&type=${requestScope.type}&currentPage=${currentPage-1}">Previous</a>
+                        href="${pageContext.request.contextPath}/controller?command=searchByType&type=${requestScope.type}&currentPage=${currentPage-1}">
+                        <fmt:message key="catalogPage.previous" bundle="${catalogPage}"/></a>
                     </li>
                 </c:if>
 
@@ -89,7 +103,8 @@
 
                 <c:if test="${currentPage lt noOfPages}">
                     <li class="page-item"><a class="page-link"
-                        href="${pageContext.request.contextPath}/controller?command=searchByType&type=${requestScope.type}&currentPage=${currentPage+1}">Next</a>
+                        href="${pageContext.request.contextPath}/controller?command=searchByType&type=${requestScope.type}&currentPage=${currentPage+1}">
+                        <fmt:message key="catalogPage.next" bundle="${catalogPage}"/></a>
                     </li>
                 </c:if>
             </ul>

@@ -21,8 +21,7 @@ public class RequestHelper {
         commands.put("register", new RegisterCommand());
         commands.put("login", new LoginCommand());
         commands.put("logout", new LogoutCommand());
-        commands.put("setEnglish", new SetEnglishCommand());
-        commands.put("setUkrainian", new SetUkrainianCommand());
+        commands.put("changeLocale", new ChangeLocaleCommand());
         commands.put("addEdition", new AddEditionCommand());
         commands.put("deleteEdition", new DeleteEditionCommand());
         commands.put("showAddEdition", new ShowAddEditionCommand());

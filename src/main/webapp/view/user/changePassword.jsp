@@ -11,10 +11,10 @@
     <script src="<c:url value="/resources/js/bootstrap.js"/>"></script>
     <script src="<c:url value="/resources/js/validator.js"/>"></script>
     <script src="<c:url value="/resources/js/bootstrap-formhelpers-phone.js"/>"></script>
-    <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'en_US'}"/>
-    <fmt:setLocale value="${locale}"/>
-    <fmt:setBundle basename="message" var="message"/>
-
+     <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'uk_UA'}"/>
+     <fmt:setLocale value="${locale}"/>
+     <fmt:setBundle basename="profilePage" var="profilePage"/>
+     <fmt:setBundle basename="common" var="common"/>
   </head>
 
 <body>
@@ -23,11 +23,17 @@
             <div class="navbar navbar-inverse">
                 <div class="container">
                     <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
-                            <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
-                            <li><a href="/view/user/profile.jsp">My profile</a></li>
-
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="${pageContext.request.contextPath}/controller?command=reviewSubscriptions"><fmt:message key="common.mySubscription" bundle="${common}"/></a></li>
+                            </ul>
+                             <ul class="nav navbar-nav navbar-right">
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=logout"><fmt:message key="common.exit" bundle="${common}"/></a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=en_US"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">ENG</a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=uk_UA"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">УКР</a></li>
+                             </ul>
                     </div>
                 </div>
             </div>
@@ -46,24 +52,25 @@
             <c:if test="${requestScope.uncorrectOldPassword != null}">
                 <h4><fmt:message key="message.uncorrectOldPassword" bundle="${message}"/></h4>
             </c:if>
-            <input type="password" placeholder="your password"
+            <input type="password" placeholder="<fmt:message key="profilePage.yourPassword" bundle="${profilePage}"/>"
                    minlength="6" name="password"   required
                    class="form-control"
                    style="width: 100%; margin-bottom: 10px"
             />
-            <input type="password" placeholder="new password"
+            <input type="password" placeholder="<fmt:message key="profilePage.newPassword" bundle="${profilePage}"/>"
                    minlength="6" name="newPassword" id="newPassword"  required
                    class="form-control"
                    style="width: 100%; margin-bottom: 10px"
             />
-            <input type="password" placeholder="confirm new password"
+            <input type="password" placeholder="<fmt:message key="profilePage.confirmNewPassword" bundle="${profilePage}"/>"
                    minlength="6" name="conpassword" required
                    data-match="#newPassword" data-match-error="Whoops, these don't match"
                    class="form-control"
                    style="width: 100%; margin-bottom: 10px"
             />
 
-            <button class="btn btn-primary" type="submit" value="changePassword" name="command">Save</button>
+            <button class="btn btn-primary" type="submit" value="changePassword" name="command">
+            <fmt:message key="profilePage.save" bundle="${profilePage}"/></button>
         </form>
     </div>
     <div class="col-md-5"></div>

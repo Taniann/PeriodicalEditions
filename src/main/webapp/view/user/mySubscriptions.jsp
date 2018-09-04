@@ -9,8 +9,11 @@
           href="<c:url value="/resources/css/bootstrap.css"/>"/>
     <link rel="stylesheet" type="text/css"
              href="<c:url value="/resources/css/style.css"/>"/>
-    <fmt:setBundle basename="catalogPage" var="catalogPage"/>
-    </head>
+     <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'uk_UA'}"/>
+     <fmt:setLocale value="${locale}"/>
+     <fmt:setBundle basename="cartPage" var="cartPage"/>
+     <fmt:setBundle basename="profilePage" var="profilePage"/>
+     <fmt:setBundle basename="common" var="common"/>    </head>
       <body>
         <div class="container-fluid">
             <div class="row">
@@ -18,9 +21,15 @@
                     <div class="container">
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="${pageContext.request.contextPath}/controller?command=logout">Вийти</a></li>
-                                <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
-                                <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=reviewSubscriptions"><fmt:message key="common.mySubscription" bundle="${common}"/></a></li>
+                            </ul>
+                             <ul class="nav navbar-nav navbar-right">
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=logout"><fmt:message key="common.exit" bundle="${common}"/></a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=en_US"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">ENG</a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=uk_UA"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">УКР</a></li>
+                             </ul>
                         </div>
                     </div>
                 </div>
@@ -36,26 +45,27 @@
                         </c:forEach>
                     <c:forEach items="${subscription.months}" var="month">
                         <c:if test="${month == '0'}">
-                           <div class="col-md-1">Січень</div>
+                           <div class="col-md-1"><fmt:message key="cartPage.january" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '1'}">
-                           <div class="col-md-1">Лютий</div>
+                           <div class="col-md-1"><fmt:message key="cartPage.february" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '9'}">
-                           <div class="col-md-1">Жовтень</div>
+                           <div class="col-md-1"><fmt:message key="cartPage.october" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '10'}">
-                           <div class="col-md-1">Листопад</div>
+                           <div class="col-md-1"><fmt:message key="cartPage.november" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '11'}">
-                           <div class="col-md-1">Грудень</div>
+                           <div class="col-md-1"><fmt:message key="cartPage.december" bundle="${cartPage}"/></div>
                           </c:if>
                      </c:forEach>
-                     <div class="col-md-2">${subscription.amount}</div>
+                     <div class="col-md-2">${subscription.amount}<fmt:message key="cartPage.uah" bundle="${cartPage}"/></div>
                    </div>
                     </c:forEach>
              </div>
-            <a href="${pageContext.request.contextPath}/controller?command=showCatalogPage&currentPage=1" class="btn btn-success">До каталогу<i class="fa fa-arrow left"></i></a>
+            <a href="${pageContext.request.contextPath}/controller?command=showCatalogPage&currentPage=1" class="btn btn-success">
+            <fmt:message key="profilePage.returnToCatalog" bundle="${profilePage}"/><i class="fa fa-arrow left"></i></a>
       </body>
      <script src="<c:url value="/resources/js/jquery-1.11.3.js"/>"></script>
      <script src="<c:url value="/resources/js/bootstrap.js"/>"></script>

@@ -13,6 +13,8 @@
     <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'uk_UA'}"/>
     <fmt:setLocale value="${locale}"/>
     <fmt:setBundle basename="registrationPage" var="registrationPage"/>
+    <fmt:setBundle basename="common" var="common"/>
+
   </head>
 
 <body>
@@ -22,8 +24,13 @@
                 <div class="container">
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
-                            <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
+                            <li><a href=""><fmt:message key="common.myProfile" bundle="${common}"/></a></li>
+                            <li><a href=""><fmt:message key="common.mySubscription" bundle="${common}"/></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=en_US" title="<fmt:message key="common.localeHint" bundle="${common}"/>">ENG</a></li>
+                            <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=uk_UA" title="<fmt:message key="common.localeHint" bundle="${common}"/>">УКР</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -44,7 +51,7 @@
                    style="width: 100%; margin-bottom: 10px"
             />
 
-            <button class="btn btn-primary" type="submit" value="login" name="command">Ввійти</button>
+            <button class="btn btn-primary" type="submit" value="login" name="command"><fmt:message key="loginPage.login" bundle="${registrationPage}"/></button>
         </form>
     </div>
     <div class="col-md-5"></div>

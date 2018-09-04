@@ -10,8 +10,11 @@
         <script src="<c:url value="/resources/js/jquery-3.2.1.js"/>"></script>
         <script src="<c:url value="/resources/js/bootstrap.js"/>"></script>
         <script src="<c:url value="/resources/js/bootstrap-formhelpers-phone.js"/>"></script>
-        <fmt:setBundle basename="catalogPage" var="catalogPage"/>
-    </head>
+     <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'uk_UA'}"/>
+     <fmt:setLocale value="${locale}"/>
+     <fmt:setBundle basename="orderPage" var="orderPage"/>
+     <fmt:setBundle basename="common" var="common"/>
+  </head>
       <body>
         <div class="container-fluid">
             <div class="row">
@@ -19,9 +22,15 @@
                     <div class="container">
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="${pageContext.request.contextPath}/controller?command=logout">Вийти</a></li>
-                                <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
-                                <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=reviewSubscriptions"><fmt:message key="common.mySubscription" bundle="${common}"/></a></li>
+                            </ul>
+                             <ul class="nav navbar-nav navbar-right">
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=logout"><fmt:message key="common.exit" bundle="${common}"/></a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=en_US"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">ENG</a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=uk_UA"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">УКР</a></li>
+                             </ul>
                         </div>
                     </div>
                 </div>
@@ -36,37 +45,49 @@
                   <c:if test="${user != null}">
                       <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
                   </c:if>
-                    <div class="col-md-3 col-md-offset-1">First name*<input type="text" name="firstName" size="20"
-                               class="form-control"  value= "<c:out value='${user.firstName}' />" required /></div>
+                    <div class="col-md-3 col-md-offset-1"><fmt:message key="orderPage.firstName" bundle="${orderPage}"/>
+                        <input type="text" name="firstName" size="20"
+                        class="form-control"  value= "<c:out value='${user.firstName}' />" required /></div>
 
-                    <div class="col-md-3">Second name*<input type="text" name="secondName" size="20"
-                               class="form-control" required value="<c:out value='${user.secondName}' />" required /></div>
-                    <div class="col-md-3">Middle name*<input type="text" name="middleName" required size="20"
-                                class="form-control" value="<c:out value='${user.middleName}' />" required /></div>
+                    <div class="col-md-3"><fmt:message key="orderPage.secondName" bundle="${orderPage}"/>
+                        <input type="text" name="secondName" size="20"
+                        class="form-control" required value="<c:out value='${user.secondName}' />" required /></div>
+                    <div class="col-md-3"><fmt:message key="orderPage.middleName" bundle="${orderPage}"/>
+                        <input type="text" name="middleName" required size="20"
+                        class="form-control" value="<c:out value='${user.middleName}' />" required /></div>
                    </div>
                    <div class="row" style="padding-top: 20px" >
-                      <div class="col-md-3 col-md-offset-1">Email*<input type="email" name="email" size="30"
-                                 class="form-control" value="<c:out value='${user.email}' />" required/></div>
-                      <div class="col-md-3" >Phone number*<input type="text" data-format="+380 (dd) ddd-dddd"
-                                 name="phone" class="form-control bfh-phone" value="<c:out value='${user.phone}' />" required/></div>
+                      <div class="col-md-3 col-md-offset-1"><fmt:message key="orderPage.email" bundle="${orderPage}"/>
+                        <input type="email" name="email" size="30"
+                        class="form-control" value="<c:out value='${user.email}' />" required/></div>
+                      <div class="col-md-3" ><fmt:message key="orderPage.phone" bundle="${orderPage}"/>
+                        <input type="text" data-format="+380 (dd) ddd-dddd"
+                        name="phone" class="form-control bfh-phone" value="<c:out value='${user.phone}' />" required/></div>
                    </div>
                     <div class="row" style="padding-top: 20px" >
-                           <div class="col-md-3 col-md-offset-1">City*<input type="text" name="city" size="15"
-                                       class="form-control" value="" required/></div>
-                           <div class="col-md-3" >Street name*<input type="text"
-                                       name="streetName" class="form-control" value="" required/></div>
-                            <div class="col-md-3" >Index*<input type="text"
-                                       name="index" class="form-control" value="" required/></div>
+                           <div class="col-md-3 col-md-offset-1"><fmt:message key="orderPage.city" bundle="${orderPage}"/>
+                                <input type="text" name="city" size="15"
+                                class="form-control" value="" required/></div>
+                           <div class="col-md-3" ><fmt:message key="orderPage.streetName" bundle="${orderPage}"/>
+                                <input type="text"
+                                name="streetName" class="form-control" value="" required/></div>
+                            <div class="col-md-3" ><fmt:message key="orderPage.index" bundle="${orderPage}"/>
+                                <input type="text"
+                                name="index" class="form-control" value="" required/></div>
                         </div>
                     <div class="row" style="padding-top: 20px" >
-                             <div class="col-md-2 col-md-offset-1">House number*<input type="text" name="houseNumber" size="15"
-                                        class="form-control" value="" required /></div>
-                             <div class="col-md-2" >Flat number<input type="text"
-                                        name="flatNumber" class="form-control" value=""/></div>
-                                </div>
+                             <div class="col-md-2 col-md-offset-1"><fmt:message key="orderPage.houseNumber" bundle="${orderPage}"/>
+                                <input type="text" name="houseNumber" size="15"
+                                class="form-control" value="" required /></div>
+                             <div class="col-md-2" ><fmt:message key="orderPage.flatNumber" bundle="${orderPage}"/>
+                                <input type="text"
+                                name="flatNumber" class="form-control" value=""/>
+                             </div>
+                    </div>
                    <div class="row">
                         <div class="col-md-3 col-md-offset-1" style="padding-top: 20px">
-                            <button class="btn btn-primary" type="submit" value="makeOrder" name="command">Save</button>
+                            <button class="btn btn-primary" type="submit" value="makeOrder" name="command">
+                            <fmt:message key="orderPage.save" bundle="${orderPage}"/></button>
                          </div>
 
                   </div>

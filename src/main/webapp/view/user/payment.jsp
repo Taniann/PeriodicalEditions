@@ -10,7 +10,10 @@
         <script src="<c:url value="/resources/js/jquery-3.2.1.js"/>"></script>
         <script src="<c:url value="/resources/js/bootstrap.js"/>"></script>
         <script src="<c:url value="/resources/js/bootstrap-formhelpers-phone.js"/>"></script>
-        <fmt:setBundle basename="catalogPage" var="catalogPage"/>
+     <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'uk_UA'}"/>
+     <fmt:setLocale value="${locale}"/>
+     <fmt:setBundle basename="paymentPage" var="paymentPage"/>
+     <fmt:setBundle basename="common" var="common"/>
     </head>
       <body>
         <div class="container-fluid">
@@ -19,9 +22,15 @@
                     <div class="container">
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="${pageContext.request.contextPath}/controller?command=logout">Вийти</a></li>
-                                <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
-                                <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=reviewSubscriptions"><fmt:message key="common.mySubscription" bundle="${common}"/></a></li>
+                            </ul>
+                             <ul class="nav navbar-nav navbar-right">
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=logout"><fmt:message key="common.exit" bundle="${common}"/></a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=en_US"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">ENG</a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=uk_UA"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">УКР</a></li>
+                             </ul>
                         </div>
                     </div>
                 </div>
@@ -33,12 +42,13 @@
                       <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
                   </c:if>
                    <div class="row">
-                    <div class="col-md-3 col-md-offset-1">Card number<input type="text" data-format="dddd dddd dddd dddd"
-                                name="cardNumber" size="20"
-                               class="form-control  bfh-phone" required /></div>
+                    <div class="col-md-3 col-md-offset-1"><fmt:message key="paymentPage.cardNumber" bundle="${paymentPage}"/>
+                        <input type="text" data-format="dddd dddd dddd dddd"
+                        name="cardNumber" size="20"
+                        class="form-control  bfh-phone" required /></div>
                    </div>
                    <div class="row" style="padding-top: 20px" >
-                      <div class="col-md-1 col-md-offset-1">Expires end
+                      <div class="col-md-1 col-md-offset-1"><fmt:message key="paymentPage.expiresEnd" bundle="${paymentPage}"/>
                             <select name="expiresEndMonth">
                                 <option value="1">01</option>
                                 <option value="2">02</option>
@@ -75,9 +85,9 @@
                    </div>
                     <div class="row">
                         <div class="col-md-3 col-md-offset-1" style="padding-top: 20px">
-                            <button class="btn btn-primary" type="submit" value="addSubscription" name="command">Save</button>
+                            <button class="btn btn-primary" type="submit" value="addSubscription" name="command">
+                            <fmt:message key="paymentPage.save" bundle="${paymentPage}"/></button>
                          </div>
-
                   </div>
               </form>
              </div>
