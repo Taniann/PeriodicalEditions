@@ -12,6 +12,8 @@ public interface EditionDAO {
     Edition findById(int id);
     List<Edition> findAll();
     List<Edition> findAll(int currentPage, int recordsPerPage);
+    List<Edition> findAllByCategoryId(int categoryId, int currentPage, int recordsPerPage);
+    List<Edition> findAllByType(String type, int currentPage, int recordsPerPage);
     boolean update(Edition edition);
     boolean delete(int id);
     int getNumberOfRows();

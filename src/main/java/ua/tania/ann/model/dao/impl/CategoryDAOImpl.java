@@ -2,6 +2,7 @@ package ua.tania.ann.model.dao.impl;
 
 import ua.tania.ann.model.dao.CategoryDAO;
 import ua.tania.ann.model.entity.Category;
+import ua.tania.ann.model.entity.Edition;
 import ua.tania.ann.utils.ConnectionPool;
 
 import java.sql.*;
@@ -15,10 +16,9 @@ public class CategoryDAOImpl implements CategoryDAO {
     private static final CategoryDAOImpl INSTANCE = new CategoryDAOImpl();
 
     private static final String INSERT_QUERY = "INSERT INTO category (name) VALUES (?)";
-    private static final String INSERT_EDITION_CATEGORIES_QUERY = "INSERT INTO edition_category (edition_id, category_name)" +
+    private static final String INSERT_EDITION_CATEGORIES_QUERY = "INSERT INTO edition_category (edition_id, category_id)" +
             "VALUES (?, ?)";
     private static final String FIND_ALL_QUERY = "SELECT* FROM category";
-    private static final String FIND_BY_EDITION_ID_QUERY = "SELECT* FROM edition_category WHERE id = ?";
     private static final String DELETE_QUERY = "DELETE FROM category WHERE id = ?";
     private static final String DELETE_BY_EDITION_QUERY = "DELETE FROM edition_category WHERE edition_id = ?";
 
@@ -62,7 +62,7 @@ public class CategoryDAOImpl implements CategoryDAO {
             statement = connection.prepareStatement(INSERT_EDITION_CATEGORIES_QUERY);
                 for (Category category : categories) {
                     statement.setInt(1, editionId);
-                    statement.setString(2, category.getName());
+                    statement.setInt(2, category.getId());
 
                     isRowInserted = statement.executeUpdate() > 0;
                 }
@@ -92,35 +92,6 @@ public class CategoryDAOImpl implements CategoryDAO {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                Category category = new Category(id, name);
-                result.add(category);
-            }
-        }catch (SQLException e) {
-
-        }finally {
-            close(connection, statement, resultSet);
-        }
-        return result;
-    }
-
-    @Override
-    public List<Category> findAllByEditionId(int editionId) {
-        List<Category> result = new ArrayList<>();
-
-        Connection connection = null;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            connection = ConnectionPool.getInstance().getConnection();
-
-            statement = connection.prepareStatement(FIND_BY_EDITION_ID_QUERY);
-            statement.setInt(1, editionId);
-            resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("category_name");
                 Category category = new Category(id, name);
                 result.add(category);
             }

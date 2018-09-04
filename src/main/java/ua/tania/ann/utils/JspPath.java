@@ -8,6 +8,8 @@ public final class JspPath {
     public static final String LOGIN_PAGE = "/view/login.jsp";
     public static final String REGISTER_PAGE = "/view/register.jsp";
     public static final String CATALOG_PAGE = "/view/user/catalog.jsp";
+    public static final String CATALOG_PAGE_FILTERED_BY_CATEGORY = "/view/user/catalogFilteredByCategory.jsp";
+    public static final String CATALOG_PAGE_FILTERED_BY_TYPE = "/view/user/catalogFilteredByType.jsp";
     public static final String CART_PAGE = "/view/user/cart.jsp";
     public static final String ADD_TO_CART_PAGE = "/view/user/addToCart.jsp";
     public static final String PAYMENT_PAGE = "/view/user/payment.jsp";
@@ -22,7 +24,7 @@ public final class JspPath {
     public static final String ERROR_PAGE = "/view/error.jsp";
 
     public static final String CATALOG_PAGE_COMMAND = "/controller?command=showCatalogPage&currentPage=1";
-    public static final String ADMIN_PAGE_COMMAND = "/controller?command=showAdminPage";
+    public static final String ADMIN_PAGE_COMMAND = "/controller?command=showAdminPage&currentPage=1";
     public static final String CATEGORY_PAGE_COMMAND = "/controller?command=showAddCategory";
     public static final String CART_PAGE_COMMAND = "/controller?command=cart";
     public static final String PROFILE_PAGE_COMMAND = "/controller?command=profile";

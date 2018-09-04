@@ -24,7 +24,7 @@ public class LoginCommand implements Command {
 
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ResultPage resultPage = new ResultPage(FORWARD);
+        ResultPage resultPage = new ResultPage(REDIRECT);
 
         String login = request.getParameter(LOGIN);
         String password = request.getParameter(PASSWORD);

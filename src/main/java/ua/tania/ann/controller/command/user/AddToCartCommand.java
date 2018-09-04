@@ -65,8 +65,8 @@ public class AddToCartCommand implements Command {
 
     private String[] monthValues(HttpServletRequest request) {
         return request.getParameterValues("month");
-
     }
+
     private Double calculateTotalAmount(ArrayList<CartRecord> cart) {
         Double result = 0.0;
         for(CartRecord record : cart) {

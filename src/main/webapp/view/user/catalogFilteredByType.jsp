@@ -33,8 +33,8 @@
   <form method="post" action="${pageContext.request.contextPath}/controller?command=searchByType&currentPage=1">
         <div class="col-md-10 col-md-offset-2">
             <select name="type">
-                <option value="1">Друковані видання</option>
-                <option value="2" >Електронні видання</option>
+                <option value="1" <c:if test="${requestScope.type != null && requestScope.type eq '1'}">selected</c:if>>Друковані видання</option>
+                <option value="2" <c:if test="${requestScope.type != null && requestScope.type eq '2'}">selected</c:if> >Електронні видання</option>
             </select>
             <button class="btn btn-primary" type="submit">Пошук</button>
         </div>
@@ -68,7 +68,7 @@
             <ul class="pagination">
                 <c:if test="${currentPage != 1}">
                     <li class="page-item"><a class="page-link"
-                        href="${pageContext.request.contextPath}/controller?command=showCatalogPage&currentPage=${currentPage-1}">Previous</a>
+                        href="${pageContext.request.contextPath}/controller?command=searchByType&type=${requestScope.type}&currentPage=${currentPage-1}">Previous</a>
                     </li>
                 </c:if>
 
@@ -81,7 +81,7 @@
                         </c:when>
                         <c:otherwise>
                             <li class="page-item"><a class="page-link"
-                                href="${pageContext.request.contextPath}/controller?command=showCatalogPage&currentPage=${i}">${i}</a>
+                                href="${pageContext.request.contextPath}/controller?command=searchByType&type=${requestScope.type}&currentPage=${i}">${i}</a>
                             </li>
                         </c:otherwise>
                     </c:choose>
@@ -89,7 +89,7 @@
 
                 <c:if test="${currentPage lt noOfPages}">
                     <li class="page-item"><a class="page-link"
-                        href="${pageContext.request.contextPath}/controller?command=showCatalogPage&currentPage=${currentPage+1}">Next</a>
+                        href="${pageContext.request.contextPath}/controller?command=searchByType&type=${requestScope.type}&currentPage=${currentPage+1}">Next</a>
                     </li>
                 </c:if>
             </ul>

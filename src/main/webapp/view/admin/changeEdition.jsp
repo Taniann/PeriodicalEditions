@@ -60,7 +60,7 @@
                 <th>Categories: </th>
                 <td>
                    <c:forEach var="category" items="${categories}">
-                      <input type="checkbox" name="chekedCategory" value="${category.name}">${category.name}
+                      <input type="checkbox" name="chekedCategory" value="${category.id}">${category.name}
                    </c:forEach>
                 </td>
             </tr>

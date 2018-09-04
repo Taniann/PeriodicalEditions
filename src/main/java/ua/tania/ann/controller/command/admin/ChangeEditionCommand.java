@@ -63,7 +63,8 @@ public class ChangeEditionCommand implements Command {
 
         for (String str: chekedCategories)
         {
-            Category category = new Category(str);
+            int id = Integer.parseInt(str);
+            Category category = new Category(id);
             result.add(category);
         }
 

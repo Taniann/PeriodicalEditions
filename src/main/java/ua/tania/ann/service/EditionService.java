@@ -41,6 +41,16 @@ public class EditionService {
         return factory.createEditionDAO().findAll(start, recordsPerPage);
     }
 
+    public List<Edition> findAllByCategoryId(int categoryId, int currentPage, int recordsPerPage) {
+        int start = currentPage * recordsPerPage - recordsPerPage;
+        return factory.createEditionDAO().findAllByCategoryId(categoryId, start, recordsPerPage);
+    }
+
+    public List<Edition> findAllByType(String type, int currentPage, int recordsPerPage) {
+        int start = currentPage * recordsPerPage - recordsPerPage;
+        return factory.createEditionDAO().findAllByType(type, start, recordsPerPage);
+    }
+
     public boolean delete(int id) {
         return factory.createEditionDAO().delete(id);
     }

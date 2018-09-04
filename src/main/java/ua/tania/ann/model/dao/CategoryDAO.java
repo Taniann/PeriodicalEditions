@@ -1,6 +1,7 @@
 package ua.tania.ann.model.dao;
 
 import ua.tania.ann.model.entity.Category;
+import ua.tania.ann.model.entity.Edition;
 
 import java.util.List;
 
@@ -11,7 +12,6 @@ public interface CategoryDAO {
     boolean insert(Category category);
     boolean insertEditionCategories(int editionId, List<Category> categories);
     List<Category> findAll();
-    List<Category> findAllByEditionId(int editionId);
     boolean delete(int id);
     boolean deleteByEditionId(int editionId);
 
