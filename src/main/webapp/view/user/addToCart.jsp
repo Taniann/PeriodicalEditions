@@ -13,6 +13,8 @@
     <fmt:setLocale value="${locale}"/>
     <fmt:setBundle basename="cartPage" var="cartPage"/>
     <fmt:setBundle basename="common" var="common"/>
+    <fmt:setBundle basename="message" var="message"/>
+
     </head>
       <body>
         <div class="container-fluid">
@@ -59,6 +61,9 @@
                       <c:if test="${editionForCart != null}">
                          <input type="hidden" name="id" value="<c:out value='${editionForCart.id}' />" />
                       </c:if>
+                       <c:if test="${requestScope.notCkeckedMonths != null}">
+                          <h4><fmt:message key="message.notCheckedMonths" bundle="${message}"/></h4>
+                       </c:if>
                          <img src="" alt="">
                             <div class="caption">
                                 <h2><c:out value="${editionForCart.name}"/></h2>

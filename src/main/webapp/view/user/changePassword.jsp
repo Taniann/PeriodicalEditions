@@ -15,6 +15,8 @@
      <fmt:setLocale value="${locale}"/>
      <fmt:setBundle basename="profilePage" var="profilePage"/>
      <fmt:setBundle basename="common" var="common"/>
+     <fmt:setBundle basename="message" var="message"/>
+
   </head>
 
 <body>

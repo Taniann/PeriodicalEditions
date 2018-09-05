@@ -24,15 +24,13 @@ public class ChangeEditionCommand implements Command {
     private static final String NAME = "name";
     private static final String INFO = "info";
     private static final String PRICE = "price";
-    private static final String IMAGE_URL = "image_url";
+    private static final String IMAGE_URL = "imageUrl";
     private static final String TYPE = "type";
 
     private EditionService editionService;
-    private CategoryService categoryService;
 
     public ChangeEditionCommand() {
         editionService = EditionService.getInstance();
-        categoryService = CategoryService.getInstance();
     }
 
     @Override
@@ -47,8 +45,7 @@ public class ChangeEditionCommand implements Command {
         String type = request.getParameter(TYPE);
 
         Edition edition = new Edition(id, name, info, price, imageUrl, type);
-        List<Category> editionCategories = addEditionCategories(request);
-        if (editionService.update(edition) && categoryService.insertEditionCategories(id, editionCategories)) {
+        if (editionService.update(edition)) {
             resultPage.setPage(JspPath.ADMIN_PAGE_COMMAND);
         }
         else {
@@ -57,17 +54,4 @@ public class ChangeEditionCommand implements Command {
         return resultPage;
     }
 
-    private List<Category> addEditionCategories(HttpServletRequest request) {
-        List<Category> result = new ArrayList<>();
-        String[] chekedCategories = request.getParameterValues("chekedCategory");
-
-        for (String str: chekedCategories)
-        {
-            int id = Integer.parseInt(str);
-            Category category = new Category(id);
-            result.add(category);
-        }
-
-        return result;
-    }
 }

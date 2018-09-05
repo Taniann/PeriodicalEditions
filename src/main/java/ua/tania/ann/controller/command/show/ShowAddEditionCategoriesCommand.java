@@ -13,24 +13,23 @@ import javax.servlet.http.HttpServletResponse;
 import static ua.tania.ann.controller.command.ResultPage.RoutingType.FORWARD;
 
 /**
- * Created by Таня on 24.08.2018.
+ * Created by Таня on 05.09.2018.
  */
-public class ShowChangeEditionCommand implements Command {
+public class ShowAddEditionCategoriesCommand implements Command {
     private static final String ID = "id";
     private EditionService editionService;
 
-    public ShowChangeEditionCommand() {
+    public ShowAddEditionCategoriesCommand() {
         editionService = EditionService.getInstance();
     }
 
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ResultPage resultPage = new ResultPage(FORWARD, JspPath.CHANGE_EDITION_PAGE);
+        ResultPage resultPage = new ResultPage(FORWARD, JspPath.ADD_EDITION_CATEGORIES_PAGE);
 
         Edition edition = editionService.findById(Integer.parseInt(request.getParameter(ID)));
         request.getSession(false).setAttribute("edition", edition);
-       // request.getSession(false).setAttribute("categories", CategoryService.getInstance().findAll());
+        request.getSession(false).setAttribute("categories", CategoryService.getInstance().findAll());
 
-        return resultPage;
-    }
+        return resultPage;    }
 }

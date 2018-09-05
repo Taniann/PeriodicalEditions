@@ -18,6 +18,7 @@ public final class JspPath {
     public static final String PROFILE_PAGE = "/view/user/profile.jsp";
     public static final String CHANGE_PASSWORD_PAGE = "/view/user/changePassword.jsp";
     public static final String CHANGE_EDITION_PAGE = "/view/admin/changeEdition.jsp";
+    public static final String ADD_EDITION_CATEGORIES_PAGE = "/view/admin/addEditionCategories.jsp";
     public static final String ADMIN_PAGE = "/view/admin/adminPage.jsp";
     public static final String EDITION_ADD_PAGE = "/view/admin/addEdition.jsp";
     public static final String CATEGORY_ADD_PAGE = "/view/admin/addCategory.jsp";

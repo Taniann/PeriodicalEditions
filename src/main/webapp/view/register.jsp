@@ -39,8 +39,8 @@
         </div>
     </div>
 <div class="row">
-    <div class="col-md-5"></div>
-    <div class="col-md-2" style="text-align: center;">
+    <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5"></div>
+    <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3" style="text-align: center;">
         <form style="padding-top: 100%; text-align: center" data-toggle="validator" method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
             <c:if test="${requestScope.uncorrectEmail != null}">
                 <h4><fmt:message key="message.uncorrectEmail" bundle="${message}"/></h4>

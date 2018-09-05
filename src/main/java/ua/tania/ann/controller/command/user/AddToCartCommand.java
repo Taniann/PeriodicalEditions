@@ -33,9 +33,16 @@ public class AddToCartCommand implements Command {
         Edition edition = editionService.findById(Integer.parseInt(request.getParameter(ID)));
 
         ArrayList<CartRecord> cart = new ArrayList<>();
+        Double amount = 0.0;
+        String[] months = null;
 
-        Double amount = edition.getPrice() * countMonth(request);
-        String[] months = monthValues(request);
+        try {
+            amount = edition.getPrice() * countMonth(request);
+            months = monthValues(request);
+        } catch (NullPointerException ex) {
+            request.setAttribute("notCkeckedMonths", true);
+            return new ResultPage(FORWARD, JspPath.ADD_TO_CART_PAGE);
+        }
 
         Double totalAmount = null;
 
@@ -43,7 +50,7 @@ public class AddToCartCommand implements Command {
             ArrayList<CartRecord> existingCart = ( ArrayList<CartRecord>)request.getSession().getAttribute("cart");
             existingCart.add(new CartRecord(edition, amount, months));
             totalAmount = calculateTotalAmount(existingCart);
-            request.getSession(false).setAttribute("cart", existingCart);
+            //request.getSession(false).setAttribute("cart", existingCart);
 
         } else {
             cart.add(new CartRecord(edition, amount, months));

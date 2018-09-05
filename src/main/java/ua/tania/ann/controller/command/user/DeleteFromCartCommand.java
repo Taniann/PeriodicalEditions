@@ -35,11 +35,12 @@ public class DeleteFromCartCommand implements Command {
 
         Double newTotalAmount = calculateNewTotalAmount(existingCart);
         request.getSession(false).setAttribute("totalAmount", newTotalAmount);
-        request.getSession(false).setAttribute("cart", existingCart);
+
         resultPage.setPage(JspPath.CART_PAGE);
 
         return resultPage;
     }
+
 
     private void removeFromCart(ArrayList<CartRecord> cart, int id) {
         for(CartRecord record : cart) {

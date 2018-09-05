@@ -9,6 +9,7 @@
           href="<c:url value="/resources/css/bootstrap.css"/>"/>
     <link rel="stylesheet" type="text/css"
              href="<c:url value="/resources/css/style.css"/>"/>
+   <fmt:setBundle basename="message" var="message"/>
     </head>
 
       <body>
@@ -33,47 +34,26 @@
                 <c:if test="${edition != null}">
                     <input type="hidden" name="id" value="<c:out value='${edition.id}' />" />
                 </c:if>
+           <c:if test="${requestScope.notCkecked != null}">
+                <h4><fmt:message key="message.notChecked" bundle="${message}"/></h4>
+            </c:if>
             <tr>
                 <th>Name: </th>
                 <td>
-                    <input type="text" name="name" size="45"
-                            value="<c:out value='${edition.name}' />" />
+                    ${edition.name}
                 </td>
             </tr>
-            <tr>
-                <th>Info: </th>
+           <tr>
+                <th>Categories: </th>
                 <td>
-                    <input type="text" name="info" size="100"
-                            value="<c:out value='${edition.info}' />"
-                    />
+                   <c:forEach var="category" items="${categories}">
+                      <input type="checkbox" name="chekedCategory" value="${category.id}">${category.name}
+                   </c:forEach>
                 </td>
-            </tr>
-            <tr>
-                <th>Price: </th>
-                <td>
-                    <input type="text" name="price" size="5"
-                            value="<c:out value='${edition.price}' />"
-                    />
-                </td>
-            </tr>
-            <tr>
-                <th>Image url: </th>
-                <td>
-                    <input type="text" name="imageUrl" size="60"
-                            value="<c:out value='${edition.imageUrl}' />"
-                    />
-                </td>
-            </tr>
-            <tr>
-                <th>Type: </th>
-                <td><select name="type">
-                        <option value="1" <c:if test="${edition.type eq '1'}">selected</c:if>>Друковане видання</option>
-                        <option value="2" <c:if test="${edition.type eq '2' }">selected</c:if>>Електронне видання</option>
-                    </select></td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <button class="btn btn-primary" type="submit" value="changeEdition" name="command">Save</button>
+                    <button class="btn btn-primary" type="submit" value="addEditionCategories" name="command">Save</button>
                 </td>
             </tr>
         </table>

@@ -40,7 +40,7 @@
 
   <div class="row" style="padding-bottom: 20px">
   <form method="post" action="${pageContext.request.contextPath}/controller?command=searchByType&currentPage=1">
-        <div class="col-md-10 col-md-offset-2">
+        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-offset-2 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2">
             <select name="type">
                 <option value="1" <c:if test="${requestScope.type != null && requestScope.type eq '1'}">selected</c:if>>
                 <fmt:message key="catalogPage.typePrinted" bundle="${catalogPage}"/></option>
@@ -51,24 +51,28 @@
             <fmt:message key="catalogPage.search" bundle="${catalogPage}"/></button>
         </div>
   </form>
+     <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+         <a href="${pageContext.request.contextPath}/controller?command=showCatalogPage&currentPage=1">
+            <fmt:message key="catalogPage.resetFilters" bundle="${catalogPage}"/>
+      </div>
   </div>
 
         <div class="row">
-            <div class="col-md-1 col-md-offset-1">
+            <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1">
                 <c:forEach var="category" items="${categories}">
                     <p><a href="${pageContext.request.contextPath}/controller?command=searchEditionsByCategory&id=${category.id}&currentPage=1">${category.name}</a></p>
                 </c:forEach>
             </div>
 
              <c:forEach var="edition" items="${editionList}">
-                <div class="col-md-3">
+                <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
                     <div class="thumbnail">
-                         <img src="" alt="">
-                     <div class="caption">
-                        <h3><a href="#"><c:out value="${edition.name}"/></a></h3>
+                         <img src="${edition.imageUrl}" style="width:150px;height:150px" alt="">
+                     <div class="caption" style="text-align: center">
+                        <h3><a href=""><c:out value="${edition.name}"/></a></h3>
                         <p><c:out value="${edition.info}"/></p>
-                        <a href="${pageContext.request.contextPath}/controller?command=addToCartPage&id=${edition.id}" class="btn btn-success">
-                        <fmt:message key="catalogPage.moreDetails" bundle="${catalogPage}"/><i class="fa fa-arrow right"></i></a>
+                        <i class="fa fa-arrow right"><a href="${pageContext.request.contextPath}/controller?command=addToCartPage&id=${edition.id}" class="btn btn-success">
+                        <fmt:message key="catalogPage.moreDetails" bundle="${catalogPage}"/></a></i>
                     </div>
                      </div>
                 </div>
@@ -76,7 +80,7 @@
         </div>
 
          <div class="row">
-        <div class="col-md-9 col-md-offset-2">
+        <div class="col-md-9 col-md-offset-2 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2">
         <nav aria-label="Navigation for editions">
             <ul class="pagination">
                 <c:if test="${currentPage != 1}">

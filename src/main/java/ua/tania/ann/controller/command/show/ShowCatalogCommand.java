@@ -14,7 +14,7 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.FORWARD;
  * Created by Таня on 03.09.2018.
  */
 public class ShowCatalogCommand implements Command {
-    private static final int recordsPerPage = 6;
+    private static final int recordsPerPage = 4;
 
     private EditionService editionService;
 

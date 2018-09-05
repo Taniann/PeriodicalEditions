@@ -19,7 +19,7 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.FORWARD;
  */
 public class SearchEditionsByCategoryCommand implements Command {
     private static final String ID = "id";
-    private static final int recordsPerPage = 6;
+    private static final int recordsPerPage = 4;
 
     private EditionService editionService;
 

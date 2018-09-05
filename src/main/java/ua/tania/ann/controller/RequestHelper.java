@@ -42,6 +42,8 @@ public class RequestHelper {
         commands.put("searchEditionsByCategory", new SearchEditionsByCategoryCommand());
         commands.put("showCatalogPage", new ShowCatalogCommand());
         commands.put("searchByType", new SearchEditionsByTypeCommand());
+        commands.put("showAddEditionCategories", new ShowAddEditionCategoriesCommand() );
+        commands.put("addEditionCategories", new AddEditionCategoriesCommand());
     }
 
     public Command getCommand(HttpServletRequest request) {

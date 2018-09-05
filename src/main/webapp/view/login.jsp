@@ -37,8 +37,8 @@
         </div>
     </div>
 <div class="row">
-    <div class="col-md-5"></div>
-    <div class="col-md-2" style="text-align: center;">
+    <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5"></div>
+    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2" style="text-align: center;">
         <form style="padding-top: 100%; text-align: center" method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
             <input type="text" placeholder="<fmt:message key="registrationPage.login" bundle="${registrationPage}"/>" name="login"
                    required
@@ -50,11 +50,9 @@
                    class="form-control"
                    style="width: 100%; margin-bottom: 10px"
             />
-
             <button class="btn btn-primary" type="submit" value="login" name="command"><fmt:message key="loginPage.login" bundle="${registrationPage}"/></button>
         </form>
     </div>
-    <div class="col-md-5"></div>
 </div>
 </body>
 </html>

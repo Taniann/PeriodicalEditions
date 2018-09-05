@@ -35,15 +35,16 @@
 
         <div class="row">
          <c:forEach var="edition" items="${editionList}">
-            <div class="col-md-3">
+            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1">
                 <div class="thumbnail">
                     <img src="" alt="">
                     <div class="caption">
                         <h3><a href=""><c:out value="${edition.name}"/></a></h3>
                         <p><c:out value="${edition.info}"/></p>
-                        <p>Categories: </p>
                         <a href="${pageContext.request.contextPath}/controller?command=showChangeEdition&id=${edition.id}" class="btn btn-success">Змінити<i class="fa fa-arrow right"></i></a>
+                        <a href="${pageContext.request.contextPath}/controller?command=showAddEditionCategories&id=${edition.id}" class="btn btn-success">Додати категорії<i class="fa fa-arrow right"></i></a>
                         <a href="${pageContext.request.contextPath}/controller?command=deleteEdition&id=${edition.id}" class="btn btn-success">Видалити<i class="fa fa-arrow right"></i></a>
+
                     </div>
                 </div>
             </div>
