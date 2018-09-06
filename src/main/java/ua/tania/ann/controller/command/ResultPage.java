@@ -32,10 +32,6 @@ public class ResultPage {
         return routingType;
     }
 
-    public void setRoutingType(RoutingType routingType) {
-        this.routingType = routingType;
-    }
-
     public enum RoutingType {
         FORWARD, REDIRECT
     }

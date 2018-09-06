@@ -9,6 +9,10 @@
           href="<c:url value="/resources/css/bootstrap.css"/>"/>
     <link rel="stylesheet" type="text/css"
              href="<c:url value="/resources/css/style.css"/>"/>
+    <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'uk_UA'}"/>
+    <fmt:setLocale value="${locale}"/>
+    <fmt:setBundle basename="adminPage" var="adminPage"/>
+    <fmt:setBundle basename="common" var="common"/>
     </head>
 
       <body>
@@ -18,9 +22,16 @@
                     <div class="container">
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="<c:url value="welcome.jsp"/>">Вийти</a></li>
-                                <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
-                                <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=showAddEdition"><fmt:message key="adminPage.addEdition" bundle="${adminPage}"/></a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=showAddCategory"><fmt:message key="adminPage.addCategory" bundle="${adminPage}"/></a></li>
+                            </ul>
+                             <ul class="nav navbar-nav navbar-right">
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=logout"><fmt:message key="common.exit" bundle="${common}"/></a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=en_US"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">ENG</a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=uk_UA"
+                                  title="<fmt:message key="common.localeHint" bundle="${common}"/>">УКР</a></li>
+                             </ul>
                         </div>
                     </div>
                 </div>
@@ -34,14 +45,14 @@
                     <input type="hidden" name="id" value="<c:out value='${edition.id}' />" />
                 </c:if>
             <tr>
-                <th>Name: </th>
+                <th><fmt:message key="adminPage.name" bundle="${adminPage}"/> </th>
                 <td>
                     <input type="text" name="name" size="45"
                             value="<c:out value='${edition.name}' />" />
                 </td>
             </tr>
             <tr>
-                <th>Info: </th>
+                <th><fmt:message key="adminPage.info" bundle="${adminPage}"/> </th>
                 <td>
                     <input type="text" name="info" size="100"
                             value="<c:out value='${edition.info}' />"
@@ -49,7 +60,7 @@
                 </td>
             </tr>
             <tr>
-                <th>Price: </th>
+                <th><fmt:message key="adminPage.price" bundle="${adminPage}"/> </th>
                 <td>
                     <input type="text" name="price" size="5"
                             value="<c:out value='${edition.price}' />"
@@ -57,7 +68,7 @@
                 </td>
             </tr>
             <tr>
-                <th>Image url: </th>
+                <th><fmt:message key="adminPage.imageUrl" bundle="${adminPage}"/> </th>
                 <td>
                     <input type="text" name="imageUrl" size="60"
                             value="<c:out value='${edition.imageUrl}' />"
@@ -65,7 +76,7 @@
                 </td>
             </tr>
             <tr>
-                <th>Type: </th>
+                <th><fmt:message key="adminPage.type" bundle="${adminPage}"/> </th>
                 <td><select name="type">
                         <option value="1" <c:if test="${edition.type eq '1'}">selected</c:if>>Друковане видання</option>
                         <option value="2" <c:if test="${edition.type eq '2' }">selected</c:if>>Електронне видання</option>
@@ -73,7 +84,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <button class="btn btn-primary" type="submit" value="changeEdition" name="command">Save</button>
+                    <button class="btn btn-primary" type="submit" value="changeEdition" name="command"><fmt:message key="adminPage.save" bundle="${adminPage}"/></button>
                 </td>
             </tr>
         </table>

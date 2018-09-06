@@ -39,38 +39,38 @@
             <div class="container-fluid">
                 <form method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
                  <div class="row">
-                    <div class="col-md-2 col-md-offset-1"><fmt:message key="profilePage.firstName" bundle="${profilePage}"/></div>
-                    <div class="col-md-2"><fmt:message key="profilePage.secondName" bundle="${profilePage}"/></div>
-                    <div class="col-md-2"><fmt:message key="profilePage.middleName" bundle="${profilePage}"/></div>
+                    <div class="col-md-2 col-md-2 col-lg-2 col-sm-3 col-xs-3 col-md-offset-1"><fmt:message key="profilePage.firstName" bundle="${profilePage}"/></div>
+                    <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3"><fmt:message key="profilePage.secondName" bundle="${profilePage}"/></div>
+                    <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3"><fmt:message key="profilePage.middleName" bundle="${profilePage}"/></div>
                  </div>
                  <div class="row">
                  <form method="post" action="${pageContext.request.contextPath}/controller" >
                   <c:if test="${user != null}">
                       <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
                   </c:if>
-                    <div class="col-md-2 col-md-offset-1"><input type="text" name="firstName" size="20"
+                    <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3 col-md-offset-1"><input type="text" name="firstName" size="20"
                                                           class="form-control" value="<c:out value='${user.firstName}' />" /></div>
-                    <div class="col-md-2"><input type="text" name="secondName" size="20"
+                    <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3"><input type="text" name="secondName" size="20"
                                                           class="form-control" value="<c:out value='${user.secondName}' />" /></div>
-                     <div class="col-md-2"><input type="text" name="middleName" size="20"
+                     <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3"><input type="text" name="middleName" size="20"
                                                           class="form-control" value="<c:out value='${user.middleName}' />" /></div>
                    </div>
                  <div class="row">
-                           <div class="col-md-3 col-md-offset-1" style="padding-top: 20px"><fmt:message key="profilePage.email" bundle="${profilePage}"/></div>
-                           <div class="col-md-2" style="padding-top: 20px"><fmt:message key="profilePage.phone" bundle="${profilePage}"/></div>
+                           <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-offset-1" style="padding-top: 20px"><fmt:message key="profilePage.email" bundle="${profilePage}"/></div>
+                           <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3" style="padding-top: 20px"><fmt:message key="profilePage.phone" bundle="${profilePage}"/></div>
                         </div>
                    <div class="row" >
-                      <div class="col-md-2 col-md-offset-1"><input type="email" name="email" size="30"
+                      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-offset-1"><input type="email" name="email" size="30"
                                                class="form-control" value="<c:out value='${user.email}' />" /></div>
-                       <div class="col-md-2 col-md-offset-1"><input type="text" data-format="+380 (dd) ddd-dddd"
+                       <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-offset-1"><input type="text" data-format="+380 (dd) ddd-dddd"
                                               name="phone" class="form-control bfh-phone" value="<c:out value='${user.phone}' />"/></div>
                    </div>
                    <div class="row">
-                        <div class="col-md-3 col-md-offset-1" style="padding-top: 20px">
+                        <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4 col-md-offset-1" style="padding-top: 20px">
                             <button class="btn btn-primary" type="submit" value="editProfile" name="command">
                             <fmt:message key="profilePage.save" bundle="${profilePage}"/></button>
                          </div>
-                         <div div class="col-md-3 col-md-offset-1" style="padding-top: 20px">
+                         <div div class="col-md-3 col-lg-3 col-sm-4 col-xs-4 col-md-offset-1" style="padding-top: 20px">
                              <a href="/view/user/changePassword.jsp" class="btn btn-primary">
                              <fmt:message key="profilePage.changePassword" bundle="${profilePage}"/><i class="fa fa-arrow right"></i></a>
                          </div>

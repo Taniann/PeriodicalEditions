@@ -42,7 +42,7 @@
                       <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
                   </c:if>
                    <div class="row">
-                    <div class="col-md-3 col-md-offset-1"><fmt:message key="paymentPage.cardNumber" bundle="${paymentPage}"/>
+                    <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-offset-1"><fmt:message key="paymentPage.cardNumber" bundle="${paymentPage}"/>
                         <input type="text" data-format="dddd dddd dddd dddd"
                         name="cardNumber" size="20"
                         class="form-control  bfh-phone" required /></div>
@@ -80,11 +80,11 @@
                        </div>
                    </div>
                    <div class="row" style="padding-top: 20px">
-                    <div class="col-md-1 col-md-offset-1">CVV<input type="text" data-format="ddd"
+                    <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 col-md-offset-1">CVV<input type="text" data-format="ddd"
                                 name="cvv"  class="form-control  bfh-phone" required /></div>
                    </div>
                     <div class="row">
-                        <div class="col-md-3 col-md-offset-1" style="padding-top: 20px">
+                        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-offset-1" style="padding-top: 20px">
                             <button class="btn btn-primary" type="submit" value="addSubscription" name="command">
                             <fmt:message key="paymentPage.save" bundle="${paymentPage}"/></button>
                          </div>

@@ -15,6 +15,9 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.FORWARD;
  */
 public class ShowAdminPageCommand implements Command {
     private static final int recordsPerPage = 4;
+    private static final String CURRENT_PAGE= "currentPage";
+    private static final String EDITION_LIST= "editionList";
+    private static final String NO_OF_PAGES= "noOfPages";
 
     private EditionService editionService;
 
@@ -24,8 +27,8 @@ public class ShowAdminPageCommand implements Command {
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ResultPage resultPage = new ResultPage(FORWARD, JspPath.ADMIN_PAGE);
 
-        int currentPage = Integer.valueOf(request.getParameter("currentPage"));
-        request.getSession(false).setAttribute("editionList", editionService.findAll(currentPage, recordsPerPage));
+        int currentPage = Integer.valueOf(request.getParameter(CURRENT_PAGE));
+        request.getSession(false).setAttribute(EDITION_LIST, editionService.findAll(currentPage, recordsPerPage));
 
         int rows = editionService.getNumberOfRows();
 
@@ -35,8 +38,8 @@ public class ShowAdminPageCommand implements Command {
             nOfPages++;
         }
 
-        request.setAttribute("noOfPages", nOfPages);
-        request.setAttribute("currentPage", currentPage);
+        request.setAttribute(NO_OF_PAGES, nOfPages);
+        request.setAttribute(CURRENT_PAGE, currentPage);
 
         return resultPage;
     }

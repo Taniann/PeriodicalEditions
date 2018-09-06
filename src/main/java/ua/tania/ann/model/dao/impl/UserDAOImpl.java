@@ -16,14 +16,12 @@ public class UserDAOImpl implements UserDAO {
     private static final String INSERT_QUERY = "INSERT INTO user_u (email, phone, " +
             "login, password, is_admin) VALUES (?, ?, ?, ?, ?)";
     private static final String FIND_BY_ID_QUERY = "SELECT* FROM user_u WHERE id = ?";
-    private static final String FIND_ALL_QUERY = "";
     private static final String UPDATE_PROFILE_QUERY = "UPDATE user_u SET first_name = ?, second_name = ?, middle_name = ?, " +
             "email = ?, phone = ? WHERE id = ?";
     private static final String UPDATE_PROFILE_FOR_ORDER_QUERY = "UPDATE user_u SET first_name = ?, second_name = ?, middle_name = ?, " +
             "email = ?, phone = ?, city = ?, street_name = ?, house_number = ?, " +
             "flat_number = ?, zip_code = ? WHERE id = ?";
     private static final String CHANGE_PASSWORD_QUERY = "UPDATE user_u SET password = ? WHERE id = ?";
-    private static final String DELETE_QUERY = "";
     private static final String FIND_BY_LOGIN_QUERY = "SELECT* FROM user_u WHERE login = ?";
 
     private static final String LABEL_ID = "id";
@@ -95,11 +93,6 @@ public class UserDAOImpl implements UserDAO {
         }
 
         return user ;
-    }
-
-    @Override
-    public List<User> findAll() {
-        return null;
     }
 
     @Override
@@ -185,11 +178,6 @@ public class UserDAOImpl implements UserDAO {
         }
 
         return isRowUpdated;
-    }
-
-    @Override
-    public boolean delete(int id) {
-        return true;
     }
 
     @Override

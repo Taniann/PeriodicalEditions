@@ -16,6 +16,8 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
  */
 public class ShowAddToCartPage implements Command {
     private static final String ID = "id";
+    private static final String EDITION_FOR_CART= "editionForCart";
+
     private EditionService editionService;
 
     public ShowAddToCartPage() {
@@ -27,7 +29,7 @@ public class ShowAddToCartPage implements Command {
         ResultPage resultPage = new ResultPage(REDIRECT, JspPath.ADD_TO_CART_PAGE);
 
         Edition edition = editionService.findById(Integer.parseInt(request.getParameter(ID)));
-        request.getSession(false).setAttribute("editionForCart", edition);
+        request.getSession(false).setAttribute(EDITION_FOR_CART, edition);
 
         return resultPage;
     }

@@ -40,26 +40,26 @@
             <div class="container-fluid">
                 <c:forEach items="${sessionScope.cart}" var="cartRecord">
                  <div class="row">
-                    <div class="col-md-2 col-md-offset-1">${cartRecord.edition.name}</div>
+                    <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3 col-md-offset-1">${cartRecord.edition.name}</div>
                     <c:forEach items="${cartRecord.months}" var="month">
                         <c:if test="${month == '0'}">
-                           <div class="col-md-1"><fmt:message key="cartPage.january" bundle="${cartPage}"/></div>
+                           <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"><fmt:message key="cartPage.january" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '1'}">
-                           <div class="col-md-1"><fmt:message key="cartPage.february" bundle="${cartPage}"/></div>
+                           <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"><fmt:message key="cartPage.february" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '9'}">
-                           <div class="col-md-1"><fmt:message key="cartPage.october" bundle="${cartPage}"/></div>
+                           <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"><fmt:message key="cartPage.october" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '10'}">
-                           <div class="col-md-1"><fmt:message key="cartPage.november" bundle="${cartPage}"/></div>
+                           <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"><fmt:message key="cartPage.november" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '11'}">
-                           <div class="col-md-1"><fmt:message key="cartPage.december" bundle="${cartPage}"/></div>
+                           <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"><fmt:message key="cartPage.december" bundle="${cartPage}"/></div>
                           </c:if>
                      </c:forEach>
-                     <div class="col-md-2">${cartRecord.amount} <fmt:message key="cartPage.uah" bundle="${cartPage}"/> </div>
-                     <div class="col-md-2"><a href="${pageContext.request.contextPath}/controller?command=deleteFromCart&id=${cartRecord.id}">
+                     <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">${cartRecord.amount} <fmt:message key="cartPage.uah" bundle="${cartPage}"/> </div>
+                     <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3"><a href="${pageContext.request.contextPath}/controller?command=deleteFromCart&id=${cartRecord.id}">
                      <fmt:message key="cartPage.delete" bundle="${cartPage}"/></a></div>
                    </div>
                     </c:forEach>

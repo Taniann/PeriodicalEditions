@@ -19,6 +19,10 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
  */
 public class AddEditionCategoriesCommand implements Command {
     private static final String ID = "id";
+    private static final String NOT_CHECKED = "notCkecked";
+    private static final String CHECKED_CATEGORY = "chekedCategory";
+
+
 
     private CategoryService categoryService;
 
@@ -37,7 +41,7 @@ public class AddEditionCategoriesCommand implements Command {
            editionCategories = addEditionCategories(request);
 
        } catch (NullPointerException ex) {
-           request.setAttribute("notCkecked", true);
+           request.setAttribute(NOT_CHECKED, true);
            return new ResultPage(FORWARD, JspPath.ADD_EDITION_CATEGORIES_PAGE);
        }
 
@@ -56,7 +60,7 @@ public class AddEditionCategoriesCommand implements Command {
         List<Category> result = new ArrayList<>();
 
 
-        String[] chekedCategories = request.getParameterValues("chekedCategory");
+        String[] chekedCategories = request.getParameterValues(CHECKED_CATEGORY);
 
         for (String str: chekedCategories)
         {

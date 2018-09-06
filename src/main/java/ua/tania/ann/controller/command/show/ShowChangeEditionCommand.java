@@ -17,6 +17,8 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.FORWARD;
  */
 public class ShowChangeEditionCommand implements Command {
     private static final String ID = "id";
+    private static final String EDITION= "edition";
+
     private EditionService editionService;
 
     public ShowChangeEditionCommand() {
@@ -28,8 +30,7 @@ public class ShowChangeEditionCommand implements Command {
         ResultPage resultPage = new ResultPage(FORWARD, JspPath.CHANGE_EDITION_PAGE);
 
         Edition edition = editionService.findById(Integer.parseInt(request.getParameter(ID)));
-        request.getSession(false).setAttribute("edition", edition);
-       // request.getSession(false).setAttribute("categories", CategoryService.getInstance().findAll());
+        request.getSession(false).setAttribute(EDITION, edition);
 
         return resultPage;
     }

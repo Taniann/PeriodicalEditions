@@ -40,27 +40,27 @@
                  <div class="row">
                         <c:forEach items="${sessionScope.editions}" var="edition">
                             <c:if test="${edition.id == subscription.editionId }">
-                                 <div class="col-md-2 col-md-offset-1">${edition.name}</div>
+                                 <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3 col-md-offset-1">${edition.name}</div>
                             </c:if>
                         </c:forEach>
                     <c:forEach items="${subscription.months}" var="month">
                         <c:if test="${month == '0'}">
-                           <div class="col-md-1"><fmt:message key="cartPage.january" bundle="${cartPage}"/></div>
+                           <div class="col-md-1 col-lg-1 col-sm-2 col-xs-2"><fmt:message key="cartPage.january" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '1'}">
-                           <div class="col-md-1"><fmt:message key="cartPage.february" bundle="${cartPage}"/></div>
+                           <div class="col-md-1 col-lg-1 col-sm-2 col-xs-2"><fmt:message key="cartPage.february" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '9'}">
-                           <div class="col-md-1"><fmt:message key="cartPage.october" bundle="${cartPage}"/></div>
+                           <div class="col-md-1 col-lg-1 col-sm-2 col-xs-2"><fmt:message key="cartPage.october" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '10'}">
-                           <div class="col-md-1"><fmt:message key="cartPage.november" bundle="${cartPage}"/></div>
+                           <div class="col-md-1 col-lg-1 col-sm-2 col-xs-2"><fmt:message key="cartPage.november" bundle="${cartPage}"/></div>
                           </c:if>
                         <c:if test="${month == '11'}">
-                           <div class="col-md-1"><fmt:message key="cartPage.december" bundle="${cartPage}"/></div>
+                           <div class="col-md-1 col-lg-1 col-sm-2 col-xs-2"><fmt:message key="cartPage.december" bundle="${cartPage}"/></div>
                           </c:if>
                      </c:forEach>
-                     <div class="col-md-2">${subscription.amount}<fmt:message key="cartPage.uah" bundle="${cartPage}"/></div>
+                     <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">${subscription.amount}<fmt:message key="cartPage.uah" bundle="${cartPage}"/></div>
                    </div>
                     </c:forEach>
              </div>

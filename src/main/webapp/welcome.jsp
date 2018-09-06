@@ -37,6 +37,14 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+            <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5"></div>
+            <div style="text-align: center;">
+                <h2><fmt:message key="welcomePage.periodicalEditions" bundle="${welcomePage}"/></h2>
+                <img src="http://troyka.es/wp-content/uploads/2015/07/periodika.jpg" alt="">
+
+    </div>
   </body>
 </html>
 

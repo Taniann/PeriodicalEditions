@@ -15,6 +15,9 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.FORWARD;
  */
 public class ShowCatalogCommand implements Command {
     private static final int recordsPerPage = 4;
+    private static final String NO_OF_PAGES= "noOfPages";
+    private static final String CURRENT_PAGE= "currentPage";
+
 
     private EditionService editionService;
 
@@ -33,8 +36,8 @@ public class ShowCatalogCommand implements Command {
             nOfPages++;
         }
 
-        request.setAttribute("noOfPages", nOfPages);
-        request.setAttribute("currentPage", currentPage);
+        request.setAttribute(NO_OF_PAGES, nOfPages);
+        request.setAttribute(CURRENT_PAGE, currentPage);
         return new ResultPage(FORWARD, JspPath.CATALOG_PAGE);
     }
 }

@@ -11,6 +11,4 @@ import java.util.List;
 public interface SubscriptionDAO {
     boolean insert(Subscription subscription);
     List<Subscription> findAllByUserId(int id);
-    List<Subscription> findAll();
-    boolean delete(int id);
 }

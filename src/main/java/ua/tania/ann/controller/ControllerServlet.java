@@ -1,8 +1,10 @@
 package ua.tania.ann.controller;
 
+import org.apache.log4j.Logger;
 import ua.tania.ann.controller.command.Command;
 import ua.tania.ann.controller.command.ResultPage;
 import ua.tania.ann.service.EditionService;
+import ua.tania.ann.utils.JspPath;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,7 +21,16 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 /**
  * Created by Таня on 17.08.2018.
  */
+
+/**
+ * ControllerServlet manages requests and responses. It execute called command,
+ * passing them wrapped request data. Then forwards or redirects to result page.
+ * @see RequestHelper
+ * @see ResultPage
+ */
 public class ControllerServlet extends HttpServlet {
+    private static final Logger log = Logger.getLogger(ControllerServlet.class);
+
     RequestHelper requestHelper = RequestHelper.getInstance();
 
     private static final String CHARACTER_ENCODING = "UTF-8";
@@ -35,7 +46,11 @@ public class ControllerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
-            processRequest(request, response);
+           try {
+               processRequest(request, response);
+           } catch (NullPointerException e) {
+               log.warn(e.getMessage(), e);
+           }
 
     }
 
@@ -52,17 +67,20 @@ public class ControllerServlet extends HttpServlet {
             HttpSession session = request.getSession(true);
             Command command = requestHelper.getCommand(request);
             page = command.execute(request, response);
+            log.info("Визвана команда: " + command.toString());
+
         } catch (ServletException e) {
-          //  request.setAttribute(ERROR_MESSAGE,
-          //          MessageManager.getInstance().getMessage(MessageManager.SERVLET_EXCEPTION));
-          //  page = ConfigurationManager.getInstance().getConfig(ConfigurationManager.ERROR);
+            log.warn(e.getMessage(), e);
+            request.setAttribute(ERROR_MESSAGE, true) ;
+            page = new ResultPage(REDIRECT, JspPath.ERROR_PAGE);
         } catch (IOException e) {
-         //   request.setAttribute(ERROR_MESSAGE,
-         //           MessageManager.getInstance().getMessage(MessageManager.IO_EXCEPTION));
-         //   page = ConfigurationManager.getInstance().getConfig(ConfigurationManager.ERROR);
+            log.warn(e.getMessage(), e);
+            request.setAttribute(ERROR_MESSAGE, true) ;
+            page = new ResultPage(REDIRECT, JspPath.ERROR_PAGE);
         } catch (Exception e) {
-         //   request.setAttribute(ERROR_MESSAGE, MessageManager.getInstance().getMessage(MessageManager.EXCEPTION));
-         //   page = ConfigurationManager.getInstance().getConfig(ConfigurationManager.ERROR);
+            log.warn(e.getMessage(), e);
+            request.setAttribute(ERROR_MESSAGE, true) ;
+            page = new ResultPage(REDIRECT, JspPath.ERROR_PAGE);
         }
         response.setCharacterEncoding(CHARACTER_ENCODING);
         response.setContentType(CONTENT_TYPE);
@@ -72,5 +90,6 @@ public class ControllerServlet extends HttpServlet {
         } else if (FORWARD.equals(page.getRoutingType())) {
             getServletContext().getRequestDispatcher(page.getPage()).forward(request, response);
         }
+
     }
 }

@@ -14,6 +14,9 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
  * Created by Таня on 17.08.2018.
  */
 public class RegisterCommand implements Command {
+    private static final String ERROR_MESSAGE = "errorMessage";
+    private static final String UNCORRECT_EMAIL = "uncorrectEmail";
+
     private static final String EMAIL = "email";
     private static final String PHONE = "phone";
     private static final String LOGIN = "login";
@@ -36,13 +39,13 @@ public class RegisterCommand implements Command {
         String password = request.getParameter(PASSWORD);
 
         if (!userService.isEmailCorrect(email)) {
-            request.setAttribute("uncorrectEmail", true);
+            request.setAttribute(UNCORRECT_EMAIL, true);
             resultPage.setPage(JspPath.REGISTER_PAGE);
             return resultPage;
         }
 
         if (!userService.isPhoneCorrect(phone)) {
-            request.setAttribute("uncorrectPhone", true);
+            request.setAttribute(UNCORRECT_EMAIL, true);
             resultPage.setPage(JspPath.REGISTER_PAGE);
             return resultPage;
         }
@@ -52,7 +55,7 @@ public class RegisterCommand implements Command {
             resultPage = new ResultPage(REDIRECT,JspPath.LOGIN_PAGE );
         }
         else {
-            request.setAttribute("errorMessage", true);
+            request.setAttribute(ERROR_MESSAGE, true);
             resultPage.setPage(JspPath.REGISTER_PAGE);
         }
 

@@ -41,7 +41,7 @@
             <div class="container-fluid">
                  <div class="row">
                  <form method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
-                    <div class="col-md-2 col-md-offset-1">
+                    <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3 col-md-offset-1">
                         <p>2018</p>
                         <p><input type="checkbox" name="month" value="0" disabled/><fmt:message key="cartPage.january" bundle="${cartPage}"/>
                         <input type="checkbox" name="month" value="1" disabled/><fmt:message key="cartPage.february" bundle="${cartPage}"/></p>

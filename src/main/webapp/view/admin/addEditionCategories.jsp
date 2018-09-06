@@ -9,6 +9,10 @@
           href="<c:url value="/resources/css/bootstrap.css"/>"/>
     <link rel="stylesheet" type="text/css"
              href="<c:url value="/resources/css/style.css"/>"/>
+    <c:set var="locale" value="${not empty sessionScope.locale ? sessionScope.locale : 'uk_UA'}"/>
+    <fmt:setLocale value="${locale}"/>
+    <fmt:setBundle basename="adminPage" var="adminPage"/>
+    <fmt:setBundle basename="common" var="common"/>
    <fmt:setBundle basename="message" var="message"/>
     </head>
 
@@ -19,9 +23,16 @@
                     <div class="container">
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="<c:url value="welcome.jsp"/>">Вийти</a></li>
-                                <li><a href="/PeriodicalEditions?command=setUkrainian">UKR</a></li>
-                                <li><a href="/PeriodicalEditions?command=setEnglish">ENG</a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=showAddEdition"><fmt:message key="adminPage.addEdition" bundle="${adminPage}"/></a></li>
+                                <li><a href="${pageContext.request.contextPath}/controller?command=showAddCategory"><fmt:message key="adminPage.addCategory" bundle="${adminPage}"/></a></li>
+                            </ul>
+                             <ul class="nav navbar-nav navbar-right">
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=logout"><fmt:message key="common.exit" bundle="${common}"/></a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=en_US"
+                                 title="<fmt:message key="common.localeHint" bundle="${common}"/>">ENG</a></li>
+                                 <li><a href="${pageContext.request.contextPath}/controller?command=changeLocale&locale=uk_UA"
+                                  title="<fmt:message key="common.localeHint" bundle="${common}"/>">УКР</a></li>
+                             </ul>
                         </div>
                     </div>
                 </div>
@@ -38,13 +49,13 @@
                 <h4><fmt:message key="message.notChecked" bundle="${message}"/></h4>
             </c:if>
             <tr>
-                <th>Name: </th>
+                <th><fmt:message key="adminPage.name" bundle="${adminPage}"/> </th>
                 <td>
                     ${edition.name}
                 </td>
             </tr>
            <tr>
-                <th>Categories: </th>
+                <th><fmt:message key="adminPage.categoriesList" bundle="${adminPage}"/> </th>
                 <td>
                    <c:forEach var="category" items="${categories}">
                       <input type="checkbox" name="chekedCategory" value="${category.id}">${category.name}
@@ -53,7 +64,8 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <button class="btn btn-primary" type="submit" value="addEditionCategories" name="command">Save</button>
+                    <button class="btn btn-primary" type="submit" value="addEditionCategories" name="command">
+                    <fmt:message key="adminPage.save" bundle="${adminPage}"/></button>
                 </td>
             </tr>
         </table>

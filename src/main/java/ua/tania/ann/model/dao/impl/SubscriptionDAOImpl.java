@@ -18,8 +18,6 @@ public class SubscriptionDAOImpl implements SubscriptionDAO {
 
     private static final String INSERT_QUERY = "INSERT INTO subscription (user_id, edition_id, " +
             "month_numbers, amount) VALUES (?, ?, ?, ?)";
-    private static final String DELETE_QUERY = "DELETE FROM edition where id = ?";
-    private static final String FIND_ALL_QUERY = "SELECT* FROM subscription";
     private static final String FIND_ALL_BY_USER_ID_QUERY = "SELECT* FROM subscription WHERE user_id = ?";
 
     private SubscriptionDAOImpl() {}
@@ -82,17 +80,6 @@ public class SubscriptionDAOImpl implements SubscriptionDAO {
         }
         return result;
     }
-
-    @Override
-    public List<Subscription> findAll() {
-        return null;
-    }
-
-    @Override
-    public boolean delete(int id) {
-        return false;
-    }
-
 
     private void close(Connection connection, Statement statement){
         try {

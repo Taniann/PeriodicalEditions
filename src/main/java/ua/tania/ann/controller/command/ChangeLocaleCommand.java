@@ -18,7 +18,7 @@ public class ChangeLocaleCommand implements Command {
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String locale = request.getParameter(LOCALE);
-        request.getSession().setAttribute("locale", locale);
+        request.getSession().setAttribute(LOCALE, locale);
         return new ResultPage(REDIRECT, request.getHeader(REFERER));
     }
 }

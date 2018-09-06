@@ -42,8 +42,8 @@
         </div>
     </div>
 <div class="row">
-    <div class="col-md-5"></div>
-    <div class="col-md-2" style="text-align: center;">
+    <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5"></div>
+    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2" style="text-align: center;">
         <form style="padding-top: 100%; text-align: center" data-toggle="validator" method="post" action="${pageContext.request.contextPath}/controller" class="center-block">
                   <c:if test="${user != null}">
                       <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
@@ -75,7 +75,6 @@
             <fmt:message key="profilePage.save" bundle="${profilePage}"/></button>
         </form>
     </div>
-    <div class="col-md-5"></div>
 </div>
 </body>
 </html>
