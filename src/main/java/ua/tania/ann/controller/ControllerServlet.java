@@ -72,15 +72,15 @@ public class ControllerServlet extends HttpServlet {
         } catch (ServletException e) {
             log.warn(e.getMessage(), e);
             request.setAttribute(ERROR_MESSAGE, true) ;
-            page = new ResultPage(REDIRECT, JspPath.ERROR_PAGE);
+            page = new ResultPage(FORWARD, JspPath.ERROR_PAGE);
         } catch (IOException e) {
             log.warn(e.getMessage(), e);
             request.setAttribute(ERROR_MESSAGE, true) ;
-            page = new ResultPage(REDIRECT, JspPath.ERROR_PAGE);
+            page = new ResultPage(FORWARD, JspPath.ERROR_PAGE);
         } catch (Exception e) {
             log.warn(e.getMessage(), e);
             request.setAttribute(ERROR_MESSAGE, true) ;
-            page = new ResultPage(REDIRECT, JspPath.ERROR_PAGE);
+            page = new ResultPage(FORWARD, JspPath.ERROR_PAGE);
         }
         response.setCharacterEncoding(CHARACTER_ENCODING);
         response.setContentType(CONTENT_TYPE);

@@ -13,12 +13,13 @@ public class User {
     private String firstName;
     private String secondName;
     private String middleName;
-    private Double bill;
     private String city;
     private String streetName;
     private String houseNumber;
     private String flatNumber;
-    private String index;
+    private String zipCode;
+    private Double cardBalance;
+
 
     public User() {
     }
@@ -105,14 +106,6 @@ public class User {
         this.middleName = middleName;
     }
 
-    public Double getBill() {
-        return bill;
-    }
-
-    public void setBill(Double bill) {
-        this.bill = bill;
-    }
-
     public String getCity() {
         return city;
     }
@@ -145,11 +138,19 @@ public class User {
         this.flatNumber = flatNumber;
     }
 
-    public String getIndex() {
-        return index;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setIndex(String index) {
-        this.index = index;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public Double getCardBalance() {
+        return cardBalance;
+    }
+
+    public void setCardBalance(Double cardBalance) {
+        this.cardBalance = cardBalance;
     }
 }

@@ -60,7 +60,7 @@ public class MakeOrderCommand implements Command {
         user.setCity(city);
         user.setStreetName(streetName);
         user.setHouseNumber(houseNumber);
-        user.setIndex(index);
+        user.setZipCode(index);
         user.setFlatNumber(flatNumber);
 
         if (userService.updateProfileForOrder(user)) {

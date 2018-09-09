@@ -5,7 +5,6 @@ import ua.tania.ann.model.entity.User;
 import ua.tania.ann.utils.ConnectionPool;
 
 import java.sql.*;
-import java.util.List;
 
 /**
  * Created by Таня on 17.08.2018.
@@ -17,7 +16,7 @@ public class UserDAOImpl implements UserDAO {
             "login, password, is_admin) VALUES (?, ?, ?, ?, ?)";
     private static final String FIND_BY_ID_QUERY = "SELECT* FROM user_u WHERE id = ?";
     private static final String UPDATE_PROFILE_QUERY = "UPDATE user_u SET first_name = ?, second_name = ?, middle_name = ?, " +
-            "email = ?, phone = ? WHERE id = ?";
+            "email = ?, phone = ?, card_balance = ? WHERE id = ?";
     private static final String UPDATE_PROFILE_FOR_ORDER_QUERY = "UPDATE user_u SET first_name = ?, second_name = ?, middle_name = ?, " +
             "email = ?, phone = ?, city = ?, street_name = ?, house_number = ?, " +
             "flat_number = ?, zip_code = ? WHERE id = ?";
@@ -33,6 +32,8 @@ public class UserDAOImpl implements UserDAO {
     private static final String LABEL_FIRST_NAME = "first_name";
     private static final String LABEL_SECOND_NAME = "second_name";
     private static final String LABEL_MIDDLE_NAME = "middle_name";
+    private static final String LABEL_CARD_BALANCE = "card_balance";
+
 
     private UserDAOImpl(){}
 
@@ -111,7 +112,8 @@ public class UserDAOImpl implements UserDAO {
             statement.setString(3, user.getMiddleName());
             statement.setString(4, user.getEmail());
             statement.setString(5, user.getPhone());
-            statement.setInt(6, user.getId());
+            statement.setDouble(6, user.getCardBalance());
+            statement.setInt(7, user.getId());
 
             isRowUpdated = statement.executeUpdate() > 0;
         }catch (SQLException e) {
@@ -143,7 +145,7 @@ public class UserDAOImpl implements UserDAO {
             statement.setString(7, user.getStreetName());
             statement.setString(8, user.getHouseNumber());
             statement.setString(9, user.getFlatNumber());
-            statement.setString(10, user.getIndex());
+            statement.setString(10, user.getZipCode());
             statement.setInt(11, user.getId());
 
             isRowUpdated = statement.executeUpdate() > 0;
@@ -237,7 +239,7 @@ public class UserDAOImpl implements UserDAO {
         user.setFirstName(resultSet.getString(LABEL_FIRST_NAME));
         user.setSecondName(resultSet.getString(LABEL_SECOND_NAME));
         user.setMiddleName(resultSet.getString(LABEL_MIDDLE_NAME));
-
+        user.setCardBalance(resultSet.getDouble(LABEL_CARD_BALANCE));
         return user;
     }
 }

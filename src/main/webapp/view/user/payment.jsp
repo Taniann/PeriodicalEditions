@@ -14,6 +14,7 @@
      <fmt:setLocale value="${locale}"/>
      <fmt:setBundle basename="paymentPage" var="paymentPage"/>
      <fmt:setBundle basename="common" var="common"/>
+     <fmt:setBundle basename="message" var="message"/>
     </head>
       <body>
         <div class="container-fluid">
@@ -40,6 +41,12 @@
                  <form method="post" action="${pageContext.request.contextPath}/controller" >
                   <c:if test="${user != null}">
                       <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
+                  </c:if>
+                  <c:if test="${requestScope.errorInputData != null}">
+                     <h4><fmt:message key="message.errorInputData" bundle="${message}"/></h4>
+                  </c:if>
+                  <c:if test="${requestScope.errorMessage != null}">
+                     <h4><fmt:message key="message.paymentError" bundle="${message}"/></h4>
                   </c:if>
                    <div class="row">
                     <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-offset-1"><fmt:message key="paymentPage.cardNumber" bundle="${paymentPage}"/>

@@ -28,18 +28,32 @@ public class CategoryService {
         return instance;
     }
 
+    /**
+     * Insert new edition`s category name
+     */
     public boolean insert(Category category) {
         return factory.createCategoryDAO().insert(category);
     }
 
+    /**
+     * Insert categories which belongs to the edition
+     * @param editionId
+     * @param categories
+     */
     public boolean insertEditionCategories(int editionId, List<Category> categories) {
         return factory.createCategoryDAO().insertEditionCategories(editionId, categories);
     }
 
+    /**
+     * Find all categories
+     */
     public List<Category> findAll() {
         return factory.createCategoryDAO().findAll();
     }
 
+    /**
+     * Delete category
+     */
     public boolean delete(int id) {
         return factory.createCategoryDAO().delete(id);
     }

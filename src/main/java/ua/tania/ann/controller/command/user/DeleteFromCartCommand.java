@@ -20,6 +20,7 @@ public class DeleteFromCartCommand implements Command {
     private static final String ID = "id";
 
 
+
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ResultPage resultPage = new ResultPage(REDIRECT);

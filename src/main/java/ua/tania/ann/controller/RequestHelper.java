@@ -37,7 +37,7 @@ public class RequestHelper {
         commands.put("editProfile", new EditProfileCommand());
         commands.put("changePassword", new ChangePasswordCommand());
         commands.put("makeOrder", new MakeOrderCommand());
-        commands.put("addSubscription", new AddSubscriptionCommand());
+        commands.put("addSubscription", new AddSubscriptionWithPayCommand());
         commands.put("reviewSubscriptions", new ReviewSubscriptionsCommand());
         commands.put("searchEditionsByCategory", new SearchEditionsByCategoryCommand());
         commands.put("showCatalogPage", new ShowCatalogCommand());

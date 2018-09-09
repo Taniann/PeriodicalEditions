@@ -56,8 +56,8 @@
                                                           class="form-control" value="<c:out value='${user.middleName}' />" /></div>
                    </div>
                  <div class="row">
-                           <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-offset-1" style="padding-top: 20px"><fmt:message key="profilePage.email" bundle="${profilePage}"/></div>
-                           <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3" style="padding-top: 20px"><fmt:message key="profilePage.phone" bundle="${profilePage}"/></div>
+                           <div class="col-md-4 col-lg-4 col-sm-3 col-xs-3 col-md-offset-1" style="padding-top: 20px"><fmt:message key="profilePage.email" bundle="${profilePage}"/></div>
+                           <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3" style="padding-top: 20px"><fmt:message key="profilePage.phone" bundle="${profilePage}"/></div>
                         </div>
                    <div class="row" >
                       <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-offset-1"><input type="email" name="email" size="30"
@@ -65,6 +65,11 @@
                        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 col-md-offset-1"><input type="text" data-format="+380 (dd) ddd-dddd"
                                               name="phone" class="form-control bfh-phone" value="<c:out value='${user.phone}' />"/></div>
                    </div>
+                  <div class="row">
+                       <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2 col-md-offset-1" style="padding-top: 20px"><fmt:message key="profilePage.cardBalance" bundle="${profilePage}"/></div>
+                       <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 " style="padding-top: 20px" ><input type="text" name="cardBalance" size="10"
+                                                                  value="<c:out value='${user.cardBalance}' />" /></div>
+                  </div>
                    <div class="row">
                         <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4 col-md-offset-1" style="padding-top: 20px">
                             <button class="btn btn-primary" type="submit" value="editProfile" name="command">

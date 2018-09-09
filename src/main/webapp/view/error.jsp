@@ -39,7 +39,11 @@
     </div>
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <p><c:out value="${messageError}"/></p>
+        <p>
+           <c:if test="${requestScope.errorMessage != null}">
+              <h4><fmt:message key="message.error" bundle="${message}"/></h4>
+           </c:if>
+        </p>
     </div>
     <div class="col-md-2"></div>
   </body>

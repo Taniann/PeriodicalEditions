@@ -36,7 +36,7 @@
 2018-09-06 20:20:26 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@589c5a3e
 2018-09-06 20:21:39 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6ff8ea0d
 2018-09-06 20:25:37 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@3b80fdc4
-2018-09-06 20:26:44 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionCommand@5f8b38ee
+2018-09-06 20:26:44 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@5f8b38ee
 2018-09-06 20:26:44 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@288615d4
 2018-09-06 20:26:49 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@288615d4
 2018-09-06 20:26:50 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@cdf1b31
@@ -49,3 +49,160 @@
 2018-09-06 20:27:50 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddCategoryCommand@55995db2
 2018-09-06 20:27:58 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.show.ShowChangeEditionCommand@7f69ceec
 2018-09-06 20:28:02 INFO  ControllerServlet:59 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddEditionCategoriesCommand@2afdd861
+2018-09-09 18:34:49 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@8ff8cf7
+2018-09-09 18:34:49 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@2f65741f
+2018-09-09 18:34:53 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@46ffefc3
+2018-09-09 18:34:57 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@122735f4
+2018-09-09 18:35:01 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@122735f4
+2018-09-09 18:35:04 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@2f65741f
+2018-09-09 18:35:06 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@46ffefc3
+2018-09-09 18:35:10 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@122735f4
+2018-09-09 18:35:31 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@273eb03e
+2018-09-09 18:35:39 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@5b4896e4
+2018-09-09 18:35:39 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@2f65741f
+2018-09-09 18:35:41 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@4011f091
+2018-09-09 18:35:45 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@2f65741f
+2018-09-09 18:36:11 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LogoutCommand@6a4b01d2
+2018-09-09 18:36:18 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.ChangeLocaleCommand@2ceeab1f
+2018-09-09 19:10:31 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7cb36740
+2018-09-09 19:10:40 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7cb36740
+2018-09-09 19:10:51 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7cb36740
+2018-09-09 19:11:00 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7cb36740
+2018-09-09 19:11:05 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7cb36740
+2018-09-09 19:11:05 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAdminPageCommand@300f0488
+2018-09-09 19:11:10 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LogoutCommand@46c9850a
+2018-09-09 19:11:21 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7cb36740
+2018-09-09 19:13:12 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7cb36740
+2018-09-09 19:15:53 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@3fb3519c
+2018-09-09 19:16:08 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@3fb3519c
+2018-09-09 19:20:36 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@200334a5
+2018-09-09 19:20:36 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@69e1f30c
+2018-09-09 19:21:36 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@69e1f30c
+2018-09-09 19:21:37 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@6d449be3
+2018-09-09 19:21:43 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@6d449be3
+2018-09-09 19:21:54 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@69e1f30c
+2018-09-09 19:22:05 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@69e1f30c
+2018-09-09 19:22:08 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@37529322
+2018-09-09 19:22:13 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@676d6326
+2018-09-09 19:22:15 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@69e1f30c
+2018-09-09 19:22:19 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@37529322
+2018-09-09 19:22:22 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@676d6326
+2018-09-09 19:22:35 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@2de5fd24
+2018-09-09 19:22:42 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@5ae6a0d
+2018-09-09 19:22:42 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@69e1f30c
+2018-09-09 19:22:44 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@6d449be3
+2018-09-09 19:22:47 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@69e1f30c
+2018-09-09 19:49:24 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@4d3a6817
+2018-09-09 19:49:24 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@78696661
+2018-09-09 19:49:28 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@961f043
+2018-09-09 19:49:37 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@78696661
+2018-09-09 19:51:33 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.EditProfileCommand@5ee475f
+2018-09-09 19:51:36 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@961f043
+2018-09-09 19:51:49 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.EditProfileCommand@5ee475f
+2018-09-09 19:51:52 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@961f043
+2018-09-09 19:51:54 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@78696661
+2018-09-09 19:52:01 WARN  ControllerServlet:81 - For input string: "15,7"
+java.lang.NumberFormatException: For input string: "15,7"
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.lang.Double.parseDouble(Double.java:538)
+	at ua.tania.ann.controller.command.user.EditProfileCommand.execute(EditProfileCommand.java:44)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:69)
+	at ua.tania.ann.controller.ControllerServlet.doPost(ControllerServlet.java:60)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:23)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-09 19:52:19 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@4d3a6817
+2018-09-09 19:52:19 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@78696661
+2018-09-09 19:52:32 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.EditProfileCommand@5ee475f
+2018-09-09 19:52:37 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@961f043
+2018-09-09 19:52:39 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@78696661
+2018-09-09 20:01:11 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@40aafae0
+2018-09-09 20:01:11 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@78696661
+2018-09-09 20:01:18 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@66ad989d
+2018-09-09 20:01:22 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@24bb6d61
+2018-09-09 20:01:24 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@78696661
+2018-09-09 20:01:27 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@78696661
+2018-09-09 20:01:29 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@66ad989d
+2018-09-09 20:01:33 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@24bb6d61
+2018-09-09 20:01:48 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@3376e564
+2018-09-09 20:01:58 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@40e8ad84
+2018-09-09 20:01:58 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@78696661
+2018-09-09 20:01:59 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@29e9cc78
+2018-09-09 20:02:03 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LogoutCommand@426306e2
+2018-09-09 20:03:54 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@592aa319
+2018-09-09 20:03:55 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@43e2a3b2
+2018-09-09 20:03:58 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@2ed197d5
+2018-09-09 20:04:01 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@43e2a3b2
+2018-09-09 20:04:10 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@43e2a3b2
+2018-09-09 20:32:00 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@6791f5a4
+2018-09-09 20:32:00 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@148a2902
+2018-09-09 20:32:03 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@47642f2f
+2018-09-09 20:32:10 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@47642f2f
+2018-09-09 20:32:11 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@148a2902
+2018-09-09 20:32:15 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@148a2902
+2018-09-09 20:32:17 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@2b363b67
+2018-09-09 20:32:22 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@2790dc4e
+2018-09-09 20:32:35 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@1566104a
+2018-09-09 20:32:42 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@62679b9d
+2018-09-09 20:32:42 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@148a2902
+2018-09-09 20:32:44 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@47642f2f
+2018-09-09 20:32:58 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@148a2902
+2018-09-09 20:35:30 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@8cc8fe2
+2018-09-09 20:35:30 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@19cbca89
+2018-09-09 20:35:44 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.EditProfileCommand@7b703c2b
+2018-09-09 20:35:52 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.EditProfileCommand@7b703c2b
+2018-09-09 20:36:05 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@19cbca89
+2018-09-09 20:36:08 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.ChangeLocaleCommand@7bb2d44
+2018-09-09 20:36:08 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@19cbca89
+2018-09-09 20:36:16 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.ChangeLocaleCommand@7bb2d44
+2018-09-09 20:36:17 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@19cbca89
+2018-09-09 20:36:19 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LogoutCommand@385ba4ce
+2018-09-09 20:47:43 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@6abb5f9d
+2018-09-09 20:47:43 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@1c97f87e
+2018-09-09 20:47:49 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@78132d98
+2018-09-09 20:47:53 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@1fb10e48
+2018-09-09 20:48:05 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@73810387
+2018-09-09 20:48:12 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@63859cb5
+2018-09-09 20:48:23 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@63859cb5
+2018-09-09 20:48:38 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@63859cb5
+2018-09-09 20:50:30 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@63859cb5
+2018-09-09 20:50:30 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@1c97f87e
+2018-09-09 20:50:32 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@18a7f819
+2018-09-09 20:50:35 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@1c97f87e
+2018-09-09 20:50:36 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@78132d98
+2018-09-09 20:50:39 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@1fb10e48
+2018-09-09 20:50:47 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@73810387
+2018-09-09 20:50:54 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@63859cb5
+2018-09-09 20:53:57 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@68887668
+2018-09-09 20:53:57 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@562c070e
+2018-09-09 20:54:03 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@5627eece
+2018-09-09 20:54:07 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@5c0c51f3
+2018-09-09 20:54:19 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@41223b99
+2018-09-09 20:54:25 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@271690ab
+2018-09-09 20:54:42 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@271690ab
+2018-09-09 20:54:42 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@562c070e
+2018-09-09 20:54:43 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@6b9212c0
+2018-09-09 20:54:49 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@562c070e
+2018-09-09 20:54:52 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LogoutCommand@4700a6ee

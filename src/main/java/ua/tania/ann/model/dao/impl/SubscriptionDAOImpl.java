@@ -3,6 +3,7 @@ package ua.tania.ann.model.dao.impl;
 import ua.tania.ann.model.dao.SubscriptionDAO;
 import ua.tania.ann.model.entity.Edition;
 import ua.tania.ann.model.entity.Subscription;
+import ua.tania.ann.model.entity.User;
 import ua.tania.ann.utils.ConnectionPool;
 
 import java.sql.*;
@@ -18,6 +19,7 @@ public class SubscriptionDAOImpl implements SubscriptionDAO {
 
     private static final String INSERT_QUERY = "INSERT INTO subscription (user_id, edition_id, " +
             "month_numbers, amount) VALUES (?, ?, ?, ?)";
+    private static final String USER_PAY_QUERY = "UPDATE user_u SET card_balance = ? WHERE id = ?";
     private static final String FIND_ALL_BY_USER_ID_QUERY = "SELECT* FROM subscription WHERE user_id = ?";
 
     private SubscriptionDAOImpl() {}
@@ -25,28 +27,41 @@ public class SubscriptionDAOImpl implements SubscriptionDAO {
     static SubscriptionDAOImpl getInstance() {return INSTANCE;}
 
     @Override
-    public boolean insert(Subscription subscription) {
-        boolean isRowInserted = false;
+    public int insertWithPay(List<Subscription> subscriptions, User user) {
+        int insertedRowCount = 0;
         Connection connection = null;
         PreparedStatement statement = null;
 
         try {
             connection = ConnectionPool.getInstance().getConnection();
+            connection.setAutoCommit(false);
+
+            statement = connection.prepareStatement(USER_PAY_QUERY);
+            statement.setDouble(1, user.getCardBalance());
+            statement.setInt(2, user.getId());
+            statement.executeUpdate();
 
             statement = connection.prepareStatement(INSERT_QUERY);
-            statement.setInt(1, subscription.getUserId());
-            statement.setInt(2, subscription.getEditionId());
-            statement.setString(3, subscription.getMonthsForInsert());
-            statement.setDouble(4, subscription.getAmount());
-
-            isRowInserted = statement.executeUpdate() > 0;
+            for (Subscription subscription: subscriptions) {
+                statement.setInt(1, subscription.getUserId());
+                statement.setInt(2, subscription.getEditionId());
+                statement.setString(3, subscription.getMonthsForInsert());
+                statement.setDouble(4, subscription.getAmount());
+                statement.addBatch();
+            }
+            insertedRowCount = statement.executeBatch().length;
+            connection.commit();
+            System.out.println(connection.getTransactionIsolation());
 
         }catch (SQLException e) {
-
+            try {
+                connection.rollback();
+            } catch (SQLException e1) {
+            }
         }finally {
             close(connection, statement);
         }
-        return isRowInserted;
+        return insertedRowCount;
     }
 
     @Override

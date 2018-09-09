@@ -22,6 +22,8 @@ public class EditProfileCommand implements Command {
     private static final String MIDDLE_NAME = "middleName";
     private static final String EMAIL = "email";
     private static final String PHONE = "phone";
+    private static final String CARD_BALANCE = "cardBalance";
+
 
     private UserService userService;
 
@@ -39,6 +41,12 @@ public class EditProfileCommand implements Command {
         String middleName = getValue(request, MIDDLE_NAME);
         String email = getValue(request, EMAIL);
         String phone = getValue(request, PHONE);
+        Double cardBalance = 0.0;
+        try {
+            cardBalance = Double.parseDouble(getValue(request, CARD_BALANCE));
+        }catch (Exception e) {
+            return new ResultPage(REDIRECT, JspPath.PROFILE_PAGE);
+        }
 
         User user = userService.findById(id);
 
@@ -47,6 +55,7 @@ public class EditProfileCommand implements Command {
         user.setMiddleName(middleName);
         user.setEmail(email);
         user.setPhone(phone);
+        user.setCardBalance(cardBalance);
 
         if (userService.updateProfile(user)) {
             request.getSession(false).setAttribute("user", user);

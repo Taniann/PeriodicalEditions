@@ -49,7 +49,7 @@
                       <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
                   </c:if>
            <c:if test="${requestScope.successfulMessage != null}">
-                <h4><fmt:message key="message.uncorrectOldPassword" bundle="${message}"/></h4>
+                <h4><fmt:message key="message.passwordChanged" bundle="${message}"/></h4>
             </c:if>
             <c:if test="${requestScope.uncorrectOldPassword != null}">
                 <h4><fmt:message key="message.uncorrectOldPassword" bundle="${message}"/></h4>

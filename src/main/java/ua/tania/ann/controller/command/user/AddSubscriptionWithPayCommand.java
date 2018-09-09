@@ -5,6 +5,7 @@ import ua.tania.ann.controller.command.Command;
 import ua.tania.ann.controller.command.ResultPage;
 import ua.tania.ann.model.entity.Subscription;
 import ua.tania.ann.model.entity.User;
+import ua.tania.ann.service.PaymentService;
 import ua.tania.ann.service.SubscriptionService;
 import ua.tania.ann.utils.JspPath;
 
@@ -18,16 +19,24 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 /**
  * Created by Таня on 30.08.2018.
  */
-public class AddSubscriptionCommand implements Command {
+public class AddSubscriptionWithPayCommand implements Command {
     private static final String CARD_NUMBER = "cardNumber";
     private static final String CVV = "cvv";
+    private static final String CART = "cart";
+    private static final String USER = "user";
+    private static final String ERROR_INPUT_DATA = "errorInputData";
+    private static final String ERROR_MESSAGE = "errorMessage";
+    private static final String TOTAL_AMOUNT = "totalAmount";
+
+
 
     private SubscriptionService subscriptionService;
+    private PaymentService paymentService;
 
-    public AddSubscriptionCommand()  {
+    public AddSubscriptionWithPayCommand()  {
         subscriptionService = SubscriptionService.getInstance();
+        paymentService = PaymentService.getInstance();
     }
-
 
 
     @Override
@@ -35,30 +44,37 @@ public class AddSubscriptionCommand implements Command {
         String cardNumber = getValue(request, CARD_NUMBER);
         String cvv = getValue(request, CVV);
 
+
         if (!subscriptionService.isCardNumberCorrect(cardNumber) || !subscriptionService.isCvvCorrect(cvv)
-                || request.getSession(false).getAttribute("cart") == null) {
-            request.setAttribute("errorMessage", true);
+                || request.getSession(false).getAttribute(CART) == null) {
+            request.setAttribute(ERROR_INPUT_DATA, true);
             return new ResultPage(FORWARD, JspPath.PAYMENT_PAGE);
         }
 
-        Subscription subscription = null;
-        boolean isInserted = false;
-        User user =  (User)request.getSession().getAttribute("user");
+        User user =  (User)request.getSession().getAttribute(USER);
+        Double totalAmount = (Double) request.getSession().getAttribute(TOTAL_AMOUNT);
 
-        ArrayList<CartRecord> cart = (ArrayList<CartRecord>) request.getSession().getAttribute("cart");
-
-        for (CartRecord cartRecord : cart) {
-            subscription = new Subscription(user.getId(), cartRecord.getEdition().getId(),
-                                            cartRecord.getMonths(), cartRecord.getAmount() );
-            isInserted = subscriptionService.insert(subscription);
+        if (paymentService.isBalanceNotEnough(user, totalAmount)) {
+            request.setAttribute(ERROR_MESSAGE, true);
+            return new ResultPage(FORWARD, JspPath.PAYMENT_PAGE);
+        }else {
+            user.setCardBalance(paymentService.getNewBalanceForInsert(user, totalAmount));
         }
 
-        request.getSession().setAttribute("cart", null);
+        ArrayList<CartRecord> cart = (ArrayList<CartRecord>) request.getSession().getAttribute(CART);
+        ArrayList<Subscription> subscriptionsForInsert = new ArrayList<>();
 
-        if (isInserted) {
+        for (CartRecord cartRecord : cart) {
+            Subscription subscription = new Subscription(user.getId(), cartRecord.getEdition().getId(),
+                                            cartRecord.getMonths(), cartRecord.getAmount() );
+            subscriptionsForInsert.add(subscription);
+        }
+
+        if (subscriptionService.insertWithPay(subscriptionsForInsert, user)) {
+            request.getSession().setAttribute(CART, null);
             return new ResultPage(REDIRECT, JspPath.CATALOG_PAGE_COMMAND);
         } else {
-            request.setAttribute("errorMessage", true);
+            request.setAttribute(ERROR_MESSAGE, true);
             return new ResultPage(FORWARD, JspPath.PAYMENT_PAGE);
         }
     }
