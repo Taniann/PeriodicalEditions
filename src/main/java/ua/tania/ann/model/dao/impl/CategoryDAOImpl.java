@@ -51,8 +51,8 @@ public class CategoryDAOImpl implements CategoryDAO {
     }
 
     @Override
-    public boolean insertEditionCategories(int editionId, List<Category> categories) {
-        boolean isRowInserted = false;
+    public int insertEditionCategories(int editionId, List<Category> categories) {
+        int insertedRowCount = 0;
         Connection connection = null;
         PreparedStatement statement = null;
 
@@ -63,16 +63,17 @@ public class CategoryDAOImpl implements CategoryDAO {
                 for (Category category : categories) {
                     statement.setInt(1, editionId);
                     statement.setInt(2, category.getId());
-
-                    isRowInserted = statement.executeUpdate() > 0;
+                    statement.addBatch();
                 }
+            insertedRowCount = statement.executeBatch().length;
+
 
         }catch (SQLException e) {
 
         }finally {
             close(connection, statement);
         }
-        return isRowInserted;
+        return insertedRowCount;
     }
 
     @Override

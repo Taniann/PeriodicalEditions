@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface CategoryDAO {
     boolean insert(Category category);
-    boolean insertEditionCategories(int editionId, List<Category> categories);
+    int insertEditionCategories(int editionId, List<Category> categories);
     List<Category> findAll();
     boolean delete(int id);
     boolean deleteByEditionId(int editionId);

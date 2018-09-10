@@ -2,7 +2,6 @@ package ua.tania.ann.controller.command.show;
 
 import ua.tania.ann.controller.command.Command;
 import ua.tania.ann.controller.command.ResultPage;
-import ua.tania.ann.service.CategoryService;
 import ua.tania.ann.utils.JspPath;
 
 import javax.servlet.http.HttpServletRequest;

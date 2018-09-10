@@ -11,9 +11,7 @@ import ua.tania.ann.utils.JspPath;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 

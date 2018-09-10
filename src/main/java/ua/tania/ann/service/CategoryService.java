@@ -41,7 +41,7 @@ public class CategoryService {
      * @param categories
      */
     public boolean insertEditionCategories(int editionId, List<Category> categories) {
-        return factory.createCategoryDAO().insertEditionCategories(editionId, categories);
+        return factory.createCategoryDAO().insertEditionCategories(editionId, categories) == categories.size();
     }
 
     /**

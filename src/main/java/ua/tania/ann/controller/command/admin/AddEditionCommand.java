@@ -2,17 +2,12 @@ package ua.tania.ann.controller.command.admin;
 
 import ua.tania.ann.controller.command.Command;
 import ua.tania.ann.controller.command.ResultPage;
-import ua.tania.ann.model.entity.Category;
 import ua.tania.ann.model.entity.Edition;
-import ua.tania.ann.service.CategoryService;
 import ua.tania.ann.service.EditionService;
 import ua.tania.ann.utils.JspPath;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 

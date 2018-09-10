@@ -111,4 +111,9 @@ public class UserService {
     public boolean isEmailCorrect(String email) {
         return email.matches(EMAIL);
     }
+
+    public void setFactory(DAOFactory factory) {
+        this.factory = factory;
+    }
+
 }

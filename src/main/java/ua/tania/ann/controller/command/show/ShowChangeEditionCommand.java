@@ -3,7 +3,6 @@ package ua.tania.ann.controller.command.show;
 import ua.tania.ann.controller.command.Command;
 import ua.tania.ann.controller.command.ResultPage;
 import ua.tania.ann.model.entity.Edition;
-import ua.tania.ann.service.CategoryService;
 import ua.tania.ann.service.EditionService;
 import ua.tania.ann.utils.JspPath;
 

@@ -153,4 +153,23 @@ public class User {
     public void setCardBalance(Double cardBalance) {
         this.cardBalance = cardBalance;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (id != user.id) return false;
+        return login.equals(user.login);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + login.hashCode();
+        return result;
+    }
 }
