@@ -34,7 +34,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void whenLoginIsExistThenTrue() {
+    public void whenUserIsExistThenCanBeReturned() {
         User expectedUser = new User();
         expectedUser.setId(5);
         expectedUser.setLogin(LOGIN);

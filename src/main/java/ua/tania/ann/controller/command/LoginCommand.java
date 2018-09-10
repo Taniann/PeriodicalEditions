@@ -22,6 +22,11 @@ public class LoginCommand implements Command {
 
     private static final String LOGIN = "login";
     private static final String PASSWORD = "password";
+    private UserService userService;
+
+    public LoginCommand() {
+        userService = UserService.getInstance();
+    }
 
     @Override
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -30,7 +35,7 @@ public class LoginCommand implements Command {
         String login = request.getParameter(LOGIN);
         String password = request.getParameter(PASSWORD);
 
-        User user = UserService.getInstance().findByLogin(login);
+        User user = userService.findByLogin(login);
 
         if (user == null) {
             resultPage = redirectToErrorPage(request, resultPage);
@@ -42,11 +47,11 @@ public class LoginCommand implements Command {
         return resultPage;
     }
 
-    private boolean isCorrectPassword(User user, String inputPassword) {
-        return UserService.getInstance().checkPassword(user, inputPassword);
+    public boolean isCorrectPassword(User user, String inputPassword) {
+        return userService.checkPassword(user, inputPassword);
     }
 
-    private ResultPage pageChoice(User user, HttpServletRequest request, ResultPage resultPage) {
+    public ResultPage pageChoice(User user, HttpServletRequest request, ResultPage resultPage) {
         if (user.isAdmin()) {
             resultPage = redirectToAdminPage(request, user, resultPage);
         } else {
@@ -55,7 +60,7 @@ public class LoginCommand implements Command {
         return resultPage;
     }
 
-    private ResultPage redirectToAdminPage(HttpServletRequest request, User user, ResultPage resultPage) {
+    public ResultPage redirectToAdminPage(HttpServletRequest request, User user, ResultPage resultPage) {
         HttpSession session = request.getSession();
         session.setAttribute(USER_ATTRIBUTE, user);
 
@@ -63,7 +68,7 @@ public class LoginCommand implements Command {
         return resultPage;
     }
 
-    private ResultPage redirectToUserPage(HttpServletRequest request, User user, ResultPage resultPage) {
+    public ResultPage redirectToUserPage(HttpServletRequest request, User user, ResultPage resultPage) {
         HttpSession session = request.getSession();
         session.setAttribute(USER_ATTRIBUTE, user);
         session.setAttribute(CATEGORIES, CategoryService.getInstance().findAll());
@@ -73,7 +78,7 @@ public class LoginCommand implements Command {
         return resultPage;
     }
 
-    private ResultPage redirectToErrorPage(HttpServletRequest request, ResultPage resultPage) {
+    public ResultPage redirectToErrorPage(HttpServletRequest request, ResultPage resultPage) {
         request.setAttribute(ERROR_MESSAGE, true);
         resultPage.setPage(JspPath.LOGIN_PAGE);
         return resultPage;

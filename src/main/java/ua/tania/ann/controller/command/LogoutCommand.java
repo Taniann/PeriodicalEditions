@@ -16,7 +16,7 @@ public class LogoutCommand implements Command {
     public ResultPage execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ResultPage resultPage = new ResultPage(REDIRECT, JspPath.WELCOME_PAGE);
 
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(false);
         session.invalidate();
         return resultPage;
     }

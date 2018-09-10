@@ -36,4 +36,22 @@ public class ResultPage {
         FORWARD, REDIRECT
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ResultPage that = (ResultPage) o;
+
+        if (!page.equals(that.page)) return false;
+        return routingType.equals(that.routingType);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = page.hashCode();
+        result = 31 * result + routingType.hashCode();
+        return result;
+    }
 }
