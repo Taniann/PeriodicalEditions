@@ -278,3 +278,709 @@ java.lang.NumberFormatException: For input string: "15,7"
 2018-09-10 13:55:12 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.user.SearchEditionsByCategoryCommand@76324d09
 2018-09-10 13:55:19 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@32fee888
 2018-09-10 13:55:22 INFO  ControllerServlet:70 - Визвана команда: ua.tania.ann.controller.command.LogoutCommand@7aaa7224
+2018-09-11 11:06:35 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7aea52fa
+2018-09-11 11:06:36 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAdminPageCommand@6a3a4dad
+2018-09-11 11:06:42 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddEditionCommand@18748b1
+2018-09-11 11:07:42 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.admin.AddEditionCommand@1d16ca7
+2018-09-11 11:07:42 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAdminPageCommand@6a3a4dad
+2018-09-11 11:07:44 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAdminPageCommand@6a3a4dad
+2018-09-11 11:07:50 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAdminPageCommand@6a3a4dad
+2018-09-11 11:07:53 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddCategoryCommand@6e71561a
+2018-09-11 11:07:58 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddEditionCommand@18748b1
+2018-09-11 11:07:59 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.LogoutCommand@44d3c25
+2018-09-11 11:08:12 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7aea52fa
+2018-09-11 11:08:28 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7aea52fa
+2018-09-11 11:08:28 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:08:33 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7271507c
+2018-09-11 11:08:35 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:08:42 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:08:46 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:08:49 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@3d91be3a
+2018-09-11 11:08:52 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6bddada0
+2018-09-11 11:08:57 WARN  ControllerServlet:79 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:47)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:67)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:48)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 11:09:05 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@33b04b57
+2018-09-11 11:09:07 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:09:11 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:09:16 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@3d91be3a
+2018-09-11 11:09:18 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6bddada0
+2018-09-11 11:10:36 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@754bb1a8
+2018-09-11 11:10:44 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@66330ca4
+2018-09-11 11:10:52 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@66330ca4
+2018-09-11 11:10:56 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7271507c
+2018-09-11 11:10:58 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:11:14 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.EditProfileCommand@56cf96a5
+2018-09-11 11:11:16 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:11:19 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:11:20 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@3d91be3a
+2018-09-11 11:11:23 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6bddada0
+2018-09-11 11:11:37 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@754bb1a8
+2018-09-11 11:11:45 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@66330ca4
+2018-09-11 11:11:45 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:11:47 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7271507c
+2018-09-11 11:11:54 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:11:56 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7271507c
+2018-09-11 11:12:10 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:12:17 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7cf5023f
+2018-09-11 11:16:22 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@3f1d7d70
+2018-09-11 11:16:22 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:16:27 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@2bfbf578
+2018-09-11 11:16:35 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6d19acc8
+2018-09-11 11:16:48 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@7a4cc85e
+2018-09-11 11:16:57 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@2126eac7
+2018-09-11 11:16:57 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:16:58 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7732fc13
+2018-09-11 11:17:08 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:17:11 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:17:14 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:17:19 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:17:24 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@2bfbf578
+2018-09-11 11:17:27 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6d19acc8
+2018-09-11 11:17:38 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@7a4cc85e
+2018-09-11 11:17:45 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@2126eac7
+2018-09-11 11:17:45 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:17:47 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7732fc13
+2018-09-11 11:17:54 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:17:56 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.LogoutCommand@5140e232
+2018-09-11 11:18:06 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@3f1d7d70
+2018-09-11 11:18:06 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:18:09 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7732fc13
+2018-09-11 11:18:19 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:18:22 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@2bfbf578
+2018-09-11 11:18:25 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6d19acc8
+2018-09-11 11:18:40 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@7a4cc85e
+2018-09-11 11:18:47 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@2126eac7
+2018-09-11 11:18:47 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:18:49 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7732fc13
+2018-09-11 11:18:51 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:18:58 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@11d8acdb
+2018-09-11 11:19:04 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.LogoutCommand@5140e232
+2018-09-11 11:21:16 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@78041a20
+2018-09-11 11:21:16 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7335c39
+2018-09-11 11:21:30 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@7335c39
+2018-09-11 11:21:34 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@5070f4de
+2018-09-11 11:21:39 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@66678b75
+2018-09-11 11:21:41 WARN  ControllerServlet:79 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:47)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:67)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:48)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 11:30:17 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@35cc3618
+2018-09-11 11:30:17 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@5ac103d
+2018-09-11 11:30:20 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@34a6460e
+2018-09-11 11:30:28 INFO  ControllerServlet:68 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@15421c97
+2018-09-11 11:30:35 WARN  ControllerServlet:79 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:47)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:67)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:48)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 11:41:18 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@4960052
+2018-09-11 11:41:18 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@5ceb15f
+2018-09-11 11:41:22 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@604b351b
+2018-09-11 11:41:25 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@41195fc6
+2018-09-11 11:41:28 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:47)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 11:41:39 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@21ee45be
+2018-09-11 11:44:45 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@a6794ad
+2018-09-11 11:44:45 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@73bf520f
+2018-09-11 11:44:52 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@29e79f98
+2018-09-11 11:44:57 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@1b57a6bb
+2018-09-11 11:44:59 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:47)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:06:12 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@44994f5
+2018-09-11 15:06:12 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@66d16bf7
+2018-09-11 15:06:14 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@47fc38b3
+2018-09-11 15:06:19 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@1e064afb
+2018-09-11 15:06:22 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:47)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:06:44 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@7e02aad
+2018-09-11 15:06:46 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@66d16bf7
+2018-09-11 15:12:31 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7a519c53
+2018-09-11 15:12:31 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@2a5b4516
+2018-09-11 15:12:34 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@6f1c83b7
+2018-09-11 15:12:38 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@604b351b
+2018-09-11 15:12:41 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:47)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:12:48 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@7b910960
+2018-09-11 15:12:50 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@2a5b4516
+2018-09-11 15:12:51 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@6f1c83b7
+2018-09-11 15:12:54 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@604b351b
+2018-09-11 15:12:56 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@2a5b4516
+2018-09-11 15:12:58 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@6f1c83b7
+2018-09-11 15:13:01 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@604b351b
+2018-09-11 15:13:02 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@2a5b4516
+2018-09-11 15:13:05 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@6f1c83b7
+2018-09-11 15:13:08 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@604b351b
+2018-09-11 15:13:10 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@7b910960
+2018-09-11 15:13:17 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:47)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:13:21 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@7b910960
+2018-09-11 15:13:23 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:47)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:13:25 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@7b910960
+2018-09-11 15:13:27 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@2a5b4516
+2018-09-11 15:16:43 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@7288d097
+2018-09-11 15:16:43 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@6b1ce60d
+2018-09-11 15:16:46 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@4ca961f7
+2018-09-11 15:16:50 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@3e55a03d
+2018-09-11 15:16:52 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:47)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:16:58 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@6b1ce60d
+2018-09-11 15:17:00 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@4ca961f7
+2018-09-11 15:17:03 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@3e55a03d
+2018-09-11 15:20:00 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@20e6ecca
+2018-09-11 15:20:00 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@607fd497
+2018-09-11 15:20:03 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@4d9134b3
+2018-09-11 15:20:07 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6b2a1995
+2018-09-11 15:20:21 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:48)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:20:27 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@680c1407
+2018-09-11 15:20:28 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@607fd497
+2018-09-11 15:20:30 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@4d9134b3
+2018-09-11 15:20:32 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6b2a1995
+2018-09-11 15:20:33 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@607fd497
+2018-09-11 15:20:35 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@607fd497
+2018-09-11 15:20:38 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@4d9134b3
+2018-09-11 15:20:41 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6b2a1995
+2018-09-11 15:20:43 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:48)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:20:47 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@607fd497
+2018-09-11 15:20:50 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@4d9134b3
+2018-09-11 15:20:53 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6b2a1995
+2018-09-11 15:20:56 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@607fd497
+2018-09-11 15:20:57 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@4d9134b3
+2018-09-11 15:21:00 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6b2a1995
+2018-09-11 15:21:02 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:48)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:21:04 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@680c1407
+2018-09-11 15:21:09 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@607fd497
+2018-09-11 15:21:11 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@4d9134b3
+2018-09-11 15:21:14 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@6b2a1995
+2018-09-11 15:21:16 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:48)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:21:18 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@680c1407
+2018-09-11 15:21:23 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@680c1407
+2018-09-11 15:21:25 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:48)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 15:21:27 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@680c1407
+2018-09-11 15:21:30 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@607fd497
+2018-09-11 16:17:51 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.LoginCommand@50cd8f90
+2018-09-11 16:17:52 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:17:59 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.SearchEditionsByTypeCommand@2e63dcfa
+2018-09-11 16:18:11 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.SearchEditionsByTypeCommand@2e63dcfa
+2018-09-11 16:18:15 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.SearchEditionsByTypeCommand@2e63dcfa
+2018-09-11 16:18:16 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:18:20 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:18:31 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.SearchEditionsByCategoryCommand@15259873
+2018-09-11 16:18:37 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7912b08
+2018-09-11 16:18:39 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:18:41 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@1929ebfe
+2018-09-11 16:18:45 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@5ebb6b82
+2018-09-11 16:18:49 WARN  ControllerServlet:74 - 
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.removeFromCart(DeleteFromCartCommand.java:48)
+	at ua.tania.ann.controller.command.user.DeleteFromCartCommand.execute(DeleteFromCartCommand.java:34)
+	at ua.tania.ann.controller.ControllerServlet.processRequest(ControllerServlet.java:62)
+	at ua.tania.ann.controller.ControllerServlet.doGet(ControllerServlet.java:47)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at ua.tania.ann.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-09-11 16:18:53 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.DeleteFromCartCommand@43a08ea2
+2018-09-11 16:19:02 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:19:04 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7912b08
+2018-09-11 16:19:06 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:19:11 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:19:13 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@1929ebfe
+2018-09-11 16:19:23 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.EditProfileCommand@3269205d
+2018-09-11 16:19:25 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:19:26 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@1929ebfe
+2018-09-11 16:19:30 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@5ebb6b82
+2018-09-11 16:19:42 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@73239343
+2018-09-11 16:19:48 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@bb5ecc6
+2018-09-11 16:19:59 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7912b08
+2018-09-11 16:20:01 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:20:08 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.EditProfileCommand@3269205d
+2018-09-11 16:20:10 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:20:13 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:20:15 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowAddToCartPage@1929ebfe
+2018-09-11 16:21:33 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddToCartCommand@5ebb6b82
+2018-09-11 16:21:45 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.MakeOrderCommand@73239343
+2018-09-11 16:22:16 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.AddSubscriptionWithPayCommand@bb5ecc6
+2018-09-11 16:22:16 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:22:23 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:22:24 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.user.ReviewSubscriptionsCommand@7912b08
+2018-09-11 16:22:27 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:22:40 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.ChangeLocaleCommand@69f6e05d
+2018-09-11 16:22:40 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:22:51 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.ChangeLocaleCommand@69f6e05d
+2018-09-11 16:22:51 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.show.ShowCatalogCommand@697285eb
+2018-09-11 16:22:53 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.LogoutCommand@40e9a341
+2018-09-11 16:22:56 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.ChangeLocaleCommand@69f6e05d
+2018-09-11 16:23:05 INFO  ControllerServlet:63 - Визвана команда: ua.tania.ann.controller.command.ChangeLocaleCommand@69f6e05d

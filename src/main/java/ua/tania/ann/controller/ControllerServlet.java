@@ -44,12 +44,7 @@ public class ControllerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
-           try {
                processRequest(request, response);
-           } catch (NullPointerException e) {
-               log.warn(e.getMessage(), e);
-           }
-
     }
 
     @Override

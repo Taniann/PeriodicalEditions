@@ -32,6 +32,7 @@ public class DeleteFromCartCommand implements Command {
         if (request.getSession(false).getAttribute("cart") != null) {
              existingCart = (ArrayList<CartRecord>)request.getSession(false).getAttribute("cart");
             removeFromCart(existingCart, id);
+            request.getSession(false).setAttribute("cart", existingCart);
         }
 
         Double newTotalAmount = calculateNewTotalAmount(existingCart);

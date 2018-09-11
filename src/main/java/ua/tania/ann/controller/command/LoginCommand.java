@@ -47,11 +47,11 @@ public class LoginCommand implements Command {
         return resultPage;
     }
 
-    public boolean isCorrectPassword(User user, String inputPassword) {
+    private boolean isCorrectPassword(User user, String inputPassword) {
         return userService.checkPassword(user, inputPassword);
     }
 
-    public ResultPage pageChoice(User user, HttpServletRequest request, ResultPage resultPage) {
+    private ResultPage pageChoice(User user, HttpServletRequest request, ResultPage resultPage) {
         if (user.isAdmin()) {
             resultPage = redirectToAdminPage(request, user, resultPage);
         } else {
@@ -60,7 +60,7 @@ public class LoginCommand implements Command {
         return resultPage;
     }
 
-    public ResultPage redirectToAdminPage(HttpServletRequest request, User user, ResultPage resultPage) {
+    private ResultPage redirectToAdminPage(HttpServletRequest request, User user, ResultPage resultPage) {
         HttpSession session = request.getSession();
         session.setAttribute(USER_ATTRIBUTE, user);
 
@@ -68,7 +68,7 @@ public class LoginCommand implements Command {
         return resultPage;
     }
 
-    public ResultPage redirectToUserPage(HttpServletRequest request, User user, ResultPage resultPage) {
+    private ResultPage redirectToUserPage(HttpServletRequest request, User user, ResultPage resultPage) {
         HttpSession session = request.getSession();
         session.setAttribute(USER_ATTRIBUTE, user);
         session.setAttribute(CATEGORIES, CategoryService.getInstance().findAll());
@@ -78,7 +78,7 @@ public class LoginCommand implements Command {
         return resultPage;
     }
 
-    public ResultPage redirectToErrorPage(HttpServletRequest request, ResultPage resultPage) {
+    private ResultPage redirectToErrorPage(HttpServletRequest request, ResultPage resultPage) {
         request.setAttribute(ERROR_MESSAGE, true);
         resultPage.setPage(JspPath.LOGIN_PAGE);
         return resultPage;

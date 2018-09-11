@@ -13,7 +13,6 @@
     <fmt:setLocale value="${locale}"/>
     <fmt:setBundle basename="cartPage" var="cartPage"/>
     <fmt:setBundle basename="common" var="common"/>
-
     </head>
       <body>
         <div class="container-fluid">
@@ -38,7 +37,7 @@
             </div>
         </div>
             <div class="container-fluid">
-                <c:forEach items="${sessionScope.cart}" var="cartRecord">
+                <c:forEach var="cartRecord" items="${cart}">
                  <div class="row">
                     <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3 col-md-offset-1">${cartRecord.edition.name}</div>
                     <c:forEach items="${cartRecord.months}" var="month">

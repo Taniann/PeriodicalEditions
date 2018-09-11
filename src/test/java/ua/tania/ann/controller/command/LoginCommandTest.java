@@ -1,6 +1,7 @@
 package ua.tania.ann.controller.command;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.mockito.PowerMockito;
@@ -24,7 +25,7 @@ import static ua.tania.ann.controller.command.ResultPage.RoutingType.REDIRECT;
 /**
  * Created by Таня on 10.09.2018.
  */
-
+@Ignore
 public class LoginCommandTest {
 
     private HttpServletRequest request;

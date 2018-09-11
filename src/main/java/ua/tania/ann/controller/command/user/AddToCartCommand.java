@@ -47,11 +47,9 @@ public class AddToCartCommand implements Command {
         Double totalAmount = null;
 
         if (request.getSession(false).getAttribute("cart") != null) {
-            ArrayList<CartRecord> existingCart = ( ArrayList<CartRecord>)request.getSession().getAttribute("cart");
+            ArrayList<CartRecord> existingCart = ( ArrayList<CartRecord>)request.getSession(false).getAttribute("cart");
             existingCart.add(new CartRecord(edition, amount, months));
             totalAmount = calculateTotalAmount(existingCart);
-            //request.getSession(false).setAttribute("cart", existingCart);
-
         } else {
             cart.add(new CartRecord(edition, amount, months));
             totalAmount = amount;
