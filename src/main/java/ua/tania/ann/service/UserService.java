@@ -9,7 +9,7 @@ import ua.tania.ann.model.entity.User;
 public class UserService {
     private String EMAIL = "^[-\\w.]+\\@{1}([A-z0-9][-A-z0-9]+\\.)+[A-z]{2,4}$";
 
-    private static UserService instance;
+    private static volatile UserService instance;
 
     private DAOFactory factory;
 

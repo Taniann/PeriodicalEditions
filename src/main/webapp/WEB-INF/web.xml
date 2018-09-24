@@ -5,7 +5,10 @@
 <web-app>
   <display-name>PeriodicalEditions</display-name>
 
-
+  <listener>
+    <listener-class>ua.tania.ann.controller.listener.SessionListener</listener-class>
+  </listener>
+  
   <servlet>
     <servlet-name>ControllerServlet</servlet-name>
     <servlet-class>ua.tania.ann.controller.ControllerServlet</servlet-class>
@@ -40,9 +43,34 @@
     <servlet-name>ControllerServlet</servlet-name>
   </filter-mapping>
 
+  <filter>
+    <filter-name>AuthenticationFilter</filter-name>
+    <filter-class>ua.tania.ann.controller.filter.AuthenticationFilter</filter-class>
+    <init-param>
+      <param-name>active</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>AuthenticationFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
   <welcome-file-list>
     <welcome-file>welcome.jsp</welcome-file>
   </welcome-file-list>
 
-
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/error.jsp</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/error.jsp</location>
+  </error-page>
 </web-app>

@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Таня on 17.08.2018.
  */
 public class EditionService {
-    private static EditionService instance;
+    private static volatile EditionService instance;
 
     private DAOFactory factory;
 

@@ -7,7 +7,7 @@ import ua.tania.ann.model.entity.User;
  * Created by Таня on 09.09.2018.
  */
 public class PaymentService {
-    private static PaymentService instance;
+    private static volatile PaymentService instance;
 
     private DAOFactory daoFactory;
 

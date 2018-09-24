@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Таня on 30.08.2018.
  */
 public class SubscriptionService {
-    private static SubscriptionService instance;
+    private static volatile SubscriptionService instance;
 
     private DAOFactory daoFactory;
 

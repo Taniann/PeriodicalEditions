@@ -7,7 +7,7 @@ import ua.tania.ann.model.dao.impl.DAOFactoryImpl;
  * Created by Таня on 17.08.2018.
  */
 public abstract class DAOFactory {
-    private static DAOFactory daoFactory;
+    private static volatile DAOFactory daoFactory;
 
     public abstract UserDAO createUserDAO();
     public abstract EditionDAO createEditionDAO();

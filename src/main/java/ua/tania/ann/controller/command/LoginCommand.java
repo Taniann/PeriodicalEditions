@@ -42,6 +42,7 @@ public class LoginCommand implements Command {
         }
         else if (isCorrectPassword(user, password)) {
             resultPage = pageChoice(user, request, resultPage);
+            CommandUtil.addLoggedUser(request, user);
         }
         else resultPage = redirectToErrorPage(request, resultPage);
         return resultPage;
@@ -72,7 +73,6 @@ public class LoginCommand implements Command {
         HttpSession session = request.getSession();
         session.setAttribute(USER_ATTRIBUTE, user);
         session.setAttribute(CATEGORIES, CategoryService.getInstance().findAll());
-
 
         resultPage.setPage(JspPath.CATALOG_PAGE_COMMAND);
         return resultPage;

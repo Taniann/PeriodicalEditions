@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Таня on 26.08.2018.
  */
 public class CategoryService {
-    private static CategoryService instance;
+    private static volatile CategoryService instance;
 
     private DAOFactory factory;
 
